@@ -12,28 +12,31 @@
 		754716B71C2EE9A4004ABFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754716B51C2EE9A4004ABFC6 /* LaunchScreen.storyboard */; };
 		754716C21C2EE9A4004ABFC6 /* clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716C11C2EE9A4004ABFC6 /* clientTests.swift */; };
 		754716CD1C2EE9A4004ABFC6 /* clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */; };
+		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
+		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
+		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
 		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; settings = {ASSET_TAGS = (); }; };
-		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B91C1C41466300CF0ABC /* Asap-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90B1C41466300CF0ABC /* Asap-Italic.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B91D1C41466300CF0ABC /* Asap-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90C1C41466300CF0ABC /* Asap-Medium.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B91E1C41466300CF0ABC /* Asap-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90D1C41466300CF0ABC /* Asap-MediumItalic.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B91F1C41466300CF0ABC /* Asap-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90E1C41466300CF0ABC /* Asap-Regular.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9201C41466300CF0ABC /* CoveredByYourGrace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90F1C41466300CF0ABC /* CoveredByYourGrace.ttf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9211C41466300CF0ABC /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9101C41466300CF0ABC /* fontawesome-webfont.ttf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9221C41466300CF0ABC /* materialdesignicons-webfont (1).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9111C41466300CF0ABC /* materialdesignicons-webfont (1).ttf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9231C41466300CF0ABC /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9121C41466300CF0ABC /* Montserrat-Black.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9241C41466300CF0ABC /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9131C41466300CF0ABC /* Montserrat-Bold.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9251C41466300CF0ABC /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9141C41466300CF0ABC /* Montserrat-ExtraBold.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9261C41466300CF0ABC /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9151C41466300CF0ABC /* Montserrat-Hairline.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9271C41466300CF0ABC /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9161C41466300CF0ABC /* Montserrat-Light.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9281C41466300CF0ABC /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9171C41466300CF0ABC /* Montserrat-Regular.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9181C41466300CF0ABC /* Montserrat-SemiBold.otf */; settings = {ASSET_TAGS = (); }; };
-		91C1B92A1C41466300CF0ABC /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9191C41466300CF0ABC /* Montserrat-UltraLight.otf */; settings = {ASSET_TAGS = (); }; };
-		91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FCB6A01C3CFEE500652E6B /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; };
+		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; };
+		91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */; };
+		91C1B91C1C41466300CF0ABC /* Asap-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90B1C41466300CF0ABC /* Asap-Italic.otf */; };
+		91C1B91D1C41466300CF0ABC /* Asap-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90C1C41466300CF0ABC /* Asap-Medium.otf */; };
+		91C1B91E1C41466300CF0ABC /* Asap-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90D1C41466300CF0ABC /* Asap-MediumItalic.otf */; };
+		91C1B91F1C41466300CF0ABC /* Asap-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90E1C41466300CF0ABC /* Asap-Regular.otf */; };
+		91C1B9201C41466300CF0ABC /* CoveredByYourGrace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90F1C41466300CF0ABC /* CoveredByYourGrace.ttf */; };
+		91C1B9211C41466300CF0ABC /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9101C41466300CF0ABC /* fontawesome-webfont.ttf */; };
+		91C1B9221C41466300CF0ABC /* materialdesignicons-webfont (1).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9111C41466300CF0ABC /* materialdesignicons-webfont (1).ttf */; };
+		91C1B9231C41466300CF0ABC /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9121C41466300CF0ABC /* Montserrat-Black.otf */; };
+		91C1B9241C41466300CF0ABC /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9131C41466300CF0ABC /* Montserrat-Bold.otf */; };
+		91C1B9251C41466300CF0ABC /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9141C41466300CF0ABC /* Montserrat-ExtraBold.otf */; };
+		91C1B9261C41466300CF0ABC /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9151C41466300CF0ABC /* Montserrat-Hairline.otf */; };
+		91C1B9271C41466300CF0ABC /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9161C41466300CF0ABC /* Montserrat-Light.otf */; };
+		91C1B9281C41466300CF0ABC /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9171C41466300CF0ABC /* Montserrat-Regular.otf */; };
+		91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9181C41466300CF0ABC /* Montserrat-SemiBold.otf */; };
+		91C1B92A1C41466300CF0ABC /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9191C41466300CF0ABC /* Montserrat-UltraLight.otf */; };
+		91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */; };
+		91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FCB6A01C3CFEE500652E6B /* Main.storyboard */; };
+		91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		754716C81C2EE9A4004ABFC6 /* clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientUITests.swift; sourceTree = "<group>"; };
 		754716CE1C2EE9A4004ABFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
+		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
+		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		91C1B9091C41466300CF0ABC /* Asap-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-Bold.otf"; sourceTree = "<group>"; };
 		91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				75840D471C4157880075FA37 /* common */,
 				91F784741C3FEBA4003ED6FA /* assets */,
 				91FCB69D1C3CFB0800652E6B /* Auth */,
 				754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */,
@@ -177,6 +184,40 @@
 				754716CE1C2EE9A4004ABFC6 /* Info.plist */,
 			);
 			path = clientUITests;
+			sourceTree = "<group>";
+		};
+		75840D471C4157880075FA37 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				75840D481C4157880075FA37 /* Protocol */,
+				75840D4A1C4157880075FA37 /* Requests */,
+				75840D4C1C4157880075FA37 /* Router */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		75840D481C4157880075FA37 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				75840D491C4157880075FA37 /* BaseRouterProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		75840D4A1C4157880075FA37 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				75840D4B1C4157880075FA37 /* BaseRequestBody.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		75840D4C1C4157880075FA37 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				75840D4D1C4157880075FA37 /* BaseRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		91F784741C3FEBA4003ED6FA /* assets */ = {
@@ -423,7 +464,10 @@
 			files = (
 				91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
+				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
+				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
+				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
 				754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
