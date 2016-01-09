@@ -20,4 +20,4 @@ SPEC CHECKSUMS:
   ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

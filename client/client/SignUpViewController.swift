@@ -24,6 +24,14 @@ class SignUpViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupInitialView()
+        
+    }
+    
+    /**
+     Setup Initial State of the View.
+     */
+    func setupInitialView() {
         signUpButton.layer.cornerRadius = CGFloat(5)
         
         facebookSignUpView.layer.borderWidth = 2
@@ -33,16 +41,6 @@ class SignUpViewController : UIViewController {
         twitterSignUpView.layer.borderWidth = 2
         twitterSignUpView.layer.cornerRadius = CGFloat(5)
         twitterSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
-        
-//        for family: String in UIFont.familyNames()
-//        {
-//            print("\(family)")
-//            for names: String in UIFont.fontNamesForFamilyName(family)
-//            {
-//                print("== \(names)")
-//            }
-//        }
-        
     }
 
 }

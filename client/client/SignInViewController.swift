@@ -22,6 +22,13 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupInitialView()
+    }
+    
+    /**
+     Initial Setup For the view components
+     */
+    func setupInitialView() {
         signInButton.layer.cornerRadius = CGFloat(5)
         
         facebookSignInView.layer.borderWidth = 2
@@ -31,8 +38,6 @@ class SignInViewController: UIViewController {
         twitterLoginView.layer.borderWidth = 2
         twitterLoginView.layer.cornerRadius = CGFloat(5)
         twitterLoginView.layer.borderColor = UIColor .lightGrayColor().CGColor
-        
     }
-    
     
 }
