@@ -15,7 +15,7 @@
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
-		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; };
 		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; };
 		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; };
 		91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */; };
