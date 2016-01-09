@@ -12,6 +12,9 @@
 		754716B71C2EE9A4004ABFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754716B51C2EE9A4004ABFC6 /* LaunchScreen.storyboard */; };
 		754716C21C2EE9A4004ABFC6 /* clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716C11C2EE9A4004ABFC6 /* clientTests.swift */; };
 		754716CD1C2EE9A4004ABFC6 /* clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */; };
+		75840D3E1C40F8750075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D3D1C40F8750075FA37 /* BaseRouter.swift */; };
+		75840D411C40FAC80075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D401C40FAC80075FA37 /* BaseRouterProtocol.swift */; };
+		75840D461C4101730075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D451C4101730075FA37 /* BaseRequestBody.swift */; };
 		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; settings = {ASSET_TAGS = (); }; };
 		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; settings = {ASSET_TAGS = (); }; };
@@ -67,6 +70,7 @@
 		754716C81C2EE9A4004ABFC6 /* clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientUITests.swift; sourceTree = "<group>"; };
 		754716CE1C2EE9A4004ABFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		91C1B9091C41466300CF0ABC /* Asap-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-Bold.otf"; sourceTree = "<group>"; };
 		91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -88,6 +92,11 @@
 		91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		91FCB6A01C3CFEE500652E6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+=======
+		75840D3D1C40F8750075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		75840D401C40FAC80075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
+		75840D451C4101730075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
+>>>>>>> 9be5d8bc8b794796392f8250fd0df826c9cab8f1
 		CA8B46F8B61DD6BE6AC7D716 /* Pods-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-client/Pods-client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +159,12 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				91F784741C3FEBA4003ED6FA /* assets */,
 				91FCB69D1C3CFB0800652E6B /* Auth */,
+=======
+				75840D3B1C40F8470075FA37 /* common */,
+>>>>>>> 9be5d8bc8b794796392f8250fd0df826c9cab8f1
 				754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */,
 				754716B31C2EE9A4004ABFC6 /* Assets.xcassets */,
 				754716B51C2EE9A4004ABFC6 /* LaunchScreen.storyboard */,
@@ -179,6 +192,7 @@
 			path = clientUITests;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		91F784741C3FEBA4003ED6FA /* assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +225,40 @@
 				91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */,
 			);
 			name = Auth;
+=======
+		75840D3B1C40F8470075FA37 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				75840D421C4100700075FA37 /* Requests */,
+				75840D3F1C40FAB80075FA37 /* Protocol */,
+				75840D3C1C40F8670075FA37 /* Router */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		75840D3C1C40F8670075FA37 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				75840D3D1C40F8750075FA37 /* BaseRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		75840D3F1C40FAB80075FA37 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				75840D401C40FAC80075FA37 /* BaseRouterProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		75840D421C4100700075FA37 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				75840D451C4101730075FA37 /* BaseRequestBody.swift */,
+			);
+			path = Requests;
+>>>>>>> 9be5d8bc8b794796392f8250fd0df826c9cab8f1
 			sourceTree = "<group>";
 		};
 		9218E10C4B5C03705DA9B541 /* Pods */ = {
@@ -425,6 +473,13 @@
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
+=======
+				75840D411C40FAC80075FA37 /* BaseRouterProtocol.swift in Sources */,
+				754716AD1C2EE9A4004ABFC6 /* FirstViewController.swift in Sources */,
+				75840D461C4101730075FA37 /* BaseRequestBody.swift in Sources */,
+				75840D3E1C40F8750075FA37 /* BaseRouter.swift in Sources */,
+>>>>>>> 9be5d8bc8b794796392f8250fd0df826c9cab8f1
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
