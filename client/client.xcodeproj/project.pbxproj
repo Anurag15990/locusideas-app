@@ -15,6 +15,9 @@
 		754716B71C2EE9A4004ABFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754716B51C2EE9A4004ABFC6 /* LaunchScreen.storyboard */; };
 		754716C21C2EE9A4004ABFC6 /* clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716C11C2EE9A4004ABFC6 /* clientTests.swift */; };
 		754716CD1C2EE9A4004ABFC6 /* clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */; };
+		75840D3E1C40F8750075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D3D1C40F8750075FA37 /* BaseRouter.swift */; };
+		75840D411C40FAC80075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D401C40FAC80075FA37 /* BaseRouterProtocol.swift */; };
+		75840D461C4101730075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D451C4101730075FA37 /* BaseRequestBody.swift */; };
 		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		754716C81C2EE9A4004ABFC6 /* clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientUITests.swift; sourceTree = "<group>"; };
 		754716CE1C2EE9A4004ABFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75840D3D1C40F8750075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		75840D401C40FAC80075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
+		75840D451C4101730075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		CA8B46F8B61DD6BE6AC7D716 /* Pods-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-client/Pods-client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +120,7 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				75840D3B1C40F8470075FA37 /* common */,
 				754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */,
 				754716AC1C2EE9A4004ABFC6 /* FirstViewController.swift */,
 				754716AE1C2EE9A4004ABFC6 /* SecondViewController.swift */,
@@ -141,6 +148,40 @@
 				754716CE1C2EE9A4004ABFC6 /* Info.plist */,
 			);
 			path = clientUITests;
+			sourceTree = "<group>";
+		};
+		75840D3B1C40F8470075FA37 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				75840D421C4100700075FA37 /* Requests */,
+				75840D3F1C40FAB80075FA37 /* Protocol */,
+				75840D3C1C40F8670075FA37 /* Router */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		75840D3C1C40F8670075FA37 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				75840D3D1C40F8750075FA37 /* BaseRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		75840D3F1C40FAB80075FA37 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				75840D401C40FAC80075FA37 /* BaseRouterProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		75840D421C4100700075FA37 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				75840D451C4101730075FA37 /* BaseRequestBody.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		9218E10C4B5C03705DA9B541 /* Pods */ = {
@@ -336,7 +377,10 @@
 			files = (
 				754716AF1C2EE9A4004ABFC6 /* SecondViewController.swift in Sources */,
 				754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */,
+				75840D411C40FAC80075FA37 /* BaseRouterProtocol.swift in Sources */,
 				754716AD1C2EE9A4004ABFC6 /* FirstViewController.swift in Sources */,
+				75840D461C4101730075FA37 /* BaseRequestBody.swift in Sources */,
+				75840D3E1C40F8750075FA37 /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
