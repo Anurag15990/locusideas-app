@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qxI-Ir-Qbq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tkx-sK-wez">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Bold.otf">
@@ -41,10 +41,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Launch Screen View Controller-->
         <scene sceneID="eL1-hF-zGK">
             <objects>
-                <viewController id="Tkx-sK-wez" sceneMemberID="viewController">
+                <viewController id="Tkx-sK-wez" customClass="LaunchScreenViewController" customModule="client" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DMU-C1-d9v"/>
                         <viewControllerLayoutGuide type="bottom" id="g6m-nf-NAM"/>
@@ -53,37 +53,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zn-gh-hOY">
-                                <rect key="frame" x="0.0" y="528" width="159" height="40"/>
-                                <color key="backgroundColor" white="0.91549227112217968" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zn-gh-hOY">
+                                <rect key="frame" x="0.0" y="518" width="160" height="50"/>
+                                <color key="backgroundColor" red="0.015686274509803921" green="0.61960784313725492" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="30D-5J-xMZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="14"/>
-                                <state key="normal" title="SIGN IN"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teB-kV-zKP">
-                                <rect key="frame" x="160" y="528" width="160" height="40"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="14"/>
-                                <state key="normal" title="SIGN UP"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EZ-ra-fbg">
-                                <rect key="frame" x="133" y="488" width="55" height="23"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
-                                <state key="normal" title="Skip &gt;&gt;">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teB-kV-zKP">
+                                <rect key="frame" x="160" y="518" width="160" height="50"/>
+                                <color key="backgroundColor" red="0.015686274509803921" green="0.61960784313725492" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uTs-3B-r55"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="14"/>
+                                <state key="normal" title="SIGN UP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EZ-ra-fbg">
+                                <rect key="frame" x="132" y="468" width="55" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="0lr-JI-ANq"/>
+                                    <constraint firstAttribute="width" constant="55" id="iTP-78-CMK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                <state key="normal" title="Skip &gt;&gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="ATI-ml-OrZ">
+                                <rect key="frame" x="129" y="426" width="61" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Nxb-P6-htg"/>
+                                    <constraint firstAttribute="width" constant="61" id="nyC-vm-CJS"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="teB-kV-zKP" firstAttribute="top" secondItem="0EZ-ra-fbg" secondAttribute="bottom" constant="27" id="37I-DB-5i5"/>
+                            <constraint firstAttribute="trailing" secondItem="teB-kV-zKP" secondAttribute="trailing" id="EzU-UH-ynS"/>
+                            <constraint firstItem="0EZ-ra-fbg" firstAttribute="top" secondItem="ATI-ml-OrZ" secondAttribute="bottom" constant="5" id="GjM-lG-4fb"/>
+                            <constraint firstItem="ATI-ml-OrZ" firstAttribute="centerX" secondItem="VnJ-Fe-GvY" secondAttribute="centerX" id="Pg0-ci-B54"/>
+                            <constraint firstItem="teB-kV-zKP" firstAttribute="leading" secondItem="0Zn-gh-hOY" secondAttribute="trailing" id="Z2W-VG-gvl"/>
+                            <constraint firstItem="teB-kV-zKP" firstAttribute="width" secondItem="0Zn-gh-hOY" secondAttribute="width" id="esL-gF-rXA"/>
+                            <constraint firstItem="g6m-nf-NAM" firstAttribute="top" secondItem="0Zn-gh-hOY" secondAttribute="bottom" id="gdk-Y9-8WX"/>
+                            <constraint firstItem="0EZ-ra-fbg" firstAttribute="centerX" secondItem="VnJ-Fe-GvY" secondAttribute="centerX" id="sEL-qP-Dp1"/>
+                            <constraint firstItem="g6m-nf-NAM" firstAttribute="top" secondItem="teB-kV-zKP" secondAttribute="bottom" id="sZy-pq-y54"/>
+                            <constraint firstItem="0Zn-gh-hOY" firstAttribute="leading" secondItem="VnJ-Fe-GvY" secondAttribute="leading" id="yoa-LC-t2G"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageNavigator" destination="ATI-ml-OrZ" id="2b8-P2-2eC"/>
+                        <outlet property="signInButton" destination="0Zn-gh-hOY" id="FXc-te-1Su"/>
+                        <outlet property="signUpButton" destination="teB-kV-zKP" id="Msg-Rd-ibQ"/>
+                        <outlet property="skipButton" destination="0EZ-ra-fbg" id="FMx-MY-Xbh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCe-1m-TXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-218" y="299"/>
         </scene>
-        <!--View Controller-->
+        <!--Launch Screen Content View Controller-->
         <scene sceneID="YKx-S3-XSD">
             <objects>
-                <viewController id="jPS-7s-RZS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageController" id="jPS-7s-RZS" customClass="LaunchScreenContentViewController" customModule="client" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X13-xf-pTP"/>
                         <viewControllerLayoutGuide type="bottom" id="pov-BM-kMk"/>
@@ -93,17 +134,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAU-Dm-hDY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VAU-Dm-hDY" secondAttribute="trailing" id="FMC-GQ-TQi"/>
-                            <constraint firstItem="pov-BM-kMk" firstAttribute="top" secondItem="VAU-Dm-hDY" secondAttribute="bottom" constant="40" id="WcA-Fk-Y2G"/>
                             <constraint firstItem="VAU-Dm-hDY" firstAttribute="leading" secondItem="wMJ-Eq-pCg" secondAttribute="leading" id="chR-5J-D6w"/>
                             <constraint firstItem="VAU-Dm-hDY" firstAttribute="top" secondItem="wMJ-Eq-pCg" secondAttribute="top" id="sKd-TE-lWq"/>
+                            <constraint firstItem="pov-BM-kMk" firstAttribute="top" secondItem="VAU-Dm-hDY" secondAttribute="bottom" id="ybE-Tl-oUe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="VAU-Dm-hDY" id="SnM-aG-pw7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWg-Ee-YpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -273,7 +317,6 @@
                     <connections>
                         <outlet property="facebookSignInView" destination="Jop-kd-wQo" id="SDc-nH-LbQ"/>
                         <outlet property="forgotPassword" destination="cHs-GI-Ijn" id="1Ej-5n-0ff"/>
-                        <outlet property="orSignInWithLabel" destination="Ne4-LL-U4E" id="UFz-rg-N7A"/>
                         <outlet property="signInButton" destination="Y32-BA-EyR" id="SKf-Uh-YmV"/>
                         <outlet property="signInEmail" destination="Pjd-xd-uxg" id="sy4-p9-LoT"/>
                         <outlet property="signInPassword" destination="7Pc-2W-GmX" id="TQq-NH-omK"/>
@@ -459,7 +502,6 @@
                     <connections>
                         <outlet property="confirmPassword" destination="1PO-Of-Nad" id="gks-Cl-yTZ"/>
                         <outlet property="facebookSignUpView" destination="OLm-GH-gbI" id="0fP-Ym-zqc"/>
-                        <outlet property="orSignUpWithLabel" destination="hsp-Kq-Xf8" id="OEZ-fD-bpM"/>
                         <outlet property="signUpButton" destination="lJS-R6-uhU" id="2eC-pI-nvT"/>
                         <outlet property="signUpEmail" destination="m6r-qp-R1Z" id="s7F-w1-xrU"/>
                         <outlet property="signUpName" destination="SuZ-60-lrj" id="oCf-jb-pTU"/>
@@ -474,7 +516,7 @@
         <!--Page View Controller-->
         <scene sceneID="vfi-lq-GT2">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cf1-Sb-N7l" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cf1-Sb-N7l" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGZ-A4-9Aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="262" y="-35"/>
