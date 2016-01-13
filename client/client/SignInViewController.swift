@@ -15,7 +15,6 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInPassword : UITextField!
     @IBOutlet weak var forgotPassword : UIButton!
     @IBOutlet weak var signInButton : UIButton!
-    @IBOutlet weak var orSignInWithLabel : UILabel!
     @IBOutlet weak var facebookSignInView : UIView!
     @IBOutlet weak var twitterLoginView : UIView!
     
