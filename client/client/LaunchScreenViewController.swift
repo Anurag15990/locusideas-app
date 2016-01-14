@@ -15,6 +15,7 @@ class LaunchScreenViewController: UIViewController, UIPageViewControllerDataSour
     @IBOutlet weak var signUpButton : UIButton!
     @IBOutlet weak var pageNavigator: UIPageControl!
     
+    
     private var pageViewController: UIPageViewController?
     
     private let contentImages = ["Splash_image_1.jpg",
@@ -93,7 +94,13 @@ class LaunchScreenViewController: UIViewController, UIPageViewControllerDataSour
         return 0
     }
     
+    @IBAction func signInButtonTapped() {
+        self.performSegueWithIdentifier("signInSegue", sender: nil)
+    }
     
+    @IBAction func signUpButtonTapped() {
+        self.performSegueWithIdentifier("signUpSegue", sender: nil)
+    }
     
 
     override func didReceiveMemoryWarning() {

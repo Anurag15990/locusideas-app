@@ -39,4 +39,7 @@ class SignInViewController: UIViewController {
         twitterLoginView.layer.borderColor = UIColor .lightGrayColor().CGColor
     }
     
+    @IBAction func cancelButtonTapped() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

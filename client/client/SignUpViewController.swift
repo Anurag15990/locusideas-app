@@ -41,5 +41,9 @@ class SignUpViewController : UIViewController {
         twitterSignUpView.layer.cornerRadius = CGFloat(5)
         twitterSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
     }
+    
+    @IBAction func cancelButtonTapped() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
