@@ -30,6 +30,7 @@ class LaunchScreenViewController: UIViewController, UIPageViewControllerDataSour
     
     
     private func createPageViewController() {
+        
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageController") as! UIPageViewController
         pageController.dataSource = self
         
@@ -53,6 +54,7 @@ class LaunchScreenViewController: UIViewController, UIPageViewControllerDataSour
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         let imageController = viewController as! LaunchScreenContentViewController
+        pageNavigator.currentPage = imageController.imageIndex
         if imageController.imageIndex > 0 {
             return getImageController(imageController.imageIndex-1)
         }
@@ -63,6 +65,7 @@ class LaunchScreenViewController: UIViewController, UIPageViewControllerDataSour
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
         let imageController = viewController as! LaunchScreenContentViewController
+        pageNavigator.currentPage = imageController.imageIndex
         if imageController.imageIndex+1 < contentImages.count {
             return getImageController(imageController.imageIndex+1)
         }
