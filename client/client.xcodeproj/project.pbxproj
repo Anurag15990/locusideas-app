@@ -19,6 +19,7 @@
 		75F61E941C536ED80042C765 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* UserProfile.swift */; };
 		75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */; };
 		75F61E981C5371900042C765 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E971C5371900042C765 /* AuthRouter.swift */; };
+		75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */; };
 		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; };
 		918650271C455F1200202F71 /* LaunchScreenContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */; };
 		918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650281C45866700202F71 /* LaunchScreenViewController.swift */; };
@@ -83,6 +84,7 @@
 		75F61E931C536ED80042C765 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignInAuthRequestBody.swift; sourceTree = "<group>"; };
 		75F61E971C5371900042C765 /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpAuthRequestBody.swift; sourceTree = "<group>"; };
 		918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenContentViewController.swift; sourceTree = "<group>"; };
 		918650281C45866700202F71 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				75840D4B1C4157880075FA37 /* BaseRequestBody.swift */,
 				75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */,
+				75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				75F61E941C536ED80042C765 /* UserProfile.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
+				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
 				75F61E981C5371900042C765 /* AuthRouter.swift in Sources */,
 				754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */,
 				918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */,

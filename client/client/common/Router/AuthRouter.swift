@@ -17,12 +17,16 @@ import Alamofire
 enum AuthRouter: BaseRouterProtocol {
     
     case EmailSignIn(EmailSignInAuthRequestBody)
+    case EmailSignUp(EmailSignUpAuthRequestBody)
     
     var path: String {
         
         switch self {
      
         case .EmailSignIn:
+            return ""
+            
+        case .EmailSignUp:
             return ""
         
         }
@@ -34,6 +38,9 @@ enum AuthRouter: BaseRouterProtocol {
          
         case .EmailSignIn:
             return .POST
+            
+        case .EmailSignUp:
+            return .POST
         }
     }
     
@@ -41,8 +48,8 @@ enum AuthRouter: BaseRouterProtocol {
     var parameters: AnyObject? {
         
         switch self {
-            
-        case .EmailSignIn:
+        
+        default:
             return nil
         }
     }
@@ -52,6 +59,9 @@ enum AuthRouter: BaseRouterProtocol {
         switch self {
             
         case .EmailSignIn(let requestBody):
+            return requestBody
+            
+        case .EmailSignUp(let requestBody):
             return requestBody
         }
     }
