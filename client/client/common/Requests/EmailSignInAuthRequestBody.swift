@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 /// This class is the Request Body to be passed while the user logs in through EmailId and Password.
-class EmailAuthRequestBody: BaseRequestBody {
+class EmailSignInAuthRequestBody: BaseRequestBody {
     
     var emailId: String?
     var password: String?

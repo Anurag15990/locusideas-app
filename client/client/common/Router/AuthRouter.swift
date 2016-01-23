@@ -9,9 +9,14 @@
 import Foundation
 import Alamofire
 
+/**
+ This Enum is used for handling all the Auth Parameters.
+ 
+ - EmailSignIn: This case is when the user is signing in using EmailId and Password
+ */
 enum AuthRouter: BaseRouterProtocol {
     
-    case EmailSignIn(EmailAuthRequestBody)
+    case EmailSignIn(EmailSignInAuthRequestBody)
     
     var path: String {
         
