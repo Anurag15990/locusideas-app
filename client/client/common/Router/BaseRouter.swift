@@ -15,11 +15,16 @@ enum BaseRouter: URLRequestConvertible {
     /// Static Endpoint/Base URL being fetched from Info.plist
     static let baseURL = NSBundle.mainBundle().objectForInfoDictionaryKey("BASE_API") as! String
     
+    case AuthRouterManager(AuthRouter)
+    
     /// URL Request is formed here.
     var URLRequest: NSMutableURLRequest {
         switch self {
-        default:
-            return NSMutableURLRequest()
+       
+        case .AuthRouterManager(let request):
+            let mutableURLRequest = configureRequest(request)
+            return mutableURLRequest
+        
         }
     }
     
