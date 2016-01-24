@@ -66,7 +66,7 @@
 /* Begin PBXFileReference section */
 		17E14FAD8DA6411C3F5A3DC7 /* Pods-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client.release.xcconfig"; path = "Pods/Target Support Files/Pods-client/Pods-client.release.xcconfig"; sourceTree = "<group>"; };
 		696433BBBC6AFE543EE020A6 /* Pods_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		754716A71C2EE9A4004ABFC6 /* client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = client.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocusIdeas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754716B31C2EE9A4004ABFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		754716B61C2EE9A4004ABFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		754716A81C2EE9A4004ABFC6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				754716A71C2EE9A4004ABFC6 /* client.app */,
+				754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */,
 				754716BD1C2EE9A4004ABFC6 /* clientTests.xctest */,
 				754716C81C2EE9A4004ABFC6 /* clientUITests.xctest */,
 			);
@@ -328,7 +328,7 @@
 			);
 			name = client;
 			productName = client;
-			productReference = 754716A71C2EE9A4004ABFC6 /* client.app */;
+			productReference = 754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */;
 			productType = "com.apple.product-type.application";
 		};
 		754716BC1C2EE9A4004ABFC6 /* clientTests */ = {
@@ -659,7 +659,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.locusideas.client;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocusIdeas;
 			};
 			name = Debug;
 		};
@@ -672,7 +672,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.locusideas.client;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocusIdeas;
 			};
 			name = Release;
 		};
