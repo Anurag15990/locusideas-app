@@ -36,6 +36,9 @@
 		91C1B9281C41466300CF0ABC /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9171C41466300CF0ABC /* Montserrat-Regular.otf */; };
 		91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9181C41466300CF0ABC /* Montserrat-SemiBold.otf */; };
 		91C1B92A1C41466300CF0ABC /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9191C41466300CF0ABC /* Montserrat-UltraLight.otf */; };
+		91ECEC531C4A22E80010A352 /* StreamDesignCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91ECEC521C4A22E80010A352 /* StreamDesignCard.xib */; };
+		91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */; };
+		91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */; };
 		91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */; };
 		91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FCB6A01C3CFEE500652E6B /* Main.storyboard */; };
 		91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */; };
@@ -95,6 +98,9 @@
 		91C1B9171C41466300CF0ABC /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		91C1B9181C41466300CF0ABC /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		91C1B9191C41466300CF0ABC /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		91ECEC521C4A22E80010A352 /* StreamDesignCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StreamDesignCard.xib; sourceTree = "<group>"; };
+		91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDesignCard.swift; sourceTree = "<group>"; };
+		91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamTableViewController.swift; sourceTree = "<group>"; };
 		91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		91FCB6A01C3CFEE500652E6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				91ECEC511C4948590010A352 /* Feed */,
 				91F3C5F21C41680200BCE92D /* LaunchScreen */,
 				75840D471C4157880075FA37 /* common */,
 				91F784741C3FEBA4003ED6FA /* assets */,
@@ -223,6 +230,16 @@
 				75840D4D1C4157880075FA37 /* BaseRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		91ECEC511C4948590010A352 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				91ECEC521C4A22E80010A352 /* StreamDesignCard.xib */,
+				91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */,
+				91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		91F3C5F21C41680200BCE92D /* LaunchScreen */ = {
@@ -403,6 +420,7 @@
 				91C1B91E1C41466300CF0ABC /* Asap-MediumItalic.otf in Resources */,
 				91C1B91C1C41466300CF0ABC /* Asap-Italic.otf in Resources */,
 				91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */,
+				91ECEC531C4A22E80010A352 /* StreamDesignCard.xib in Resources */,
 				91C1B9281C41466300CF0ABC /* Montserrat-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +495,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */,
+				91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */,
+				91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,

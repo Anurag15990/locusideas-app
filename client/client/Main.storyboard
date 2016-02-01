@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tkx-sK-wez">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="q7Z-2U-tGi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -341,17 +341,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="facebookSignInView" destination="Jop-kd-wQo" id="SDc-nH-LbQ"/>
+                        <outlet property="facebookSignInView" destination="Jop-kd-wQo" id="A0E-jV-SyP"/>
                         <outlet property="forgotPassword" destination="cHs-GI-Ijn" id="1Ej-5n-0ff"/>
                         <outlet property="signInButton" destination="Y32-BA-EyR" id="SKf-Uh-YmV"/>
                         <outlet property="signInEmail" destination="Pjd-xd-uxg" id="sy4-p9-LoT"/>
                         <outlet property="signInPassword" destination="7Pc-2W-GmX" id="TQq-NH-omK"/>
-                        <outlet property="twitterLoginView" destination="uHL-w1-XLe" id="s90-aa-Db7"/>
+                        <outlet property="twitterSignInView" destination="uHL-w1-XLe" id="YDw-1z-Qn2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2A-1Y-ER7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="688"/>
+            <point key="canvasLocation" x="808" y="688"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="DeQ-wv-aWJ">
@@ -543,17 +543,49 @@
                     </view>
                     <connections>
                         <outlet property="confirmPassword" destination="1PO-Of-Nad" id="gks-Cl-yTZ"/>
-                        <outlet property="facebookSignUpView" destination="OLm-GH-gbI" id="0fP-Ym-zqc"/>
+                        <outlet property="facebookSignUpView" destination="OLm-GH-gbI" id="4Rs-W0-FM6"/>
                         <outlet property="signUpButton" destination="lJS-R6-uhU" id="2eC-pI-nvT"/>
                         <outlet property="signUpEmail" destination="m6r-qp-R1Z" id="s7F-w1-xrU"/>
                         <outlet property="signUpName" destination="SuZ-60-lrj" id="oCf-jb-pTU"/>
                         <outlet property="signUpPassword" destination="paW-yk-qsB" id="n29-fq-Ilj"/>
-                        <outlet property="twitterSignUpView" destination="Imu-9F-VFD" id="BxK-21-pFM"/>
+                        <outlet property="twitterSignUpView" destination="Imu-9F-VFD" id="PY9-EX-F5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chq-WI-aMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="-35"/>
+            <point key="canvasLocation" x="808" y="-75"/>
+        </scene>
+        <!--Stream Table View Controller-->
+        <scene sceneID="4J1-Lp-MqO">
+            <objects>
+                <tableViewController id="iam-pR-bes" customClass="StreamTableViewController" customModule="client" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DJa-er-pYh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eRv-Fe-76r">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRv-Fe-76r" id="6f2-P5-Bhd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iam-pR-bes" id="fXx-L5-sfZ"/>
+                            <outlet property="delegate" destination="iam-pR-bes" id="6lS-c4-zty"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0lO-dg-RaL"/>
+                    <connections>
+                        <outlet property="tableView" destination="DJa-er-pYh" id="irl-pq-hMX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6N-J5-RzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755" y="273"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="vfi-lq-GT2">
@@ -562,6 +594,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGZ-A4-9Aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-59" y="-35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aSM-LR-ylm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q7Z-2U-tGi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U0E-0z-Qz0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iam-pR-bes" kind="relationship" relationship="rootViewController" id="X4D-Y4-foO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZT-mh-eXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="273"/>
         </scene>
     </scenes>
     <resources>

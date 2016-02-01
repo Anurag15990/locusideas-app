@@ -16,7 +16,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var forgotPassword : UIButton!
     @IBOutlet weak var signInButton : UIButton!
     @IBOutlet weak var facebookSignInView : UIView!
-    @IBOutlet weak var twitterLoginView : UIView!
+    @IBOutlet weak var twitterSignInView : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +34,9 @@ class SignInViewController: UIViewController {
         facebookSignInView.layer.cornerRadius = CGFloat(5)
         facebookSignInView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
-        twitterLoginView.layer.borderWidth = 2
-        twitterLoginView.layer.cornerRadius = CGFloat(5)
-        twitterLoginView.layer.borderColor = UIColor .lightGrayColor().CGColor
+        twitterSignInView.layer.borderWidth = 2
+        twitterSignInView.layer.cornerRadius = CGFloat(5)
+        twitterSignInView.layer.borderColor = UIColor .lightGrayColor().CGColor
     }
     
     @IBAction func cancelButtonTapped() {
