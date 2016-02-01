@@ -15,6 +15,11 @@
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
+		75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaults.swift */; };
+		75F61E941C536ED80042C765 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* UserProfile.swift */; };
+		75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */; };
+		75F61E981C5371900042C765 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E971C5371900042C765 /* AuthRouter.swift */; };
+		75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */; };
 		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; };
 		918650271C455F1200202F71 /* LaunchScreenContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */; };
 		918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650281C45866700202F71 /* LaunchScreenViewController.swift */; };
@@ -64,7 +69,7 @@
 /* Begin PBXFileReference section */
 		17E14FAD8DA6411C3F5A3DC7 /* Pods-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client.release.xcconfig"; path = "Pods/Target Support Files/Pods-client/Pods-client.release.xcconfig"; sourceTree = "<group>"; };
 		696433BBBC6AFE543EE020A6 /* Pods_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		754716A71C2EE9A4004ABFC6 /* client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = client.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocusIdeas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754716B31C2EE9A4004ABFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		754716B61C2EE9A4004ABFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +83,11 @@
 		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		75F61E901C535EBE0042C765 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaults.swift; sourceTree = "<group>"; };
+		75F61E931C536ED80042C765 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignInAuthRequestBody.swift; sourceTree = "<group>"; };
+		75F61E971C5371900042C765 /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpAuthRequestBody.swift; sourceTree = "<group>"; };
 		918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenContentViewController.swift; sourceTree = "<group>"; };
 		918650281C45866700202F71 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
@@ -156,7 +166,7 @@
 		754716A81C2EE9A4004ABFC6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				754716A71C2EE9A4004ABFC6 /* client.app */,
+				754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */,
 				754716BD1C2EE9A4004ABFC6 /* clientTests.xctest */,
 				754716C81C2EE9A4004ABFC6 /* clientUITests.xctest */,
 			);
@@ -201,6 +211,8 @@
 		75840D471C4157880075FA37 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				75F61E921C536ECA0042C765 /* Models */,
+				75F61E8F1C535EAE0042C765 /* Utils */,
 				75840D481C4157880075FA37 /* Protocol */,
 				75840D4A1C4157880075FA37 /* Requests */,
 				75840D4C1C4157880075FA37 /* Router */,
@@ -220,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				75840D4B1C4157880075FA37 /* BaseRequestBody.swift */,
+				75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */,
+				75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -228,8 +242,25 @@
 			isa = PBXGroup;
 			children = (
 				75840D4D1C4157880075FA37 /* BaseRouter.swift */,
+				75F61E971C5371900042C765 /* AuthRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		75F61E8F1C535EAE0042C765 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				75F61E901C535EBE0042C765 /* NSUserDefaults.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		75F61E921C536ECA0042C765 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75F61E931C536ED80042C765 /* UserProfile.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		91ECEC511C4948590010A352 /* Feed */ = {
@@ -314,7 +345,7 @@
 			);
 			name = client;
 			productName = client;
-			productReference = 754716A71C2EE9A4004ABFC6 /* client.app */;
+			productReference = 754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */;
 			productType = "com.apple.product-type.application";
 		};
 		754716BC1C2EE9A4004ABFC6 /* clientTests */ = {
@@ -501,9 +532,14 @@
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
+				75F61E941C536ED80042C765 /* UserProfile.swift in Sources */,
+				75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
+				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
+				75F61E981C5371900042C765 /* AuthRouter.swift in Sources */,
 				754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */,
 				918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */,
+				75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */,
 				918650271C455F1200202F71 /* LaunchScreenContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,7 +679,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.locusideas.client;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocusIdeas;
 			};
 			name = Debug;
 		};
@@ -656,7 +692,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.locusideas.client;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocusIdeas;
 			};
 			name = Release;
 		};
