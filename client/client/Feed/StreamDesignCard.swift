@@ -30,6 +30,8 @@ class StreamDesignCard: UITableViewCell {
         categoryLabel.text = "Modern"
         appreciationCountLabel.text = "12345"
         viewCountLabel.text = "123456"
+        
+        self.selectionStyle = .None
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
