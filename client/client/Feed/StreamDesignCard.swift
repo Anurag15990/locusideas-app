@@ -11,6 +11,7 @@ import SDWebImage
 
 class StreamDesignCard: UITableViewCell {
     
+    @IBOutlet weak var containerView : ContainerView!
     @IBOutlet weak var designCoverImage : UIImageView!
     @IBOutlet weak var designTitleLabel : UILabel!
     @IBOutlet weak var designerNameLabel : UILabel!
@@ -23,9 +24,9 @@ class StreamDesignCard: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        designCoverImage.image = UIImage(named: "Studio_pepperfry.jpg")
-        designTitleLabel.text = "Pepperfry's first concept store - studio pepperfry".uppercaseString
-        designerNameLabel.text = "Some Pepperfry Fan"
+        designCoverImage.image = UIImage(named: "Blue_chair.jpg")
+        designTitleLabel.text = "Single seater chair in Phantom blue colour with an ottoman".uppercaseString
+        designerNameLabel.text = "John Doe"
         categoryLabel.text = "Modern"
         appreciationCountLabel.text = "12345"
         viewCountLabel.text = "123456"
