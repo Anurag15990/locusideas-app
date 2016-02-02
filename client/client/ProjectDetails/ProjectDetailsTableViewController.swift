@@ -50,10 +50,15 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     
     func calculateHeightForString(text: String) -> CGFloat {
         
-        let annotationPadding = CGFloat(16)
-        let font = UIFont(name: "Helvetica Neue", size: 13)!
+        let annotationPadding = CGFloat(24)
+        let font = UIFont(name: "Asap-regular", size: 14)!
         
-        let rect = NSString(string: text).boundingRectWithSize(CGSize(width: self.tableView.frame.width - 16, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context: nil)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 0.9
+        paragraphStyle.lineSpacing = 4.0
+        
+        
+        let rect = NSString(string: text).boundingRectWithSize(CGSize(width: self.tableView.frame.width - 24, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : font, NSParagraphStyleAttributeName: paragraphStyle], context: nil)
         
         let descriptionHeight = ceil(rect.height)
         let height = annotationPadding + descriptionHeight
