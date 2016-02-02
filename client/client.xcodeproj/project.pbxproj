@@ -23,6 +23,8 @@
 		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; };
 		918650271C455F1200202F71 /* LaunchScreenContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */; };
 		918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650281C45866700202F71 /* LaunchScreenViewController.swift */; };
+		91954C7A1C60D60E001A0953 /* ProjectDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91954C791C60D60E001A0953 /* ProjectDescription.xib */; };
+		91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C7B1C60D67E001A0953 /* ProjectDescription.swift */; };
 		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; };
 		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; };
 		91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */; };
@@ -94,6 +96,8 @@
 		75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpAuthRequestBody.swift; sourceTree = "<group>"; };
 		918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenContentViewController.swift; sourceTree = "<group>"; };
 		918650281C45866700202F71 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		91954C791C60D60E001A0953 /* ProjectDescription.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDescription.xib; sourceTree = "<group>"; };
+		91954C7B1C60D67E001A0953 /* ProjectDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDescription.swift; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		91C1B9091C41466300CF0ABC /* Asap-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-Bold.otf"; sourceTree = "<group>"; };
 		91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */,
 				91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */,
 				91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */,
+				91954C791C60D60E001A0953 /* ProjectDescription.xib */,
+				91954C7B1C60D67E001A0953 /* ProjectDescription.swift */,
 			);
 			path = ProjectDetails;
 			sourceTree = "<group>";
@@ -460,6 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91954C7A1C60D60E001A0953 /* ProjectDescription.xib in Resources */,
 				91C1B9251C41466300CF0ABC /* Montserrat-ExtraBold.otf in Resources */,
 				91C1B9211C41466300CF0ABC /* fontawesome-webfont.ttf in Resources */,
 				91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */,
@@ -560,6 +567,7 @@
 				91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */,
 				91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
+				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,

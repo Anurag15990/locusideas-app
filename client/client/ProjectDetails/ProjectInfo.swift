@@ -38,9 +38,9 @@ class ProjectInfo: UITableViewCell {
         followButton.layer.borderColor = UIColor(red: 4/255, green: 158/255, blue: 143/255, alpha: 1.0).CGColor
         
         categoryLabel.text = "Furniture Design, Industrial Design, Interior Design"
-        appreciationCountLabel.text = "123456"
+        appreciationCountLabel.text = "12345678"
         viewCountLabel.text = "12345678"
-        commentsCountLabel.text = "12345"
+        commentsCountLabel.text = "12345678"
 
     }
 
