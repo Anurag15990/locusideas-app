@@ -18,6 +18,7 @@ class StreamTableViewController: UIViewController, UITableViewDataSource, UITabl
 
         
         tableView.registerNib(UINib(nibName: "StreamDesignCard", bundle: nil), forCellReuseIdentifier: "StreamDesignCard")
+        tableView.separatorStyle = .None
                 // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
