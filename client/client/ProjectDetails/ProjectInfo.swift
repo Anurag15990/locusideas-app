@@ -41,6 +41,8 @@ class ProjectInfo: UITableViewCell {
         appreciationCountLabel.text = "12345678"
         viewCountLabel.text = "12345678"
         commentsCountLabel.text = "12345678"
+        
+        self.selectionStyle = .None
 
     }
 
