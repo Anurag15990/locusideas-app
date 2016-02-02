@@ -21,6 +21,8 @@ class ProjectDescription: UITableViewCell {
         let attributeString = NSMutableAttributedString(string: "You might be asking why you need Alamofire in the first place. Apple provides the NSURLSession class and related classes for downloading content via HTTP, so why complicate things with another third party library? The short answer is that Alamofire is based on NSURLSession, but it frees you from writing boilerplate code and makes writing networking code much easier. You can access data on the Internet with very little effort, and your code will be much cleaner and easier to read.To use Alamofire, you first need to import it. To do this, open PhotoBrowserCollectionViewController.swift and add the following line to the top of the file: \n\n You might be asking why you need Alamofire in the first place. Apple provides the NSURLSession class and related classes for downloading content via HTTP, so why complicate things with another third party library? The short answer is that Alamofire is based on NSURLSession, but it frees you from writing boilerplate code and makes writing networking code much easier. You can access data on the Internet with very little effort, and your code will be much cleaner and easier to read.To use Alamofire, you first need to import it. To do this, open PhotoBrowserCollectionViewController.swift and add the following line to the top of the file:" as String, attributes: [NSFontAttributeName: UIFont(name: "Asap-regular", size: 12)!, NSParagraphStyleAttributeName: paragraphStyle])
 
         descriptionLabel.attributedText = attributeString
+        
+        self.selectionStyle = .None
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
