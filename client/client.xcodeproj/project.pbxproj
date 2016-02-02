@@ -44,6 +44,7 @@
 		91ECEC531C4A22E80010A352 /* StreamDesignCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91ECEC521C4A22E80010A352 /* StreamDesignCard.xib */; };
 		91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */; };
 		91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */; };
+		91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */; };
 		91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */; };
 		91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FCB6A01C3CFEE500652E6B /* Main.storyboard */; };
 		91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */; };
@@ -111,6 +112,7 @@
 		91ECEC521C4A22E80010A352 /* StreamDesignCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StreamDesignCard.xib; sourceTree = "<group>"; };
 		91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDesignCard.swift; sourceTree = "<group>"; };
 		91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamTableViewController.swift; sourceTree = "<group>"; };
+		91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		91FCB6A01C3CFEE500652E6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		75840D471C4157880075FA37 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				91FA8A191C5F36D20000F6A8 /* Views */,
 				75F61E921C536ECA0042C765 /* Models */,
 				75F61E8F1C535EAE0042C765 /* Utils */,
 				75840D481C4157880075FA37 /* Protocol */,
@@ -305,6 +308,14 @@
 				91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */,
 			);
 			name = assets;
+			sourceTree = "<group>";
+		};
+		91FA8A191C5F36D20000F6A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		91FCB69D1C3CFB0800652E6B /* Auth */ = {
@@ -534,6 +545,7 @@
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
 				75F61E941C536ED80042C765 /* UserProfile.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */,
+				91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
 				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
 				75F61E981C5371900042C765 /* AuthRouter.swift in Sources */,

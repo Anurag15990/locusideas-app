@@ -18,9 +18,7 @@ class StreamTableViewController: UIViewController, UITableViewDataSource, UITabl
 
         
         tableView.registerNib(UINib(nibName: "StreamDesignCard", bundle: nil), forCellReuseIdentifier: "StreamDesignCard")
-        tableView.separatorStyle = .SingleLine
-        tableView.separatorColor = UIColor .lightGrayColor()
-        // Uncomment the following line to preserve selection between presentations
+                // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -52,7 +50,7 @@ class StreamTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 258
+        return 430
     }
         
 
