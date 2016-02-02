@@ -20,17 +20,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cY-Pi-akz">
-                        <rect key="frame" x="8" y="8" width="304" height="87"/>
+                        <rect key="frame" x="12" y="8" width="296" height="87"/>
                         <fontDescription key="fontDescription" name="Asap-Regular" family="Asap" pointSize="12"/>
                         <color key="textColor" red="0.2353614267676768" green="0.2353614267676768" blue="0.2353614267676768" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9cY-Pi-akz" firstAttribute="top" secondItem="pz5-fw-NTv" secondAttribute="top" constant="8" id="06k-Zh-QWV"/>
-                    <constraint firstAttribute="bottom" secondItem="9cY-Pi-akz" secondAttribute="bottom" constant="8" id="B47-jS-QfG"/>
-                    <constraint firstAttribute="trailing" secondItem="9cY-Pi-akz" secondAttribute="trailing" constant="8" id="dYb-Nn-zWR"/>
-                    <constraint firstItem="9cY-Pi-akz" firstAttribute="leading" secondItem="pz5-fw-NTv" secondAttribute="leading" constant="8" id="gTM-VJ-uML"/>
+                    <constraint firstAttribute="trailing" secondItem="9cY-Pi-akz" secondAttribute="trailing" constant="12" id="GbG-ef-Xpi"/>
+                    <constraint firstItem="9cY-Pi-akz" firstAttribute="top" secondItem="pz5-fw-NTv" secondAttribute="top" constant="8" id="Is7-9t-h04"/>
+                    <constraint firstAttribute="bottom" secondItem="9cY-Pi-akz" secondAttribute="bottom" constant="8" id="ery-ma-FFZ"/>
+                    <constraint firstItem="9cY-Pi-akz" firstAttribute="leading" secondItem="pz5-fw-NTv" secondAttribute="leading" constant="12" id="iMd-vJ-Jza"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
