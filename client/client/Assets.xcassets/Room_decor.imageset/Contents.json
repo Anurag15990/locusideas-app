@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Room_decor.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Room_decor.jpg",
       "scale" : "2x"
     },
     {

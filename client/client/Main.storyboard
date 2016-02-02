@@ -584,6 +584,43 @@
             </objects>
             <point key="canvasLocation" x="1755" y="273"/>
         </scene>
+        <!--Project Details Table View Controller-->
+        <scene sceneID="ybh-UG-kgA">
+            <objects>
+                <viewController storyboardIdentifier="ProjectDetailsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gxJ-gC-VLo" customClass="ProjectDetailsTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZUu-sH-lqg"/>
+                        <viewControllerLayoutGuide type="bottom" id="lNF-Vh-edB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zfE-zs-UVY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUQ-tc-wri">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gxJ-gC-VLo" id="gds-eb-I9S"/>
+                                    <outlet property="delegate" destination="gxJ-gC-VLo" id="8uM-zt-cRM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TUQ-tc-wri" secondAttribute="trailing" id="PUe-Lv-lNv"/>
+                            <constraint firstItem="TUQ-tc-wri" firstAttribute="leading" secondItem="zfE-zs-UVY" secondAttribute="leading" id="Ssv-o3-vBS"/>
+                            <constraint firstItem="lNF-Vh-edB" firstAttribute="top" secondItem="TUQ-tc-wri" secondAttribute="bottom" id="mas-xs-wNm"/>
+                            <constraint firstItem="TUQ-tc-wri" firstAttribute="top" secondItem="zfE-zs-UVY" secondAttribute="top" id="ywz-3k-173"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="TUQ-tc-wri" id="FvH-xR-VPY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hb-g0-5ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="273"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="vfi-lq-GT2">
             <objects>
