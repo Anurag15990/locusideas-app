@@ -23,6 +23,8 @@
 		8879E405E36C6526B7F97BF7 /* Pods_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696433BBBC6AFE543EE020A6 /* Pods_client.framework */; };
 		918650271C455F1200202F71 /* LaunchScreenContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */; };
 		918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650281C45866700202F71 /* LaunchScreenViewController.swift */; };
+		91954C7A1C60D60E001A0953 /* ProjectDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91954C791C60D60E001A0953 /* ProjectDescription.xib */; };
+		91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C7B1C60D67E001A0953 /* ProjectDescription.swift */; };
 		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; };
 		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; };
 		91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */; };
@@ -45,6 +47,9 @@
 		91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */; };
 		91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */; };
 		91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */; };
+		91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */; };
+		91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */; };
+		91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */; };
 		91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */; };
 		91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FCB6A01C3CFEE500652E6B /* Main.storyboard */; };
 		91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */; };
@@ -91,6 +96,8 @@
 		75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpAuthRequestBody.swift; sourceTree = "<group>"; };
 		918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenContentViewController.swift; sourceTree = "<group>"; };
 		918650281C45866700202F71 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		91954C791C60D60E001A0953 /* ProjectDescription.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDescription.xib; sourceTree = "<group>"; };
+		91954C7B1C60D67E001A0953 /* ProjectDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDescription.swift; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		91C1B9091C41466300CF0ABC /* Asap-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-Bold.otf"; sourceTree = "<group>"; };
 		91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -113,6 +120,9 @@
 		91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDesignCard.swift; sourceTree = "<group>"; };
 		91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamTableViewController.swift; sourceTree = "<group>"; };
 		91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectInfo.xib; sourceTree = "<group>"; };
+		91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfo.swift; sourceTree = "<group>"; };
+		91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailsTableViewController.swift; sourceTree = "<group>"; };
 		91FCB69E1C3CFB9100652E6B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		91FCB6A01C3CFEE500652E6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +188,7 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				91FA8ABC1C609CEF0000F6A8 /* ProjectDetails */,
 				91ECEC511C4948590010A352 /* Feed */,
 				91F3C5F21C41680200BCE92D /* LaunchScreen */,
 				75840D471C4157880075FA37 /* common */,
@@ -318,6 +329,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		91FA8ABC1C609CEF0000F6A8 /* ProjectDetails */ = {
+			isa = PBXGroup;
+			children = (
+				91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */,
+				91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */,
+				91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */,
+				91954C791C60D60E001A0953 /* ProjectDescription.xib */,
+				91954C7B1C60D67E001A0953 /* ProjectDescription.swift */,
+			);
+			path = ProjectDetails;
+			sourceTree = "<group>";
+		};
 		91FCB69D1C3CFB0800652E6B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91954C7A1C60D60E001A0953 /* ProjectDescription.xib in Resources */,
 				91C1B9251C41466300CF0ABC /* Montserrat-ExtraBold.otf in Resources */,
 				91C1B9211C41466300CF0ABC /* fontawesome-webfont.ttf in Resources */,
 				91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */,
@@ -452,6 +476,7 @@
 				91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */,
 				91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */,
 				91C1B9221C41466300CF0ABC /* materialdesignicons-webfont (1).ttf in Resources */,
+				91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */,
 				91C1B9261C41466300CF0ABC /* Montserrat-Hairline.otf in Resources */,
 				91C1B91D1C41466300CF0ABC /* Asap-Medium.otf in Resources */,
 				91C1B91F1C41466300CF0ABC /* Asap-Regular.otf in Resources */,
@@ -536,10 +561,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */,
 				91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */,
+				91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */,
 				91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */,
 				91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
+				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
