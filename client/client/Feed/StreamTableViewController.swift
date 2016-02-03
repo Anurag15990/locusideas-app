@@ -54,7 +54,7 @@ class StreamTableViewController: UIViewController, UITableViewDataSource, UITabl
         return 430
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath: NSIndexPath) {
         
         let vc = storyboard?.instantiateViewControllerWithIdentifier("ProjectDetailsTableViewController") as! ProjectDetailsTableViewController
         self.navigationController?.pushViewController(vc, animated: true)
