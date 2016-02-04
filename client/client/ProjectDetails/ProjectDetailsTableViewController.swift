@@ -20,8 +20,15 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         
         tableView.registerNib(UINib(nibName: "ProjectInfo", bundle: nil), forCellReuseIdentifier: "ProjectInfo")
         tableView.registerNib(UINib(nibName: "ProjectDescription", bundle: nil), forCellReuseIdentifier: "ProjectDescription")
-        tableView.separatorStyle = .SingleLine
-        tableView.separatorColor = UIColor.darkGrayColor()
+        tableView.separatorStyle = .None
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 
     override func didReceiveMemoryWarning() {

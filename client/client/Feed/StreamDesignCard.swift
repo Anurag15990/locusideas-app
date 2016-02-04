@@ -26,7 +26,7 @@ class StreamDesignCard: UITableViewCell {
         
         designCoverImage.image = UIImage(named: "Blue_chair.jpg")
         designTitleLabel.text = "Single seater chair in Phantom blue colour with an ottoman".uppercaseString
-        designerNameLabel.text = "John Doe"
+        designerNameLabel.text = "Dipankar Rajiblochan Chatterjee"
         categoryLabel.text = "Modern"
         appreciationCountLabel.text = "12345"
         viewCountLabel.text = "123456"
