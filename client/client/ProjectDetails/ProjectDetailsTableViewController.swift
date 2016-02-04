@@ -25,11 +25,13 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
+//        self.setNeedsStatusBarAppearanceUpdate()
+        
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return .LightContent
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

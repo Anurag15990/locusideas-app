@@ -24,8 +24,8 @@ class SignUpViewController : UIViewController {
         super.viewDidLoad()
         
         setupInitialView()
-        
     }
+
     
     /**
      Setup Initial State of the View.
