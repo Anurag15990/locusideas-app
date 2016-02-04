@@ -92,7 +92,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="3Qs-T8-9Y5"/>
                             <constraint firstAttribute="width" constant="75" id="Wit-eD-N0P"/>
@@ -114,7 +113,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="2fu-7m-AXr"/>
                             <constraint firstAttribute="height" constant="20" id="ERR-AC-cKz"/>
@@ -136,7 +134,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="I6s-nc-4gC"/>
                             <constraint firstAttribute="height" constant="20" id="ck8-Ke-c4z"/>
@@ -165,6 +162,7 @@
                     <constraint firstItem="DyO-bP-x2r" firstAttribute="top" secondItem="Oeq-6W-iut" secondAttribute="bottom" constant="8" id="wN2-BR-L5X"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.029999999999999999" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="appreciationCountLabel" destination="glv-EX-ekh" id="TVD-hE-8DK"/>
                 <outlet property="appreciationIconLabel" destination="kgo-NY-J5g" id="e7B-9m-yOa"/>
