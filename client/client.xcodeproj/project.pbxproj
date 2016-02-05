@@ -27,6 +27,7 @@
 		91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C7B1C60D67E001A0953 /* ProjectDescription.swift */; };
 		91954C7E1C632150001A0953 /* ProjectGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91954C7D1C632150001A0953 /* ProjectGalleryCell.xib */; };
 		91954C801C638A92001A0953 /* ProjectGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C7F1C638A92001A0953 /* ProjectGalleryCell.swift */; };
+		91954C841C646993001A0953 /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91954C831C646993001A0953 /* Lobster 1.4.otf */; };
 		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; };
 		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; };
 		91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */; };
@@ -102,6 +103,7 @@
 		91954C7B1C60D67E001A0953 /* ProjectDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDescription.swift; sourceTree = "<group>"; };
 		91954C7D1C632150001A0953 /* ProjectGalleryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectGalleryCell.xib; sourceTree = "<group>"; };
 		91954C7F1C638A92001A0953 /* ProjectGalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectGalleryCell.swift; sourceTree = "<group>"; };
+		91954C831C646993001A0953 /* Lobster 1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster 1.4.otf"; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		91C1B9091C41466300CF0ABC /* Asap-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-Bold.otf"; sourceTree = "<group>"; };
 		91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		91F784741C3FEBA4003ED6FA /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				91954C831C646993001A0953 /* Lobster 1.4.otf */,
 				91C1B9091C41466300CF0ABC /* Asap-Bold.otf */,
 				91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */,
 				91C1B90B1C41466300CF0ABC /* Asap-Italic.otf */,
@@ -488,6 +491,7 @@
 				91C1B91F1C41466300CF0ABC /* Asap-Regular.otf in Resources */,
 				91954C7E1C632150001A0953 /* ProjectGalleryCell.xib in Resources */,
 				754716B71C2EE9A4004ABFC6 /* LaunchScreen.storyboard in Resources */,
+				91954C841C646993001A0953 /* Lobster 1.4.otf in Resources */,
 				754716B41C2EE9A4004ABFC6 /* Assets.xcassets in Resources */,
 				91C1B9241C41466300CF0ABC /* Montserrat-Bold.otf in Resources */,
 				91C1B9231C41466300CF0ABC /* Montserrat-Black.otf in Resources */,
