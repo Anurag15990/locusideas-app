@@ -20,14 +20,21 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         
         tableView.registerNib(UINib(nibName: "ProjectInfo", bundle: nil), forCellReuseIdentifier: "ProjectInfo")
         tableView.registerNib(UINib(nibName: "ProjectDescription", bundle: nil), forCellReuseIdentifier: "ProjectDescription")
+        tableView.registerNib(UINib(nibName: "ProjectGalleryCell", bundle: nil), forCellReuseIdentifier: "ProjectGalleryCell")
         tableView.separatorStyle = .None
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: "backButtonPressed:")
 
         
 //        self.setNeedsStatusBarAppearanceUpdate()
         
+    }
+    
+    func backButtonPressed(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
     }
     
 //    override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -44,7 +51,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -52,8 +59,11 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectInfo", forIndexPath: indexPath) as! ProjectInfo
             return cell
-        } else {
+        } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectDescription", forIndexPath: indexPath) as! ProjectDescription
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("ProjectGalleryCell", forIndexPath: indexPath) as! ProjectGalleryCell
             return cell
         }
     }
@@ -87,7 +97,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
             let text = "You might be asking why you need Alamofire in the first place. Apple provides the NSURLSession class and related classes for downloading content via HTTP, so why complicate things with another third party library? The short answer is that Alamofire is based on NSURLSession, but it frees you from writing boilerplate code and makes writing networking code much easier. You can access data on the Internet with very little effort, and your code will be much cleaner and easier to read.To use Alamofire, you first need to import it. To do this, open PhotoBrowserCollectionViewController.swift and add the following line to the top of the file: \n\n You might be asking why you need Alamofire in the first place. Apple provides the NSURLSession class and related classes for downloading content via HTTP, so why complicate things with another third party library? The short answer is that Alamofire is based on NSURLSession, but it frees you from writing boilerplate code and makes writing networking code much easier. You can access data on the Internet with very little effort, and your code will be much cleaner and easier to read.To use Alamofire, you first need to import it. To do this, open PhotoBrowserCollectionViewController.swift and add the following line to the top of the file:"
             return calculateHeightForString(text)
         }else {
-            return 0
+            return 180
         }
     }
 

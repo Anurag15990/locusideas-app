@@ -28,6 +28,8 @@
 		91954C7E1C632150001A0953 /* ProjectGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91954C7D1C632150001A0953 /* ProjectGalleryCell.xib */; };
 		91954C801C638A92001A0953 /* ProjectGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C7F1C638A92001A0953 /* ProjectGalleryCell.swift */; };
 		91954C841C646993001A0953 /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91954C831C646993001A0953 /* Lobster 1.4.otf */; };
+		91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C851C64BF00001A0953 /* UIImage_Gradient.swift */; };
+		91954C881C64E51B001A0953 /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C871C64E51B001A0953 /* CAGradientLayer.swift */; };
 		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; };
 		91C1B91A1C41466300CF0ABC /* Asap-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B9091C41466300CF0ABC /* Asap-Bold.otf */; };
 		91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */; };
@@ -104,6 +106,8 @@
 		91954C7D1C632150001A0953 /* ProjectGalleryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectGalleryCell.xib; sourceTree = "<group>"; };
 		91954C7F1C638A92001A0953 /* ProjectGalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectGalleryCell.swift; sourceTree = "<group>"; };
 		91954C831C646993001A0953 /* Lobster 1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster 1.4.otf"; sourceTree = "<group>"; };
+		91954C851C64BF00001A0953 /* UIImage_Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage_Gradient.swift; sourceTree = "<group>"; };
+		91954C871C64E51B001A0953 /* CAGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		91C1B9091C41466300CF0ABC /* Asap-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-Bold.otf"; sourceTree = "<group>"; };
 		91C1B90A1C41466300CF0ABC /* Asap-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				75F61E901C535EBE0042C765 /* NSUserDefaults.swift */,
+				91954C851C64BF00001A0953 /* UIImage_Gradient.swift */,
+				91954C871C64E51B001A0953 /* CAGradientLayer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -581,7 +587,9 @@
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				91954C801C638A92001A0953 /* ProjectGalleryCell.swift in Sources */,
+				91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
+				91954C881C64E51B001A0953 /* CAGradientLayer.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
 				75F61E941C536ED80042C765 /* UserProfile.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */,

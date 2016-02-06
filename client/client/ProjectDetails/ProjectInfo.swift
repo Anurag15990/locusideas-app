@@ -45,6 +45,18 @@ class ProjectInfo: UITableViewCell {
         self.selectionStyle = .None
 
     }
+    
+    @IBAction func followButton(sender: UIButton) {
+        
+        if sender.currentTitleColor != UIColor.whiteColor() {
+            sender.backgroundColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
+            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        } else {
+            sender.backgroundColor = UIColor.whiteColor()
+            sender.setTitleColor(UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0), forState: UIControlState.Normal)
+        }
+        
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
