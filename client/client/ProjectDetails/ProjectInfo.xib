@@ -66,6 +66,9 @@
                         <state key="normal" title="">
                             <color key="titleColor" red="0.015686274510000001" green="0.61960784310000006" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="followButton:" destination="hNl-k0-PtB" eventType="touchUpInside" id="Noa-Su-hDh"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyO-bP-x2r">
                         <rect key="frame" x="8" y="56" width="304" height="15"/>

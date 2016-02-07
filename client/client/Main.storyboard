@@ -94,7 +94,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="q7Z-2U-tGi" kind="modal" id="qEP-Pn-65o"/>
+                                    <segue destination="xL2-ro-aB0" kind="modal" id="zxC-8P-92m"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="ATI-ml-OrZ">
@@ -582,7 +582,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6N-J5-RzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="273"/>
+            <point key="canvasLocation" x="2147" y="273"/>
         </scene>
         <!--Project Details Table View Controller-->
         <scene sceneID="ybh-UG-kgA">
@@ -619,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hb-g0-5ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2162" y="273"/>
+            <point key="canvasLocation" x="2490" y="273"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="vfi-lq-GT2">
@@ -629,10 +629,30 @@
             </objects>
             <point key="canvasLocation" x="-59" y="-35"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="f7p-2d-HDL">
+            <objects>
+                <tabBarController id="xL2-ro-aB0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qMS-Sg-5fS"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="aJc-A8-out">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.015686274510000001" green="0.61960784310000006" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="q7Z-2U-tGi" kind="relationship" relationship="viewControllers" id="HiA-j4-6o2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="se1-sS-Odl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1269" y="273"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aSM-LR-ylm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q7Z-2U-tGi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" id="Sb3-if-iZH"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="K37-fC-Jh7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U0E-0z-Qz0">
@@ -646,7 +666,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZT-mh-eXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="273"/>
+            <point key="canvasLocation" x="1765" y="273"/>
         </scene>
     </scenes>
     <resources>
