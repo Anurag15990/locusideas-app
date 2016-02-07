@@ -49,11 +49,13 @@ class ProjectInfo: UITableViewCell {
     @IBAction func followButton(sender: UIButton) {
         
         if sender.currentTitleColor != UIColor.whiteColor() {
+            sender.setTitleColor(UIColor.whiteColor(), forState: .Normal)
             sender.backgroundColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
-            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            sender.setAttributedTitle(NSAttributedString(string: "", attributes: [NSFontAttributeName:UIFont(name: "MaterialDesignIcons", size: 22.0)!, NSForegroundColorAttributeName: UIColor.whiteColor()]), forState: UIControlState.Normal)
         } else {
+            sender.setTitleColor(UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0), forState: .Normal)
             sender.backgroundColor = UIColor.whiteColor()
-            sender.setTitleColor(UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0), forState: UIControlState.Normal)
+            sender.setAttributedTitle(NSAttributedString(string: "", attributes: [NSFontAttributeName: UIFont(name: "MaterialDesignIcons", size: 22.0)!, NSForegroundColorAttributeName: UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)]), forState: UIControlState.Normal)
         }
         
     }

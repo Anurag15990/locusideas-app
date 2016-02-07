@@ -26,7 +26,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Lobster 1.4.otf</string>
+		<string>Lobster.otf</string>
 		<string>fontawesome-webfont.ttf</string>
 		<string>materialdesignicons-webfont (1).ttf</string>
 		<string>CoveredByYourGrace.ttf</string>
