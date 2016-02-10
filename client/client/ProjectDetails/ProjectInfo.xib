@@ -47,7 +47,7 @@
                             <constraint firstAttribute="height" constant="40" id="ZWR-UJ-7hj"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKI-5Q-4CY">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKI-5Q-4CY">
                         <rect key="frame" x="56" y="89" width="218" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="6kf-jB-yVL"/>
@@ -70,7 +70,7 @@
                             <action selector="followButton:" destination="hNl-k0-PtB" eventType="touchUpInside" id="Noa-Su-hDh"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyO-bP-x2r">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyO-bP-x2r">
                         <rect key="frame" x="8" y="56" width="304" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="1ou-jh-Fuy"/>

@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Asap-Regular", size: 15)!], forState: .Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Asap-Medium", size: 13)!], forState: .Normal)
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 225.0/255.0, green: 129.0/255.0, blue: 115.0/255.0, alpha: 1.0)], forState: .Selected)
         return true
     }
 
