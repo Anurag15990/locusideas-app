@@ -731,24 +731,18 @@
         <scene sceneID="7mM-3W-w7K">
             <objects>
                 <viewController id="1dV-CH-OJL" customClass="ExploreTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LhF-gH-n35"/>
-                        <viewControllerLayoutGuide type="bottom" id="y2z-Es-MsE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pay-3T-wcj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CC8-7G-uJ8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-sQ-aaD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="1dV-CH-OJL" id="sdW-lV-sDU"/>
+                            <outlet property="delegate" destination="1dV-CH-OJL" id="Nc7-LP-AMP"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="Mgx-e2-9NF"/>
                     <connections>
-                        <outlet property="tableView" destination="IYt-sQ-aaD" id="yWW-7K-mof"/>
+                        <outlet property="tableView" destination="CC8-7G-uJ8" id="Vji-Vw-oK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgX-yi-cjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -759,7 +753,7 @@
         <scene sceneID="gAz-kH-WJo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fZl-O7-o1h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Upload" id="xlk-hR-NP5"/>
+                    <tabBarItem key="tabBarItem" title="Upload" image="ic_file_upload_white_18pt" selectedImage="ic_file_upload_white_18pt" id="xlk-hR-NP5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Gn-To-GX6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -778,7 +772,7 @@
         <scene sceneID="HCI-JI-IfJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WOJ-OV-bct" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="qPW-rc-3St"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ic_person_white_18pt" selectedImage="ic_person_white_18pt" id="qPW-rc-3St"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NzA-Kr-JKz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -797,7 +791,7 @@
         <scene sceneID="xb7-ry-bf4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wmc-A0-mB5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" id="Agy-Wp-xmc"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="ic_explore_white_18pt" selectedImage="ic_explore_white_18pt" id="Agy-Wp-xmc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dYW-To-7Ju">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -814,7 +808,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_trending_up_white_18pt" width="18" height="18"/>
+        <image name="ic_explore_white_18pt" width="25" height="25"/>
+        <image name="ic_file_upload_white_18pt" width="25" height="25"/>
+        <image name="ic_person_white_18pt" width="25" height="25"/>
+        <image name="ic_trending_up_white_18pt" width="25" height="25"/>
         <image name="logo" width="1754" height="1240"/>
     </resources>
 </document>
