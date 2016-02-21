@@ -6,6 +6,9 @@ pod 'Alamofire', '~> 2.0.0'
 pod 'ObjectMapper', '~> 0.17'
 pod 'SDWebImage', '~> 3.7'
 pod 'AlamofireObjectMapper', '~> 0.9'
+pod 'Bolts'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
 use_frameworks!
 end
 
