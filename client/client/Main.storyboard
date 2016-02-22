@@ -699,23 +699,16 @@
             </objects>
             <point key="canvasLocation" x="2180" y="546"/>
         </scene>
-        <!--Profile Table View Controller-->
+        <!--My Profile View Controller-->
         <scene sceneID="drS-tx-8G1">
             <objects>
-                <viewController id="MB3-aj-Dkm" customClass="ProfileTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MB3-aj-Dkm" customClass="MyProfileViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8hs-lO-1fv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="MB3-aj-Dkm" id="4VA-1t-f4W"/>
-                            <outlet property="delegate" destination="MB3-aj-Dkm" id="8Ap-4Z-L1M"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Av0-Zk-KKO"/>
-                    <connections>
-                        <outlet property="tableView" destination="8hs-lO-1fv" id="Q9s-IO-WZ3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhM-r3-KS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -742,6 +735,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgX-yi-cjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2189" y="-188"/>
+        </scene>
+        <!--Designer Profile Table View Controller-->
+        <scene sceneID="5k8-Bm-zIO">
+            <objects>
+                <viewController storyboardIdentifier="DesignerProfileTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4s-7C-geI" customClass="DesignerProfileTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LST-Qc-pgL"/>
+                        <viewControllerLayoutGuide type="bottom" id="rhL-mG-7zc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7IW-jh-zU5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRN-IF-8vj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="I4s-7C-geI" id="jNF-Qb-S5l"/>
+                                    <outlet property="delegate" destination="I4s-7C-geI" id="ZPp-VB-llE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rhL-mG-7zc" firstAttribute="top" secondItem="wRN-IF-8vj" secondAttribute="bottom" id="Jnz-Sh-RLe"/>
+                            <constraint firstItem="wRN-IF-8vj" firstAttribute="leading" secondItem="7IW-jh-zU5" secondAttribute="leading" id="MzG-Iz-eEY"/>
+                            <constraint firstItem="wRN-IF-8vj" firstAttribute="top" secondItem="7IW-jh-zU5" secondAttribute="top" id="Qyn-Th-RlN"/>
+                            <constraint firstAttribute="trailing" secondItem="wRN-IF-8vj" secondAttribute="trailing" id="UUj-fn-Nm5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wRN-IF-8vj" id="23a-64-7gP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e63-io-Px4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2558" y="-188"/>
         </scene>
         <!--Upload-->
         <scene sceneID="gAz-kH-WJo">

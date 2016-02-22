@@ -8,22 +8,25 @@
 
 import UIKit
 
-class ProfileTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DesignerProfileTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "ProfileInfoCard", bundle: nil), forCellReuseIdentifier: "ProfileInfoCard")
+        tableView.registerNib(UINib(nibName: "DesignerProfileInfoCard", bundle: nil), forCellReuseIdentifier: "DesignerProfileInfoCard")
         tableView.separatorStyle = .None
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.title = "Profile"
-        
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_settings_white_18pt"), style: .Plain, target: self, action: nil)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: "backButtonPressed:")
+        self.title = "Dipankar Rajiblochan Chatterjee"
+    }
+    
+    func backButtonPressed(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -40,7 +43,7 @@ class ProfileTableViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ProfileInfoCard", forIndexPath: indexPath) as! ProfileInfoCard
+        let cell = tableView.dequeueReusableCellWithIdentifier("DesignerProfileInfoCard", forIndexPath: indexPath) as! DesignerProfileInfoCard
         return cell
     }
 
