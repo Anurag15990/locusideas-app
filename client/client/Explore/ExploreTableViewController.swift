@@ -41,4 +41,10 @@ class ExploreTableViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 195
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("DesignerProfileTableViewController") as! DesignerProfileTableViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

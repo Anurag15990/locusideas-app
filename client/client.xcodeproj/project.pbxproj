@@ -21,7 +21,7 @@
 		75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */; };
 		75F61E981C5371900042C765 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E971C5371900042C765 /* AuthRouter.swift */; };
 		75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */; };
-		915C84631C6B842E00736AD3 /* ProfileInfoCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 915C84621C6B842E00736AD3 /* ProfileInfoCard.xib */; };
+		915C84631C6B842E00736AD3 /* DesignerProfileInfoCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 915C84621C6B842E00736AD3 /* DesignerProfileInfoCard.xib */; };
 		918650271C455F1200202F71 /* LaunchScreenContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */; };
 		918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918650281C45866700202F71 /* LaunchScreenViewController.swift */; };
 		91954C7A1C60D60E001A0953 /* ProjectDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91954C791C60D60E001A0953 /* ProjectDescription.xib */; };
@@ -33,7 +33,7 @@
 		91954C8A1C672C73001A0953 /* Lobster.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91954C891C672C73001A0953 /* Lobster.otf */; };
 		91954C8F1C675151001A0953 /* ExploreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C8E1C675151001A0953 /* ExploreTableViewController.swift */; };
 		91954C911C675A49001A0953 /* UploadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C901C675A49001A0953 /* UploadTableViewController.swift */; };
-		91954C931C675BC9001A0953 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C921C675BC9001A0953 /* ProfileTableViewController.swift */; };
+		91954C931C675BC9001A0953 /* DesignerProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C921C675BC9001A0953 /* DesignerProfileTableViewController.swift */; };
 		91954C951C678986001A0953 /* ExploreDesignersCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91954C941C678986001A0953 /* ExploreDesignersCard.xib */; };
 		91954C971C678A0B001A0953 /* ExploreDesignersCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91954C961C678A0B001A0953 /* ExploreDesignersCard.swift */; };
 		91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */; };
@@ -57,7 +57,8 @@
 		91ECEC531C4A22E80010A352 /* StreamDesignCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91ECEC521C4A22E80010A352 /* StreamDesignCard.xib */; };
 		91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC541C4FC6760010A352 /* StreamDesignCard.swift */; };
 		91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */; };
-		91F0849F1C7AEE9400BA3B80 /* ProfileInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0849E1C7AEE9400BA3B80 /* ProfileInfoCard.swift */; };
+		91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */; };
+		91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */; };
 		91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */; };
 		91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */; };
 		91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */; };
@@ -106,7 +107,7 @@
 		75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignInAuthRequestBody.swift; sourceTree = "<group>"; };
 		75F61E971C5371900042C765 /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpAuthRequestBody.swift; sourceTree = "<group>"; };
-		915C84621C6B842E00736AD3 /* ProfileInfoCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileInfoCard.xib; sourceTree = "<group>"; };
+		915C84621C6B842E00736AD3 /* DesignerProfileInfoCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerProfileInfoCard.xib; sourceTree = "<group>"; };
 		918650261C455F1200202F71 /* LaunchScreenContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenContentViewController.swift; sourceTree = "<group>"; };
 		918650281C45866700202F71 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		91954C791C60D60E001A0953 /* ProjectDescription.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDescription.xib; sourceTree = "<group>"; };
@@ -118,7 +119,7 @@
 		91954C891C672C73001A0953 /* Lobster.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster.otf; sourceTree = "<group>"; };
 		91954C8E1C675151001A0953 /* ExploreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreTableViewController.swift; sourceTree = "<group>"; };
 		91954C901C675A49001A0953 /* UploadTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTableViewController.swift; sourceTree = "<group>"; };
-		91954C921C675BC9001A0953 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		91954C921C675BC9001A0953 /* DesignerProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileTableViewController.swift; sourceTree = "<group>"; };
 		91954C941C678986001A0953 /* ExploreDesignersCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExploreDesignersCard.xib; sourceTree = "<group>"; };
 		91954C961C678A0B001A0953 /* ExploreDesignersCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDesignersCard.swift; sourceTree = "<group>"; };
 		91C1B9071C412BBE00CF0ABC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
@@ -145,7 +146,8 @@
 		91F084971C735EB100BA3B80 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		91F084981C735EB100BA3B80 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		91F084991C735EB100BA3B80 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		91F0849E1C7AEE9400BA3B80 /* ProfileInfoCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoCard.swift; sourceTree = "<group>"; };
+		91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileInfoCard.swift; sourceTree = "<group>"; };
+		91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectInfo.xib; sourceTree = "<group>"; };
 		91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfo.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				91F084A41C7AFF5300BA3B80 /* MyProfile */,
 				91954C8D1C6742AA001A0953 /* Profile */,
 				91954C8C1C674296001A0953 /* Upload */,
 				91954C8B1C67424C001A0953 /* Explore */,
@@ -333,9 +336,9 @@
 		91954C8D1C6742AA001A0953 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				91954C921C675BC9001A0953 /* ProfileTableViewController.swift */,
-				915C84621C6B842E00736AD3 /* ProfileInfoCard.xib */,
-				91F0849E1C7AEE9400BA3B80 /* ProfileInfoCard.swift */,
+				91954C921C675BC9001A0953 /* DesignerProfileTableViewController.swift */,
+				915C84621C6B842E00736AD3 /* DesignerProfileInfoCard.xib */,
+				91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -348,6 +351,14 @@
 				91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		91F084A41C7AFF5300BA3B80 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */,
+			);
+			path = MyProfile;
 			sourceTree = "<group>";
 		};
 		91F3C5F21C41680200BCE92D /* LaunchScreen */ = {
@@ -542,7 +553,7 @@
 				91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */,
 				91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */,
 				91C1B9221C41466300CF0ABC /* materialdesignicons-webfont (1).ttf in Resources */,
-				915C84631C6B842E00736AD3 /* ProfileInfoCard.xib in Resources */,
+				915C84631C6B842E00736AD3 /* DesignerProfileInfoCard.xib in Resources */,
 				91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */,
 				91C1B9261C41466300CF0ABC /* Montserrat-Hairline.otf in Resources */,
 				91C1B91D1C41466300CF0ABC /* Asap-Medium.otf in Resources */,
@@ -640,13 +651,14 @@
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
-				91954C931C675BC9001A0953 /* ProfileTableViewController.swift in Sources */,
+				91954C931C675BC9001A0953 /* DesignerProfileTableViewController.swift in Sources */,
 				91954C801C638A92001A0953 /* ProjectGalleryCell.swift in Sources */,
 				91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				91954C881C64E51B001A0953 /* CAGradientLayer.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
-				91F0849F1C7AEE9400BA3B80 /* ProfileInfoCard.swift in Sources */,
+				91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */,
+				91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */,
 				75F61E941C536ED80042C765 /* UserProfile.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */,
 				91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */,

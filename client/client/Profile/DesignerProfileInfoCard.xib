@@ -19,7 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="270" id="zqL-4p-vAz" customClass="ProfileInfoCard" customModule="LocusIdeas" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="270" id="zqL-4p-vAz" customClass="DesignerProfileInfoCard" customModule="LocusIdeas" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zqL-4p-vAz" id="V5J-YP-d0P">
@@ -98,11 +98,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="coverImageView" destination="Qbz-Kt-tJT" id="wCI-mD-6aJ"/>
-                <outlet property="currentDesignationLabel" destination="5P7-bb-2jY" id="dWH-VA-Axe"/>
-                <outlet property="locationLabel" destination="HZm-HF-Y1b" id="V4S-AK-s5y"/>
-                <outlet property="nameLabel" destination="8eh-wX-G8R" id="3LM-QA-g3z"/>
-                <outlet property="profileImageView" destination="Lb3-jn-U1x" id="i6L-yo-EiD"/>
+                <outlet property="coverImageView" destination="Qbz-Kt-tJT" id="d1J-GC-3IR"/>
+                <outlet property="currentDesignationLabel" destination="5P7-bb-2jY" id="btS-DI-flX"/>
+                <outlet property="locationLabel" destination="HZm-HF-Y1b" id="tz9-lv-Z7I"/>
+                <outlet property="nameLabel" destination="8eh-wX-G8R" id="96l-33-lLi"/>
+                <outlet property="profileImageView" destination="Lb3-jn-U1x" id="8QK-eT-dbv"/>
             </connections>
             <point key="canvasLocation" x="178" y="205"/>
         </tableViewCell>

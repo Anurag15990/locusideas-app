@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileInfoCard : UITableViewCell {
+class DesignerProfileInfoCard : UITableViewCell {
     
     @IBOutlet weak var coverImageView : UIImageView!
     @IBOutlet weak var profileImageView : UIImageView!
