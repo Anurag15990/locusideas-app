@@ -703,24 +703,18 @@
         <scene sceneID="drS-tx-8G1">
             <objects>
                 <viewController id="MB3-aj-Dkm" customClass="ProfileTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jZ7-tk-rhK"/>
-                        <viewControllerLayoutGuide type="bottom" id="t6K-Hn-NDy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ETj-cL-hiJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8hs-lO-1fv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pc7-rp-Ct6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="MB3-aj-Dkm" id="4VA-1t-f4W"/>
+                            <outlet property="delegate" destination="MB3-aj-Dkm" id="8Ap-4Z-L1M"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="Av0-Zk-KKO"/>
                     <connections>
-                        <outlet property="tableView" destination="pc7-rp-Ct6" id="jCT-mh-3J0"/>
+                        <outlet property="tableView" destination="8hs-lO-1fv" id="Q9s-IO-WZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhM-r3-KS8" userLabel="First Responder" sceneMemberID="firstResponder"/>

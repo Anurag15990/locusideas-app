@@ -86,12 +86,18 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-client/Alamofire.framework"
   install_framework "Pods-client/AlamofireObjectMapper.framework"
+  install_framework "Pods-client/Bolts.framework"
+  install_framework "Pods-client/FBSDKCoreKit.framework"
+  install_framework "Pods-client/FBSDKLoginKit.framework"
   install_framework "Pods-client/ObjectMapper.framework"
   install_framework "Pods-client/SDWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-client/Alamofire.framework"
   install_framework "Pods-client/AlamofireObjectMapper.framework"
+  install_framework "Pods-client/Bolts.framework"
+  install_framework "Pods-client/FBSDKCoreKit.framework"
+  install_framework "Pods-client/FBSDKLoginKit.framework"
   install_framework "Pods-client/ObjectMapper.framework"
   install_framework "Pods-client/SDWebImage.framework"
 fi
