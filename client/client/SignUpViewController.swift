@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Alamofire
 
 class SignUpViewController : UIViewController {
     
@@ -72,12 +73,34 @@ class SignUpViewController : UIViewController {
                 if (error != nil) {
                     print("Error: \(error)")
                 } else {
-                    print(result)
+                    let facebookAuthRequestBody = FacebookAuthRequestBody()
+                    facebookAuthRequestBody.id = result.valueForKey("id") as? String
+                    facebookAuthRequestBody.accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                    self.authenticateWithFacebook(facebookAuthRequestBody)
                 }
             })
         }
     }
     
+    func authenticateWithFacebook(request: FacebookAuthRequestBody){
+        Alamofire.request(BaseRouter.AuthRouterManager(AuthRouter.FacebookAuth(request)))
+            .debugLog()
+            .responseJSON {response in
+                print(response.result)
+                if response.result.isSuccess {
+                    print(response.result.value)
+                    if let value = response.result.value {
+                        if let token = value["token"] as? String{
+                            NSUserDefaultsUtils.setAuthToken(token)
+                        }
+                    }
+                    
+                }else {
+                    print(response.result.error)
+                }
+    
+        }
+    }
     
     @IBAction func cancelButtonTapped() {
         self.dismissViewControllerAnimated(true, completion: nil)

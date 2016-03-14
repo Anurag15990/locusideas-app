@@ -18,6 +18,7 @@ enum AuthRouter: BaseRouterProtocol {
     
     case EmailSignIn(EmailSignInAuthRequestBody)
     case EmailSignUp(EmailSignUpAuthRequestBody)
+    case FacebookAuth(FacebookAuthRequestBody)
     
     var path: String {
         
@@ -29,6 +30,9 @@ enum AuthRouter: BaseRouterProtocol {
         case .EmailSignUp:
             return ""
         
+        case .FacebookAuth:
+            return "/api/users/auth"
+            
         }
     }
     
@@ -40,6 +44,9 @@ enum AuthRouter: BaseRouterProtocol {
             return .POST
             
         case .EmailSignUp:
+            return .POST
+            
+        case .FacebookAuth:
             return .POST
         }
     }
@@ -62,6 +69,9 @@ enum AuthRouter: BaseRouterProtocol {
             return requestBody
             
         case .EmailSignUp(let requestBody):
+            return requestBody
+            
+        case .FacebookAuth(let requestBody):
             return requestBody
         }
     }
