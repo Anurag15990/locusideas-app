@@ -13,7 +13,9 @@ import ObjectMapper
 enum BaseRouter: URLRequestConvertible {
     
     /// Static Endpoint/Base URL being fetched from Info.plist
-    static let baseURL = NSBundle.mainBundle().objectForInfoDictionaryKey("BASE_API") as! String
+//    static let baseURL = NSBundle.mainBundle().objectForInfoDictionaryKey("BASE_API") as! String
+    
+    static let baseURL = "http://localhost:3002"
     
     case AuthRouterManager(AuthRouter)
     
@@ -66,6 +68,27 @@ enum BaseRouter: URLRequestConvertible {
             return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters as? [String : AnyObject]).0
         }
         
+        //Set Request Headers
+        mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         return mutableURLRequest
+    }
+}
+
+
+extension Request {
+    public func debugLog() -> Self {
+        
+        print("===============")
+        print(self)
+        print("Headers ---> ")
+        print(self.request!.allHTTPHeaderFields)
+        print("Body ---> ")
+        if let requestBody = self.request!.HTTPBody {
+            print(NSString(data: requestBody, encoding: NSUTF8StringEncoding))
+        }
+        print("===============")
+        
+        return self
     }
 }
