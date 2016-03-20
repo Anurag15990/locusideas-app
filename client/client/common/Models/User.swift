@@ -10,20 +10,28 @@ import Foundation
 import ObjectMapper
 
 /// User Profile Object
-class UserProfile: Mappable {
+class User: NSObject, Mappable {
     
     var id: String?
     var firstName: String?
     var lastName: String?
     var email: String?
     var type: String?
-    var approvedStatus: Bool?
     var password: String?
+    var facebook: String?
+    var twitter: String?
+    var status: String?
+    var createdAt: NSDate?
+    var updatedAt: NSDate?
     
     //TODO: Handle Location for the user.
     
+    override init() {
+        super.init()
+    }
+    
     required init?(_ map: Map) {
-        
+
     }
     
     /**
@@ -32,14 +40,16 @@ class UserProfile: Mappable {
      - parameter map: <#map description#>
      */
     func mapping(map: Map) {
-        
         id              <- map["id"]
         firstName       <- map["firstName"]
         lastName        <- map["lastName"]
         email           <- map["email"]
         type            <- map["type"]
-        approvedStatus  <- map["approvedStatus"]
         password        <- map["password"]
-    
+        facebook        <- map["facebook"]
+        twitter         <- map["twitter"]
+        status          <- map["status"]
+        createdAt       <- map["createdAt"]
+        updatedAt       <- map["updatedAt"]
     }
 }
