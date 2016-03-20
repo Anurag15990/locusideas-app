@@ -12,6 +12,8 @@ import Alamofire
 enum UserRouter: BaseRouterProtocol {
  
     case GetMeRequest()
+    case FollowUserRequest(UserFollowRequestBody)
+    case UnfollowUserRequest(UserUnfollowRequestBody)
     
     var path: String {
         
@@ -19,7 +21,12 @@ enum UserRouter: BaseRouterProtocol {
         
         case .GetMeRequest():
             return "/api/users/me"
+            
+        case .FollowUserRequest:
+            return "/api/users/follow"
         
+        case .UnfollowUserRequest:
+            return "/api/users/unfollow"
         }
     
     }
@@ -30,6 +37,13 @@ enum UserRouter: BaseRouterProtocol {
         
         case .GetMeRequest:
             return .GET
+            
+        case .FollowUserRequest:
+            return .POST
+            
+        case .UnfollowUserRequest:
+            return .POST
+        
         }
     
     }
@@ -48,6 +62,12 @@ enum UserRouter: BaseRouterProtocol {
     var body: BaseRequestBody? {
         switch self {
         
+        case .FollowUserRequest(let request):
+            return request
+            
+        case .UnfollowUserRequest(let request):
+            return request
+            
         default:
             return BaseRequestBody()
         }
