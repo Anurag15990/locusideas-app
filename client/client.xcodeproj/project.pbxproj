@@ -23,7 +23,7 @@
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
-		75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaults.swift */; };
+		75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */; };
 		75F61E941C536ED80042C765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* User.swift */; };
 		75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */; };
 		75F61E981C5371900042C765 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E971C5371900042C765 /* AuthRouter.swift */; };
@@ -116,7 +116,7 @@
 		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
-		75F61E901C535EBE0042C765 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaults.swift; sourceTree = "<group>"; };
+		75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
 		75F61E931C536ED80042C765 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailSignInAuthRequestBody.swift; path = ../EmailSignInAuthRequestBody.swift; sourceTree = "<group>"; };
 		75F61E971C5371900042C765 /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		75F61E8F1C535EAE0042C765 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				75F61E901C535EBE0042C765 /* NSUserDefaults.swift */,
+				75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */,
 				91954C851C64BF00001A0953 /* UIImage_Gradient.swift */,
 				91954C871C64E51B001A0953 /* CAGradientLayer.swift */,
 			);
@@ -710,7 +710,7 @@
 				91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */,
 				75F61E941C536ED80042C765 /* User.swift in Sources */,
 				755550451C9E7F6200B734D8 /* Office.swift in Sources */,
-				75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */,
+				75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */,
 				91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
 				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
