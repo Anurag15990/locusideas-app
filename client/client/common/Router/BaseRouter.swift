@@ -18,6 +18,7 @@ enum BaseRouter: URLRequestConvertible {
     static let baseURL = "http://localhost:3002"
     
     case AuthRouterManager(AuthRouter)
+    case UserRouteManager(UserRouter)
     
     /// URL Request is formed here.
     var URLRequest: NSMutableURLRequest {
@@ -27,6 +28,9 @@ enum BaseRouter: URLRequestConvertible {
             let mutableURLRequest = configureRequest(request)
             return mutableURLRequest
         
+        case .UserRouteManager(let request):
+            let mutableURLRequest = configureRequest(request)
+            return mutableURLRequest
         }
     }
     
@@ -70,6 +74,10 @@ enum BaseRouter: URLRequestConvertible {
         
         //Set Request Headers
         mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let authToken = NSUserDefaultsUtils.getAuthToken(){
+            mutableURLRequest.setValue("Bearer \(authToken)", forKey: "Authorization")
+        }
         
         return mutableURLRequest
     }

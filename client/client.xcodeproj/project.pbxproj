@@ -17,6 +17,9 @@
 		755550411C9E651700B734D8 /* Designer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755550401C9E651700B734D8 /* Designer.swift */; };
 		755550451C9E7F6200B734D8 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755550441C9E7F6200B734D8 /* Office.swift */; };
 		755550471C9E88B000B734D8 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755550461C9E88AF00B734D8 /* Phone.swift */; };
+		755550491C9E9B5300B734D8 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755550481C9E9B5300B734D8 /* UserRouter.swift */; };
+		7555504C1C9EA00000B734D8 /* UserFollowRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555504B1C9EA00000B734D8 /* UserFollowRequestBody.swift */; };
+		7555504E1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555504D1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift */; };
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
@@ -107,6 +110,9 @@
 		755550401C9E651700B734D8 /* Designer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Designer.swift; sourceTree = "<group>"; };
 		755550441C9E7F6200B734D8 /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
 		755550461C9E88AF00B734D8 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
+		755550481C9E9B5300B734D8 /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		7555504B1C9EA00000B734D8 /* UserFollowRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFollowRequestBody.swift; sourceTree = "<group>"; };
+		7555504D1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUnfollowRequestBody.swift; sourceTree = "<group>"; };
 		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -286,6 +292,16 @@
 			path = UserModels;
 			sourceTree = "<group>";
 		};
+		7555504A1C9E9FC900B734D8 /* UserRequests */ = {
+			isa = PBXGroup;
+			children = (
+				7555504B1C9EA00000B734D8 /* UserFollowRequestBody.swift */,
+				7555504D1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift */,
+			);
+			name = UserRequests;
+			path = UserRequest;
+			sourceTree = "<group>";
+		};
 		75840D471C4157880075FA37 /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +326,7 @@
 		75840D4A1C4157880075FA37 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				7555504A1C9E9FC900B734D8 /* UserRequests */,
 				7555503C1C9D4D5200B734D8 /* AuthRequests */,
 				75840D4B1C4157880075FA37 /* BaseRequestBody.swift */,
 			);
@@ -321,6 +338,7 @@
 			children = (
 				75840D4D1C4157880075FA37 /* BaseRouter.swift */,
 				75F61E971C5371900042C765 /* AuthRouter.swift */,
+				755550481C9E9B5300B734D8 /* UserRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -686,6 +704,7 @@
 				91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				91954C881C64E51B001A0953 /* CAGradientLayer.swift in Sources */,
+				7555504E1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
 				91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */,
 				91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */,
@@ -701,6 +720,8 @@
 				7555503E1C9D4D9D00B734D8 /* FacebookAuthRequestBody.swift in Sources */,
 				918650291C45866700202F71 /* LaunchScreenViewController.swift in Sources */,
 				75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */,
+				755550491C9E9B5300B734D8 /* UserRouter.swift in Sources */,
+				7555504C1C9EA00000B734D8 /* UserFollowRequestBody.swift in Sources */,
 				91954C911C675A49001A0953 /* UploadTableViewController.swift in Sources */,
 				918650271C455F1200202F71 /* LaunchScreenContentViewController.swift in Sources */,
 			);
