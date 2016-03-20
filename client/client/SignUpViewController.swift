@@ -92,6 +92,8 @@ class SignUpViewController : UIViewController {
                     if let value = response.result.value {
                         if let token = value["token"] as? String{
                             NSUserDefaultsUtils.setAuthToken(token)
+                            self.getUserDetails()
+                            self.pushToTabView()
                         }
                     }
                     
@@ -100,6 +102,30 @@ class SignUpViewController : UIViewController {
                 }
     
         }
+    }
+    
+    func getUserDetails() {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetMeRequest()))
+            .debugLog()
+            .responseString {response in
+                print(response.result)
+                if response.result.isSuccess {
+                    print(response.result.value)
+                    if let value = response.result.value {
+                        NSUserDefaultsUtils.setUserDetails(value)
+                    }
+                }
+                else {
+                    print(response.result.error)
+                }
+        }
+    }
+    
+    func pushToTabView() {
+        
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonTapped() {
