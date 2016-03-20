@@ -14,11 +14,14 @@
 		754716C21C2EE9A4004ABFC6 /* clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716C11C2EE9A4004ABFC6 /* clientTests.swift */; };
 		754716CD1C2EE9A4004ABFC6 /* clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */; };
 		7555503E1C9D4D9D00B734D8 /* FacebookAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555503D1C9D4D9D00B734D8 /* FacebookAuthRequestBody.swift */; };
+		755550411C9E651700B734D8 /* Designer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755550401C9E651700B734D8 /* Designer.swift */; };
+		755550451C9E7F6200B734D8 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755550441C9E7F6200B734D8 /* Office.swift */; };
+		755550471C9E88B000B734D8 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755550461C9E88AF00B734D8 /* Phone.swift */; };
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
 		75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaults.swift */; };
-		75F61E941C536ED80042C765 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* UserProfile.swift */; };
+		75F61E941C536ED80042C765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* User.swift */; };
 		75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */; };
 		75F61E981C5371900042C765 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E971C5371900042C765 /* AuthRouter.swift */; };
 		75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */; };
@@ -101,11 +104,14 @@
 		754716CC1C2EE9A4004ABFC6 /* clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientUITests.swift; sourceTree = "<group>"; };
 		754716CE1C2EE9A4004ABFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7555503D1C9D4D9D00B734D8 /* FacebookAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAuthRequestBody.swift; sourceTree = "<group>"; };
+		755550401C9E651700B734D8 /* Designer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Designer.swift; sourceTree = "<group>"; };
+		755550441C9E7F6200B734D8 /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
+		755550461C9E88AF00B734D8 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		75F61E901C535EBE0042C765 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaults.swift; sourceTree = "<group>"; };
-		75F61E931C536ED80042C765 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		75F61E931C536ED80042C765 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailSignInAuthRequestBody.swift; path = ../EmailSignInAuthRequestBody.swift; sourceTree = "<group>"; };
 		75F61E971C5371900042C765 /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		75F61E991C5377010042C765 /* EmailSignUpAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailSignUpAuthRequestBody.swift; path = ../EmailSignUpAuthRequestBody.swift; sourceTree = "<group>"; };
@@ -269,6 +275,17 @@
 			path = AuthRequests;
 			sourceTree = "<group>";
 		};
+		7555503F1C9E64F100B734D8 /* UserModels */ = {
+			isa = PBXGroup;
+			children = (
+				75F61E931C536ED80042C765 /* User.swift */,
+				755550401C9E651700B734D8 /* Designer.swift */,
+				755550441C9E7F6200B734D8 /* Office.swift */,
+				755550461C9E88AF00B734D8 /* Phone.swift */,
+			);
+			path = UserModels;
+			sourceTree = "<group>";
+		};
 		75840D471C4157880075FA37 /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,7 +338,7 @@
 		75F61E921C536ECA0042C765 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				75F61E931C536ED80042C765 /* UserProfile.swift */,
+				7555503F1C9E64F100B734D8 /* UserModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -659,9 +676,11 @@
 				91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */,
 				91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */,
 				91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */,
+				755550411C9E651700B734D8 /* Designer.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
+				755550471C9E88B000B734D8 /* Phone.swift in Sources */,
 				91954C931C675BC9001A0953 /* DesignerProfileTableViewController.swift in Sources */,
 				91954C801C638A92001A0953 /* ProjectGalleryCell.swift in Sources */,
 				91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */,
@@ -670,7 +689,8 @@
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
 				91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */,
 				91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */,
-				75F61E941C536ED80042C765 /* UserProfile.swift in Sources */,
+				75F61E941C536ED80042C765 /* User.swift in Sources */,
+				755550451C9E7F6200B734D8 /* Office.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaults.swift in Sources */,
 				91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
