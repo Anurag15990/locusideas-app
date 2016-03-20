@@ -15,7 +15,7 @@ enum BaseRouter: URLRequestConvertible {
     /// Static Endpoint/Base URL being fetched from Info.plist
 //    static let baseURL = NSBundle.mainBundle().objectForInfoDictionaryKey("BASE_API") as! String
     
-    static let baseURL = "http://localhost:3002"
+    static let baseURL = "http://192.168.0.148:3002"
     
     case AuthRouterManager(AuthRouter)
     case UserRouteManager(UserRouter)
@@ -76,7 +76,7 @@ enum BaseRouter: URLRequestConvertible {
         mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if let authToken = NSUserDefaultsUtils.getAuthToken(){
-            mutableURLRequest.setValue("Bearer \(authToken)", forKey: "Authorization")
+            mutableURLRequest.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         }
         
         return mutableURLRequest
