@@ -69,7 +69,9 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let vc = storyboard?.instantiateViewControllerWithIdentifier("ProjectDetailsTableViewController") as! ProjectDetailsTableViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if indexPath.row > 1 {
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("ProjectDetailsTableViewController") as! ProjectDetailsTableViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
