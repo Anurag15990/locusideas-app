@@ -1,23 +1,34 @@
 PODS:
-  - Alamofire (2.0.0)
-  - AlamofireObjectMapper (0.9):
-    - Alamofire (= 2.0.0)
-    - ObjectMapper (= 0.17)
-  - ObjectMapper (0.17)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
+  - Alamofire (3.2.1)
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.6.0)
+  - FBSDKCoreKit (4.10.0):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.10.0):
+    - FBSDKCoreKit
+  - ObjectMapper (1.1.5)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
 
 DEPENDENCIES:
-  - Alamofire (~> 2.0.0)
-  - AlamofireObjectMapper (~> 0.9)
-  - ObjectMapper (~> 0.17)
+  - Alamofire
+  - Bolts
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - ObjectMapper
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
-  Alamofire: 2f13548b29d25a58ecd91c9225fb51493e2b782b
-  AlamofireObjectMapper: 263915f1960f5a5bf00bdb921ceb5b8673e901d4
-  ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
+  FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
+  ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
