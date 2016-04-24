@@ -24,14 +24,20 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: "backButtonPressed:")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_info_outline_white_18pt"), style: .Plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_info_outline_white_18pt"), style: .Plain, target: self, action: "infoButtonPressed:")
         self.title = "Dipankar Rajiblochan Chatterjee"
     }
     
     func backButtonPressed(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func infoButtonPressed(sender: UIButton) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("DesignerInfoDetailTableViewController") as! DesignerInfoDetailTableViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
