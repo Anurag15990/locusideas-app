@@ -66,7 +66,7 @@
 		91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */; };
 		91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */; };
 		91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */; };
-		91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */; };
+		91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABA1C5F37250000F6A8 /* ShadowedContainerView.swift */; };
 		91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */; };
 		91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */; };
 		91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */; };
@@ -75,6 +75,12 @@
 		91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */; };
 		C5375B361CA7C9AE00AA5B06 /* ProjectHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5375B351CA7C9AE00AA5B06 /* ProjectHeaderView.xib */; };
 		C5375B381CA7CFC000AA5B06 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5375B371CA7CFC000AA5B06 /* ProjectHeaderView.swift */; };
+		C540533E1CCA6F1F006DA888 /* DesignerWorkExpCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C540533D1CCA6F1F006DA888 /* DesignerWorkExpCard.xib */; };
+		C54053401CCA6F65006DA888 /* DesignerWorkExpCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C540533F1CCA6F65006DA888 /* DesignerWorkExpCard.swift */; };
+		C5D0C8CE1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D0C8CD1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift */; };
+		C5D0C8D01CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D0C8CF1CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib */; };
+		C5D0C8D21CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D0C8D11CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift */; };
+		C5E539321CC3660B006964EE /* DesignerInfoDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E539311CC3660B006964EE /* DesignerInfoDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,7 +170,7 @@
 		91F084991C735EB100BA3B80 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileInfoCard.swift; sourceTree = "<group>"; };
 		91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
-		91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		91FA8ABA1C5F37250000F6A8 /* ShadowedContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowedContainerView.swift; sourceTree = "<group>"; };
 		91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectInfo.xib; sourceTree = "<group>"; };
 		91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfo.swift; sourceTree = "<group>"; };
 		91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +179,12 @@
 		91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C5375B351CA7C9AE00AA5B06 /* ProjectHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectHeaderView.xib; sourceTree = "<group>"; };
 		C5375B371CA7CFC000AA5B06 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
+		C540533D1CCA6F1F006DA888 /* DesignerWorkExpCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerWorkExpCard.xib; sourceTree = "<group>"; };
+		C540533F1CCA6F65006DA888 /* DesignerWorkExpCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerWorkExpCard.swift; sourceTree = "<group>"; };
+		C5D0C8CD1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerInfoDetailTableViewController.swift; sourceTree = "<group>"; };
+		C5D0C8CF1CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerWorkExperienceHeaderView.xib; sourceTree = "<group>"; };
+		C5D0C8D11CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerWorkExperienceHeaderView.swift; sourceTree = "<group>"; };
+		C5E539311CC3660B006964EE /* DesignerInfoDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerInfoDetailView.xib; sourceTree = "<group>"; };
 		CA8B46F8B61DD6BE6AC7D716 /* Pods-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-client/Pods-client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -391,6 +403,12 @@
 				91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */,
 				C5375B351CA7C9AE00AA5B06 /* ProjectHeaderView.xib */,
 				C5375B371CA7CFC000AA5B06 /* ProjectHeaderView.swift */,
+				C5E539311CC3660B006964EE /* DesignerInfoDetailView.xib */,
+				C5D0C8CD1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift */,
+				C5D0C8CF1CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib */,
+				C5D0C8D11CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift */,
+				C540533D1CCA6F1F006DA888 /* DesignerWorkExpCard.xib */,
+				C540533F1CCA6F65006DA888 /* DesignerWorkExpCard.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -451,7 +469,7 @@
 		91FA8A191C5F36D20000F6A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */,
+				91FA8ABA1C5F37250000F6A8 /* ShadowedContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -598,6 +616,7 @@
 				91954C7A1C60D60E001A0953 /* ProjectDescription.xib in Resources */,
 				91C1B9251C41466300CF0ABC /* Montserrat-ExtraBold.otf in Resources */,
 				91C1B9211C41466300CF0ABC /* fontawesome-webfont.ttf in Resources */,
+				C540533E1CCA6F1F006DA888 /* DesignerWorkExpCard.xib in Resources */,
 				91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */,
 				91C1B9271C41466300CF0ABC /* Montserrat-Light.otf in Resources */,
 				91C1B92A1C41466300CF0ABC /* Montserrat-UltraLight.otf in Resources */,
@@ -608,6 +627,8 @@
 				915C84631C6B842E00736AD3 /* DesignerProfileInfoCard.xib in Resources */,
 				91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */,
 				91C1B9261C41466300CF0ABC /* Montserrat-Hairline.otf in Resources */,
+				C5D0C8D01CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib in Resources */,
+				C5E539321CC3660B006964EE /* DesignerInfoDetailView.xib in Resources */,
 				C5375B361CA7C9AE00AA5B06 /* ProjectHeaderView.xib in Resources */,
 				91C1B91D1C41466300CF0ABC /* Asap-Medium.otf in Resources */,
 				91C1B91F1C41466300CF0ABC /* Asap-Regular.otf in Resources */,
@@ -696,10 +717,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				91954C971C678A0B001A0953 /* ExploreDesignersCard.swift in Sources */,
+				C5D0C8D21CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift in Sources */,
 				91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */,
 				91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */,
 				91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */,
 				91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */,
+				C5D0C8CE1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift in Sources */,
 				91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */,
 				755550411C9E651700B734D8 /* Designer.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
@@ -716,10 +739,11 @@
 				91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */,
 				91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */,
 				75F61E941C536ED80042C765 /* User.swift in Sources */,
+				C54053401CCA6F65006DA888 /* DesignerWorkExpCard.swift in Sources */,
 				755550451C9E7F6200B734D8 /* Office.swift in Sources */,
 				C5375B381CA7CFC000AA5B06 /* ProjectHeaderView.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */,
-				91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */,
+				91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
 				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
 				91954C8F1C675151001A0953 /* ExploreTableViewController.swift in Sources */,

@@ -587,7 +587,7 @@
         <!--Project Details Table View Controller-->
         <scene sceneID="ybh-UG-kgA">
             <objects>
-                <viewController storyboardIdentifier="ProjectDetailsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gxJ-gC-VLo" customClass="ProjectDetailsTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProjectDetailsTableViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gxJ-gC-VLo" customClass="ProjectDetailsTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZUu-sH-lqg"/>
                         <viewControllerLayoutGuide type="bottom" id="lNF-Vh-edB"/>
@@ -597,8 +597,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUQ-tc-wri">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XXJ-wH-aOz">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXJ-wH-aOz" id="i2f-D3-ma9">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="gxJ-gC-VLo" id="gds-eb-I9S"/>
                                     <outlet property="delegate" destination="gxJ-gC-VLo" id="8uM-zt-cRM"/>
@@ -610,7 +620,7 @@
                             <constraint firstAttribute="trailing" secondItem="TUQ-tc-wri" secondAttribute="trailing" id="PUe-Lv-lNv"/>
                             <constraint firstItem="TUQ-tc-wri" firstAttribute="leading" secondItem="zfE-zs-UVY" secondAttribute="leading" id="Ssv-o3-vBS"/>
                             <constraint firstItem="lNF-Vh-edB" firstAttribute="top" secondItem="TUQ-tc-wri" secondAttribute="bottom" id="mas-xs-wNm"/>
-                            <constraint firstItem="TUQ-tc-wri" firstAttribute="top" secondItem="zfE-zs-UVY" secondAttribute="top" id="ywz-3k-173"/>
+                            <constraint firstItem="TUQ-tc-wri" firstAttribute="top" secondItem="zfE-zs-UVY" secondAttribute="top" constant="64" id="ywz-3k-173"/>
                         </constraints>
                     </view>
                     <connections>
@@ -739,7 +749,7 @@
         <!--Designer Profile Table View Controller-->
         <scene sceneID="5k8-Bm-zIO">
             <objects>
-                <viewController storyboardIdentifier="DesignerProfileTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4s-7C-geI" customClass="DesignerProfileTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DesignerProfileTableViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4s-7C-geI" customClass="DesignerProfileTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LST-Qc-pgL"/>
                         <viewControllerLayoutGuide type="bottom" id="rhL-mG-7zc"/>
@@ -749,7 +759,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRN-IF-8vj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="I4s-7C-geI" id="jNF-Qb-S5l"/>
@@ -761,7 +771,7 @@
                         <constraints>
                             <constraint firstItem="rhL-mG-7zc" firstAttribute="top" secondItem="wRN-IF-8vj" secondAttribute="bottom" id="Jnz-Sh-RLe"/>
                             <constraint firstItem="wRN-IF-8vj" firstAttribute="leading" secondItem="7IW-jh-zU5" secondAttribute="leading" id="MzG-Iz-eEY"/>
-                            <constraint firstItem="wRN-IF-8vj" firstAttribute="top" secondItem="7IW-jh-zU5" secondAttribute="top" id="Qyn-Th-RlN"/>
+                            <constraint firstItem="wRN-IF-8vj" firstAttribute="top" secondItem="7IW-jh-zU5" secondAttribute="top" constant="64" id="Qyn-Th-RlN"/>
                             <constraint firstAttribute="trailing" secondItem="wRN-IF-8vj" secondAttribute="trailing" id="UUj-fn-Nm5"/>
                         </constraints>
                     </view>
@@ -772,6 +782,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e63-io-Px4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2558" y="-188"/>
+        </scene>
+        <!--Designer Info Detail Table View Controller-->
+        <scene sceneID="tj7-MD-TKa">
+            <objects>
+                <viewController storyboardIdentifier="DesignerInfoDetailTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="ZWh-59-oBs" customClass="DesignerInfoDetailTableViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mxj-5m-p3z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Myd-mg-mNL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lyM-Bz-cjV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-aj-Fuk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZWh-59-oBs" id="ATn-Te-Zbk"/>
+                                    <outlet property="delegate" destination="ZWh-59-oBs" id="OE1-6l-Lzg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Myd-mg-mNL" firstAttribute="top" secondItem="DPq-aj-Fuk" secondAttribute="bottom" id="gpS-w5-nV2"/>
+                            <constraint firstItem="DPq-aj-Fuk" firstAttribute="leading" secondItem="lyM-Bz-cjV" secondAttribute="leading" id="lBJ-gN-fBg"/>
+                            <constraint firstItem="DPq-aj-Fuk" firstAttribute="top" secondItem="lyM-Bz-cjV" secondAttribute="top" constant="64" id="nH9-1c-CmG"/>
+                            <constraint firstAttribute="trailing" secondItem="DPq-aj-Fuk" secondAttribute="trailing" id="xCv-Ca-mif"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="DPq-aj-Fuk" id="WqJ-IX-7TO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqo-Hp-gGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2985" y="-188"/>
         </scene>
         <!--Upload-->
         <scene sceneID="gAz-kH-WJo">
