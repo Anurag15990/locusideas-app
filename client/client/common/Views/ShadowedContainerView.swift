@@ -13,7 +13,7 @@ class ShadowedContainerView: UIView {
     override func awakeFromNib() {
         self.layer.borderColor = UIColor.lightGrayColor().CGColor
         self.layer.borderWidth = 0.5
-        layer.shadowColor = UIColor(red: 138, green: 138, blue: 138, alpha: 1.0).CGColor
+        layer.shadowColor = UIColor(red: 138.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1.0).CGColor
         layer.shadowOffset = CGSizeMake(0, 0)
         layer.shadowOpacity = 1.0
         layer.shadowRadius = 2.0
