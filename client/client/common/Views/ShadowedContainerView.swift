@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerView: UIView {
+class ShadowedContainerView: UIView {
     
     override func awakeFromNib() {
         self.layer.borderColor = UIColor.lightGrayColor().CGColor

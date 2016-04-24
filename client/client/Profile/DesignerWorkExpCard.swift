@@ -10,7 +10,7 @@ import UIKit
 
 class DesignerWorkExpCard: UITableViewCell {
     
-    @IBOutlet weak var containerView : ContainerView!
+    @IBOutlet weak var containerView : ShadowedContainerView!
     @IBOutlet weak var companyNameLabel : UILabel!
     @IBOutlet weak var designationLabel: UILabel!
     @IBOutlet weak var jobDescriptionLabel : UILabel!

@@ -66,7 +66,7 @@
 		91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEC561C4FDB8A0010A352 /* StreamTableViewController.swift */; };
 		91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */; };
 		91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */; };
-		91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */; };
+		91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABA1C5F37250000F6A8 /* ShadowedContainerView.swift */; };
 		91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */; };
 		91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */; };
 		91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */; };
@@ -170,7 +170,7 @@
 		91F084991C735EB100BA3B80 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileInfoCard.swift; sourceTree = "<group>"; };
 		91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
-		91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		91FA8ABA1C5F37250000F6A8 /* ShadowedContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowedContainerView.swift; sourceTree = "<group>"; };
 		91FA8ABD1C609D3C0000F6A8 /* ProjectInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectInfo.xib; sourceTree = "<group>"; };
 		91FA8ABF1C60A27A0000F6A8 /* ProjectInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfo.swift; sourceTree = "<group>"; };
 		91FA8AC11C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -469,7 +469,7 @@
 		91FA8A191C5F36D20000F6A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				91FA8ABA1C5F37250000F6A8 /* ContainerView.swift */,
+				91FA8ABA1C5F37250000F6A8 /* ShadowedContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -743,7 +743,7 @@
 				755550451C9E7F6200B734D8 /* Office.swift in Sources */,
 				C5375B381CA7CFC000AA5B06 /* ProjectHeaderView.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */,
-				91FA8ABB1C5F37250000F6A8 /* ContainerView.swift in Sources */,
+				91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
 				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
 				91954C8F1C675151001A0953 /* ExploreTableViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 class ExploreDesignersCard: UITableViewCell {
     
-    @IBOutlet weak var containerView : ContainerView!
+    @IBOutlet weak var containerView : ShadowedContainerView!
     @IBOutlet weak var designerProfileImage : UIImageView!
     @IBOutlet weak var designerNameLabel : UILabel!
     @IBOutlet weak var categoryLabel : UILabel!

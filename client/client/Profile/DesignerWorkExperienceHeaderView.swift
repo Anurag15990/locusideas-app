@@ -10,7 +10,7 @@ import UIKit
 
 class DesignerWorkExperienceHeaderView: UITableViewHeaderFooterView {
     
-    @IBOutlet weak var containerView : ContainerView!
+    @IBOutlet weak var containerView : ShadowedContainerView!
     @IBOutlet weak var titleLabel : UILabel!
     
     override func awakeFromNib() {

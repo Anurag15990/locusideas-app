@@ -11,7 +11,7 @@ import UIKit
 
 class StreamDesignCard: UITableViewCell {
     
-    @IBOutlet weak var containerView : ContainerView!
+    @IBOutlet weak var containerView : ShadowedContainerView!
     @IBOutlet weak var designCoverImage : UIImageView!
     @IBOutlet weak var designTitleLabel : UILabel!
     @IBOutlet weak var designerNameLabel : UILabel!
