@@ -23,14 +23,6 @@ class DesignerWorkExpCard: UITableViewCell {
         self.selectionStyle = .None
         containerView.layer.borderWidth = 0.5
         containerView.layer.borderColor = UIColor.lightGrayColor().CGColor
-        
-        companyNameLabel.text = "jabong".uppercaseString
-        designationLabel.text = "UI/UX Design Intern"
-        jobDescriptionLabel.text = "Interned as a graphic designer at Jabong.com and worked on multiple projects including IOFW (India Online Fashion Week), On site and social media creatives."
-        servingPeriodLabel.text = "6 months"
-        
-        
-        
     }
     
     

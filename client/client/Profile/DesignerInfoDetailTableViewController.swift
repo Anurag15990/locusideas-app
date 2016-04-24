@@ -57,6 +57,25 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DesignerWorkExpCard", forIndexPath: indexPath) as! DesignerWorkExpCard
+        
+        switch indexPath.section {
+            
+        case 0 :
+            cell.companyNameLabel.text = "jabong".uppercaseString
+            cell.designationLabel.text = "UI/UX Design Intern"
+            cell.servingPeriodLabel.text = "6 months"
+            cell.jobDescriptionLabel.text = "Interned as a graphic designer at Jabong.com and worked on multiple projects including IOFW (India Online Fashion Week), On site and social media creatives."
+            
+        case 1 :
+            cell.companyNameLabel.text = "national institute of fashion technology, mumbai".uppercaseString
+            cell.designationLabel.text = "Fashion Communication"
+            cell.servingPeriodLabel.text = "August 2012 - Present"
+            cell.jobDescriptionLabel.text = "This course includes Fashion Studies, History and Philosophy of Design, Communication Concepts & Processes, Writing Skills, Consumer Behavior in Fashion, Computer Application, Graphic Design, Visual Merchandising, Photography."
+            
+        default :
+            break
+        }
+        
         return cell
     }
     
