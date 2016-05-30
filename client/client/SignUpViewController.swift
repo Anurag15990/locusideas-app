@@ -54,7 +54,7 @@ class SignUpViewController : UIViewController {
         
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         let fbReadPermissions = ["user_work_history", "user_location", "user_education_history", "email", "user_birthday", "user_friends"]
-        fbLoginManager .logInWithReadPermissions(fbReadPermissions, fromViewController: self) { (result, error) -> Void in
+        fbLoginManager.logInWithReadPermissions(fbReadPermissions, fromViewController: self) { (result, error) -> Void in
             if (error == nil){
                 let fbLoginResult : FBSDKLoginManagerLoginResult = result
                 if(fbLoginResult.grantedPermissions.contains("email")) {

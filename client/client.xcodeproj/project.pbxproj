@@ -23,6 +23,8 @@
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
+		759B5CF71CF77D6300BC6ACE /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B5CF61CF77D6300BC6ACE /* ApplicationAssembly.swift */; };
+		75BD35C41CFCBB6600804682 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD35C31CFCBB6600804682 /* AuthService.swift */; };
 		75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */; };
 		75F61E941C536ED80042C765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* User.swift */; };
 		75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */; };
@@ -124,6 +126,8 @@
 		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		759B5CF61CF77D6300BC6ACE /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		75BD35C31CFCBB6600804682 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
 		75F61E931C536ED80042C765 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailSignInAuthRequestBody.swift; path = ../EmailSignInAuthRequestBody.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				75BD35C21CFCBB4700804682 /* Services */,
+				759B5CF51CF77D4C00BC6ACE /* Assembly */,
 				91F084A41C7AFF5300BA3B80 /* MyProfile */,
 				91954C8D1C6742AA001A0953 /* Profile */,
 				91954C8C1C674296001A0953 /* Upload */,
@@ -357,6 +363,22 @@
 				755550481C9E9B5300B734D8 /* UserRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		759B5CF51CF77D4C00BC6ACE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				759B5CF61CF77D6300BC6ACE /* ApplicationAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		75BD35C21CFCBB4700804682 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				75BD35C31CFCBB6600804682 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		75F61E8F1C535EAE0042C765 /* Utils */ = {
@@ -734,6 +756,7 @@
 				91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				91954C881C64E51B001A0953 /* CAGradientLayer.swift in Sources */,
+				759B5CF71CF77D6300BC6ACE /* ApplicationAssembly.swift in Sources */,
 				7555504E1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
 				91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */,
@@ -742,6 +765,7 @@
 				C54053401CCA6F65006DA888 /* DesignerWorkExpCard.swift in Sources */,
 				755550451C9E7F6200B734D8 /* Office.swift in Sources */,
 				C5375B381CA7CFC000AA5B06 /* ProjectHeaderView.swift in Sources */,
+				75BD35C41CFCBB6600804682 /* AuthService.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */,
 				91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
