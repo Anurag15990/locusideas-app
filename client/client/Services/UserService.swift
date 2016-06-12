@@ -53,5 +53,29 @@ class UserService: NSObject {
     }
     
     
-
+    /**
+     Method to Update User Object corresponding to specific User ID.
+     
+     - parameter userId:          User ID of the user to be updated
+     - parameter requestBody:     User Request Body.
+     - parameter successCallback: Returns if request is successfull.
+     - parameter errorCallback:   Returns if error is encountered.
+     */
+    func updateUser(userId: String,
+                    requestBody: User,
+                    successCallback: (() -> Void),
+                    errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.UpdateUserRequest(userId, requestBody)))
+        .debugLog()
+            .responseString { response in
+                switch response.result {
+                case .Success( _):
+                    successCallback()
+                case .Failure(let error):
+                    errorCallback(error: error)
+                }
+                
+        }
+    }
 }
