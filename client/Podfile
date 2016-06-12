@@ -8,6 +8,7 @@ pod 'SDWebImage', '~> 3.7'
 pod 'Bolts'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
+pod 'Typhoon'
 use_frameworks!
 end
 

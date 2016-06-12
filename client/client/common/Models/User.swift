@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 /// User Profile Object
-class User: NSObject, Mappable {
+class User: BaseRequestBody {
     
     var id: String?
     var firstName: String?
@@ -31,7 +31,7 @@ class User: NSObject, Mappable {
     }
     
     required init?(_ map: Map) {
-
+        super.init(map)
     }
     
     /**
@@ -39,7 +39,7 @@ class User: NSObject, Mappable {
      
      - parameter map: <#map description#>
      */
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         id              <- map["id"]
         firstName       <- map["firstName"]
         lastName        <- map["lastName"]

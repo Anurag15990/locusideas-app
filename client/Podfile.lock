@@ -14,6 +14,9 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - Typhoon (3.4.7):
+    - Typhoon/no-arc (= 3.4.7)
+  - Typhoon/no-arc (3.4.7)
 
 DEPENDENCIES:
   - Alamofire
@@ -22,6 +25,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - ObjectMapper
   - SDWebImage (~> 3.7)
+  - Typhoon
 
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
@@ -30,5 +34,6 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  Typhoon: 0953addabd5a10a930973fcc131c03badc88c4ba
 
 COCOAPODS: 0.39.0

@@ -90,6 +90,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-client/FBSDKLoginKit.framework"
   install_framework "Pods-client/ObjectMapper.framework"
   install_framework "Pods-client/SDWebImage.framework"
+  install_framework "Pods-client/Typhoon.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-client/Alamofire.framework"
@@ -98,4 +99,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-client/FBSDKLoginKit.framework"
   install_framework "Pods-client/ObjectMapper.framework"
   install_framework "Pods-client/SDWebImage.framework"
+  install_framework "Pods-client/Typhoon.framework"
 fi
