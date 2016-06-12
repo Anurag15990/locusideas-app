@@ -90,7 +90,5 @@ class AuthService: NSObject {
                     errorCallback(error: error)
                 }
         }
-
-        
     }
 }
