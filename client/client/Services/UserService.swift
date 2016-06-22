@@ -78,4 +78,31 @@ class UserService: NSObject {
                 
         }
     }
+    
+    /**
+     Method to Fetch A User Object corresponding to a User Id.
+     
+     - parameter userId:          User Id of the user to fetch
+     - parameter successCallback: Returns User Object.
+     - parameter errorCallback:   Returns Error Object.
+     */
+    func getUserById(userId: String,
+                     successCallback: ((user: User) -> Void),
+                     errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetUser(userId)))
+        .debugLog()
+        .responseString { (response) in
+            switch response.result {
+            case .Success(let value):
+                let user = Mapper<User>().map(value)
+                if let user = user {
+                    successCallback(user: user)
+                }
+                
+            case .Failure(let error):
+                errorCallback(error: error)
+            }
+        }
+    }
 }
