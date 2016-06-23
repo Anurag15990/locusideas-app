@@ -9,6 +9,7 @@ pod 'Bolts'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'Typhoon'
+pod 'Cloudinary'
 use_frameworks!
 end
 
