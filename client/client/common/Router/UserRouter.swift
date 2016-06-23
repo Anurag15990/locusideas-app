@@ -16,6 +16,7 @@ enum UserRouter: BaseRouterProtocol {
     case UnfollowUserRequest(UserUnfollowRequestBody)
     case UpdateUserRequest(String, User)
     case GetUser(String)
+    case GetUsers()
     
     var path: String {
         
@@ -35,6 +36,9 @@ enum UserRouter: BaseRouterProtocol {
             
         case .GetUser(let userId):
             return "/api/users/\(userId)"
+            
+        case .GetUsers:
+            return "/api/users"
         }
     
     }
@@ -56,6 +60,9 @@ enum UserRouter: BaseRouterProtocol {
             return .PUT
             
         case .GetUser:
+            return .GET
+            
+        case .GetUsers:
             return .GET
         }
     

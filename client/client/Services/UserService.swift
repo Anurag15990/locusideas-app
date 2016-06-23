@@ -95,11 +95,33 @@ class UserService: NSObject {
         .responseString { (response) in
             switch response.result {
             case .Success(let value):
-                let user = Mapper<User>().map(value)
-                if let user = user {
+                if let user = Mapper<User>().map(value) {
                     successCallback(user: user)
                 }
                 
+            case .Failure(let error):
+                errorCallback(error: error)
+            }
+        }
+    }
+    
+    /**
+     Method to Fetch All Users.
+     
+     - parameter successCallback: Returns an Array of Users
+     - parameter errorCallback:   Returns an Error if Request Fails.
+     */
+    func getUsers(successCallback: ((users: [User]) -> Void),
+                  errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetUsers()))
+        .debugLog()
+        .responseString { (response) in
+            switch response.result {
+            case .Success(let value):
+                if let users = Mapper<User>().mapArray(value) {
+                    successCallback(users: users)
+                }
             case .Failure(let error):
                 errorCallback(error: error)
             }
