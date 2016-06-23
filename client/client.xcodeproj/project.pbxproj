@@ -21,6 +21,9 @@
 		7555504C1C9EA00000B734D8 /* UserFollowRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555504B1C9EA00000B734D8 /* UserFollowRequestBody.swift */; };
 		7555504E1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555504D1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift */; };
 		75623E0D1D1C639B00C83C89 /* CloudinaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75623E0C1D1C639B00C83C89 /* CloudinaryService.swift */; };
+		75623E121D1C6BF100C83C89 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75623E111D1C6BF100C83C89 /* Project.swift */; };
+		75623E151D1C6CF200C83C89 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75623E141D1C6CF200C83C89 /* Media.swift */; };
+		75623E171D1C6E0900C83C89 /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75623E161D1C6E0900C83C89 /* MediaObject.swift */; };
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
@@ -126,6 +129,9 @@
 		7555504B1C9EA00000B734D8 /* UserFollowRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFollowRequestBody.swift; sourceTree = "<group>"; };
 		7555504D1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUnfollowRequestBody.swift; sourceTree = "<group>"; };
 		75623E0C1D1C639B00C83C89 /* CloudinaryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudinaryService.swift; sourceTree = "<group>"; };
+		75623E111D1C6BF100C83C89 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		75623E141D1C6CF200C83C89 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		75623E161D1C6E0900C83C89 /* MediaObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -328,6 +334,23 @@
 			path = UserRequest;
 			sourceTree = "<group>";
 		};
+		75623E101D1C6BE800C83C89 /* ProjectModels */ = {
+			isa = PBXGroup;
+			children = (
+				75623E111D1C6BF100C83C89 /* Project.swift */,
+			);
+			path = ProjectModels;
+			sourceTree = "<group>";
+		};
+		75623E131D1C6CE700C83C89 /* MediaModels */ = {
+			isa = PBXGroup;
+			children = (
+				75623E141D1C6CF200C83C89 /* Media.swift */,
+				75623E161D1C6E0900C83C89 /* MediaObject.swift */,
+			);
+			path = MediaModels;
+			sourceTree = "<group>";
+		};
 		75840D471C4157880075FA37 /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +423,8 @@
 		75F61E921C536ECA0042C765 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75623E131D1C6CE700C83C89 /* MediaModels */,
+				75623E101D1C6BE800C83C89 /* ProjectModels */,
 				7555503F1C9E64F100B734D8 /* UserModels */,
 			);
 			path = Models;
@@ -750,8 +775,10 @@
 				91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */,
 				91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */,
 				91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */,
+				75623E151D1C6CF200C83C89 /* Media.swift in Sources */,
 				C5D0C8CE1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift in Sources */,
 				91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */,
+				75623E121D1C6BF100C83C89 /* Project.swift in Sources */,
 				755550411C9E651700B734D8 /* Designer.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
@@ -775,6 +802,7 @@
 				75BD35C41CFCBB6600804682 /* AuthService.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */,
 				91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */,
+				75623E171D1C6E0900C83C89 /* MediaObject.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
 				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
 				91954C8F1C675151001A0953 /* ExploreTableViewController.swift in Sources */,

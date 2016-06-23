@@ -11,9 +11,9 @@ import Cloudinary
 
 class CloudinaryService: NSObject {
     
-    let API_KEY = "457641541578998"
-    let CLOUD_NAME = "superapp"
-    let API_SECRET = "AwazODq1ZDA7doDmNAOQKkubc"
+    let API_KEY = "592296372413477"
+    let CLOUD_NAME = "dxtera6ex"
+    let API_SECRET = "5wvQF3wE4u8VJs7A37axvlOFpms"
     
     static var sharedInstance = CloudinaryService()
     
