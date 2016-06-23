@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.6.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.6.0)
+  - Bond (4.3.1)
   - Cloudinary (1.0.15)
   - FBSDKCoreKit (4.10.0):
     - Bolts (~> 1.5)
@@ -22,6 +23,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Bolts
+  - Bond
   - Cloudinary
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -32,6 +34,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   Bolts: f52a250053bb517ca874523c3913776359ab3def
+  Bond: 55903fc67f09e8e49791a657163cabba1d6fb29d
   Cloudinary: f80af4565ec08c521d5e58cb56d9fbe1e4595e40
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
