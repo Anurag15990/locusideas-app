@@ -54,6 +54,8 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
                 cell.designTitleLabel.text = title
             }
             
+            cell.designerNameLabel.text = self.viewModel.fetchProjectOwnerName(project)
+            
             return cell
         }
     }
