@@ -61,4 +61,26 @@ class StreamViewModel: NSObject {
         }
         return nil
     }
+    
+    /**
+     Method to fetch Project Owner Name.
+     
+     - parameter project: <#project description#>
+     
+     - returns: <#return value description#>
+     */
+    func fetchProjectOwnerName(project: Project) -> String {
+        
+        var fullName = ""
+        
+        if let firstName = project.owner?.user?.name?.firstName {
+            fullName += firstName + " "
+        }
+        
+        if let lastName = project.owner?.user?.name?.lastName {
+            fullName += lastName + " "
+        }
+        
+        return fullName
+    }
 }
