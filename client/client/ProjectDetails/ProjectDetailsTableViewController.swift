@@ -103,7 +103,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
                 return calculateHeightForString(text)
             }
         }else {
-            return 180
+            return 300
         }
         return 0
     }
