@@ -12,10 +12,8 @@ PODS:
     - Bolts (~> 1.5)
   - FBSDKLoginKit (4.10.0):
     - FBSDKCoreKit
+  - Kingfisher (2.4.1)
   - ObjectMapper (1.1.5)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
   - Typhoon (3.4.7):
     - Typhoon/no-arc (= 3.4.7)
   - Typhoon/no-arc (3.4.7)
@@ -27,8 +25,8 @@ DEPENDENCIES:
   - Cloudinary
   - FBSDKCoreKit
   - FBSDKLoginKit
+  - Kingfisher
   - ObjectMapper
-  - SDWebImage (~> 3.7)
   - Typhoon
 
 SPEC CHECKSUMS:
@@ -38,8 +36,8 @@ SPEC CHECKSUMS:
   Cloudinary: f80af4565ec08c521d5e58cb56d9fbe1e4595e40
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
+  Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   Typhoon: 0953addabd5a10a930973fcc131c03badc88c4ba
 
 COCOAPODS: 0.39.0

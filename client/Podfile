@@ -4,8 +4,8 @@
 target 'client' do
 pod 'Alamofire'
 pod 'ObjectMapper'
-pod 'SDWebImage', '~> 3.7'
 pod 'Bolts'
+pod 'Kingfisher'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'Typhoon'
