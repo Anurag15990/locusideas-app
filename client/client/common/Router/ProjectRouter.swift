@@ -13,6 +13,7 @@ enum ProjectRouter: BaseRouterProtocol {
     
     case GetProjects()
     case GetProjectById(String)
+    case UpdateProject(String, Project)
     
     var path: String {
         
@@ -22,7 +23,10 @@ enum ProjectRouter: BaseRouterProtocol {
             return "/api/projects"
             
         case .GetProjectById(let projectId):
-            return "}/api/projects/\(projectId)"
+            return "/api/projects/\(projectId)"
+            
+        case .UpdateProject(let projectId, _):
+            return "/api/projects/\(projectId)"
         
         }
     }
@@ -37,6 +41,8 @@ enum ProjectRouter: BaseRouterProtocol {
         case .GetProjects:
             return .GET
         
+        case .UpdateProject:
+            return .PUT
         }
     }
     
@@ -54,6 +60,9 @@ enum ProjectRouter: BaseRouterProtocol {
         
         switch self {
         
+        case .UpdateProject(_, let request):
+            return request
+            
         default:
             return BaseRequestBody()
         
