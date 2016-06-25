@@ -29,8 +29,10 @@ class ProjectService: NSObject {
         .responseString { (response) in
             switch response.result {
             case .Success(let value):
-                if let projects = Mapper<Project>().mapArray(value) {
-                    successCallback(projects: projects)
+                if let projectResponse = Mapper<ProjectResponse>().map(value) {
+                    if let projects = projectResponse.projects {
+                        successCallback(projects: projects)
+                    }
                 }
                 
             case .Failure(let error):

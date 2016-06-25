@@ -15,7 +15,7 @@ enum BaseRouter: URLRequestConvertible {
     /// Static Endpoint/Base URL being fetched from Info.plist
 //    static let baseURL = NSBundle.mainBundle().objectForInfoDictionaryKey("BASE_API") as! String
     
-    static let baseURL = "http://192.168.0.148:3002"
+    static let baseURL = "http://api-staging-c3po.locusideas.com"
     
     case AuthRouterManager(AuthRouter)
     case UserRouteManager(UserRouter)

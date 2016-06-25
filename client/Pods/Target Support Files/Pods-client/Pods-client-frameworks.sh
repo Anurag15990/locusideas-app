@@ -90,8 +90,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-client/Cloudinary.framework"
   install_framework "Pods-client/FBSDKCoreKit.framework"
   install_framework "Pods-client/FBSDKLoginKit.framework"
+  install_framework "Pods-client/Kingfisher.framework"
   install_framework "Pods-client/ObjectMapper.framework"
-  install_framework "Pods-client/SDWebImage.framework"
   install_framework "Pods-client/Typhoon.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -101,7 +101,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-client/Cloudinary.framework"
   install_framework "Pods-client/FBSDKCoreKit.framework"
   install_framework "Pods-client/FBSDKLoginKit.framework"
+  install_framework "Pods-client/Kingfisher.framework"
   install_framework "Pods-client/ObjectMapper.framework"
-  install_framework "Pods-client/SDWebImage.framework"
   install_framework "Pods-client/Typhoon.framework"
 fi

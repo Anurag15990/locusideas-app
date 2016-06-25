@@ -49,6 +49,7 @@ public struct NSUserDefaultsUtils {
      - returns: <#return value description#>
      */
     public static func getAuthToken() -> String? {
+        return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NzRiM2I5NzY4YTA3YjM0NWFlYzU1ZDMiLCJ0eXBlIjoiYXV0aGVudGljYXRpb24iLCJleHBpcmVzSW5TZWNvbmRzIjoiOTk5OTkiLCJpc3N1ZXIiOiIvL2FwaS1zdGFnaW5nLWMzcG8ubG9jdXNpZGVhcy5jb20iLCJhdWRpZW5jZSI6Ii8vYXBpLXN0YWdpbmctYzNwby5sb2N1c2lkZWFzLmNvbSIsImlhdCI6MTQ2NDU0ODI0OH0.GDzUdhWDFPrL4lzYO8TbeI5cxu4lq1tDN-GMytdCijc"
         return getObject(userAuthToken) as? String
     }
     

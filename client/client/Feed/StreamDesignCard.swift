@@ -24,8 +24,6 @@ class StreamDesignCard: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        designCoverImage.image = UIImage(named: "Blue_chair.jpg")
-        designTitleLabel.text = "Single seater chair in Phantom blue colour with an ottoman".uppercaseString
         designerNameLabel.text = "Dipankar Rajiblochan Chatterjee"
         categoryLabel.text = "Modern"
         appreciationCountLabel.text = "12345"
@@ -33,6 +31,8 @@ class StreamDesignCard: UITableViewCell {
         
         self.selectionStyle = .None
     }
+    
+    
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

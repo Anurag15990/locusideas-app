@@ -11,6 +11,7 @@
 		753577291D1D8C2400B3B043 /* ProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577281D1D8C2400B3B043 /* ProjectRouter.swift */; };
 		7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772B1D1E849C00B3B043 /* StreamViewModel.swift */; };
 		7535772E1D1E863700B3B043 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772D1D1E863700B3B043 /* ProjectService.swift */; };
+		753577301D1E97C000B3B043 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772F1D1E97C000B3B043 /* ProjectResponse.swift */; };
 		754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */; };
 		754716B41C2EE9A4004ABFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754716B31C2EE9A4004ABFC6 /* Assets.xcassets */; };
 		754716B71C2EE9A4004ABFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754716B51C2EE9A4004ABFC6 /* LaunchScreen.storyboard */; };
@@ -116,6 +117,7 @@
 		753577281D1D8C2400B3B043 /* ProjectRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRouter.swift; sourceTree = "<group>"; };
 		7535772B1D1E849C00B3B043 /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
 		7535772D1D1E863700B3B043 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		7535772F1D1E97C000B3B043 /* ProjectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
 		754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocusIdeas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754716B31C2EE9A4004ABFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				75623E111D1C6BF100C83C89 /* Project.swift */,
+				7535772F1D1E97C000B3B043 /* ProjectResponse.swift */,
 			);
 			path = ProjectModels;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
+				753577301D1E97C000B3B043 /* ProjectResponse.swift in Sources */,
 				755550471C9E88B000B734D8 /* Phone.swift in Sources */,
 				7535772E1D1E863700B3B043 /* ProjectService.swift in Sources */,
 				91954C931C675BC9001A0953 /* DesignerProfileTableViewController.swift in Sources */,
@@ -921,6 +925,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -959,6 +964,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -979,7 +985,7 @@
 				INFOPLIST_FILE = client/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.locusideas.client;
 				PRODUCT_NAME = LocusIdeas;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1000,7 +1006,7 @@
 				INFOPLIST_FILE = client/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.locusideas.client;
 				PRODUCT_NAME = LocusIdeas;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
