@@ -60,6 +60,10 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectInfo", forIndexPath: indexPath) as! ProjectInfo
             cell.projectTitleLabel.text = self.getProjectTitle()
+            cell.designerNameLabel.text = self.getProjectOwnerName()
+            if let profilePicture = self.getProfileImage() {
+                cell.designerProfileImage.kf_setImageWithURL(NSURL(string: profilePicture)!)
+            }
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectDescription", forIndexPath: indexPath) as! ProjectDescription
@@ -117,6 +121,25 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     func getProjectTitle() -> String {
         
         return self.project!.title!
+    }
+    
+    func getProjectOwnerName() -> String {
+        
+        var fullName = ""
+        
+        if let firstName = self.project.owner?.user!.name?.firstName {
+            fullName += firstName + " "
+        }
+        
+        if let lastName = self.project.owner?.user!.name?.lastName {
+            fullName += lastName
+        }
+        return fullName
+    }
+    
+    func getProfileImage() -> String? {
+        
+        return self.project.owner?.user?.picture?.url
     }
     
     func getProjectDescription() -> String? {
