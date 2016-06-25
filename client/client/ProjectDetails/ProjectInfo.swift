@@ -32,6 +32,7 @@ class ProjectInfo: UITableViewCell {
 
         designerProfileImage.layer.cornerRadius = CGFloat(5)
         designerProfileImage.image = UIImage(named: "Nick_Bateman.jpg")
+        designerProfileImage.clipsToBounds = true
         
         followButton.layer.cornerRadius = CGFloat(5)
         followButton.layer.borderWidth = 2

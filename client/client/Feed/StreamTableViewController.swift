@@ -69,9 +69,12 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
         return 430
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath: NSIndexPath) {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let vc = storyboard?.instantiateViewControllerWithIdentifier("ProjectDetailsTableViewController") as! ProjectDetailsTableViewController
+        let project = viewModel.streamArrayObservable.array[indexPath.row]
+        vc.project = project
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

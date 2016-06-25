@@ -12,6 +12,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
 
     @IBOutlet weak var tableView : UITableView!
     
+    var project : Project!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,19 +52,27 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 2 + self.getProjectMediaCount()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectInfo", forIndexPath: indexPath) as! ProjectInfo
+            cell.projectTitleLabel.text = self.getProjectTitle()
+            cell.designerNameLabel.text = self.getProjectOwnerName()
+            if let profilePicture = self.getProfileImage() {
+                cell.designerProfileImage.kf_setImageWithURL(NSURL(string: profilePicture)!)
+            }
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectDescription", forIndexPath: indexPath) as! ProjectDescription
+            cell.descriptionLabel.text = self.getProjectDescription()
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectGalleryCell", forIndexPath: indexPath) as! ProjectGalleryCell
+            let media = self.getProjectMedia()[indexPath.row - 2].media
+            cell.galleryImageView.kf_setImageWithURL(NSURL(string: (media?.url)!)!)
             return cell
         }
     }
@@ -94,11 +103,54 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         if indexPath.row == 0{
             return 160
         } else if indexPath.row == 1{
-            let text = "You might be asking why you need Alamofire in the first place. Apple provides the NSURLSession class and related classes for downloading content via HTTP, so why complicate things with another third party library? The short answer is that Alamofire is based on NSURLSession, but it frees you from writing boilerplate code and makes writing networking code much easier. You can access data on the Internet with very little effort, and your code will be much cleaner and easier to read.To use Alamofire, you first need to import it. To do this, open PhotoBrowserCollectionViewController.swift and add the following line to the top of the file: \n\n You might be asking why you need Alamofire in the first place. Apple provides the NSURLSession class and related classes for downloading content via HTTP, so why complicate things with another third party library? The short answer is that Alamofire is based on NSURLSession, but it frees you from writing boilerplate code and makes writing networking code much easier. You can access data on the Internet with very little effort, and your code will be much cleaner and easier to read.To use Alamofire, you first need to import it. To do this, open PhotoBrowserCollectionViewController.swift and add the following line to the top of the file:"
-            return calculateHeightForString(text)
+            if let text = self.getProjectDescription() {
+                return calculateHeightForString(text)
+            }
         }else {
-            return 180
+            return 300
         }
+        return 0
+    }
+    
+    func getProjectMediaCount() -> Int {
+        
+        return self.project!.medias!.initial!.count
+        
+    }
+    
+    func getProjectTitle() -> String {
+        
+        return self.project!.title!
+    }
+    
+    func getProjectOwnerName() -> String {
+        
+        var fullName = ""
+        
+        if let firstName = self.project.owner?.user!.name?.firstName {
+            fullName += firstName + " "
+        }
+        
+        if let lastName = self.project.owner?.user!.name?.lastName {
+            fullName += lastName
+        }
+        return fullName
+    }
+    
+    func getProfileImage() -> String? {
+        
+        return self.project.owner?.user?.picture?.url
+    }
+    
+    func getProjectDescription() -> String? {
+        
+        return self.project!.projectDescription
+    }
+    
+    func getProjectMedia() -> [MediaObject.InitialMedia] {
+        
+        return self.project!.medias!.initial!
+    
     }
 
     /*

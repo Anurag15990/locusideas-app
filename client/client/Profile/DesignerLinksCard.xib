@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Light.otf">
+            <string>Montserrat-Light</string>
+        </mutableArray>
+        <mutableArray key="materialdesignicons-webfont (1).ttf">
+            <string>MaterialDesignIcons</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="1NQ-oA-Igz" customClass="DesignerLinksCard" customModule="LocusIdeas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1NQ-oA-Igz" id="HZy-2n-Ogf">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9OO-gh-3Oe">
+                        <rect key="frame" x="8" y="8" width="304" height="33"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj9-m2-gC7">
+                                <rect key="frame" x="21" y="6" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Dm4-nC-hiK"/>
+                                    <constraint firstAttribute="width" constant="20" id="RVg-vZ-lGm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MaterialDesignIcons" family="MaterialDesignIcons" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-t5-TlM">
+                                <rect key="frame" x="51" y="6" width="245" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="uhQ-9s-o4c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JRt-t5-TlM" secondAttribute="trailing" constant="8" id="MAt-oh-8HU"/>
+                            <constraint firstItem="JRt-t5-TlM" firstAttribute="leading" secondItem="aj9-m2-gC7" secondAttribute="trailing" constant="10" id="Vut-lh-eUU"/>
+                            <constraint firstItem="aj9-m2-gC7" firstAttribute="leading" secondItem="9OO-gh-3Oe" secondAttribute="leading" constant="21" id="htv-ub-8gy"/>
+                            <constraint firstItem="JRt-t5-TlM" firstAttribute="top" secondItem="9OO-gh-3Oe" secondAttribute="top" constant="6" id="jiw-cT-B3t"/>
+                            <constraint firstItem="aj9-m2-gC7" firstAttribute="top" secondItem="9OO-gh-3Oe" secondAttribute="top" constant="6" id="qY7-B9-pR9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9OO-gh-3Oe" secondAttribute="trailing" constant="8" id="Shf-Rh-bSe"/>
+                    <constraint firstItem="9OO-gh-3Oe" firstAttribute="top" secondItem="HZy-2n-Ogf" secondAttribute="top" constant="8" id="T8H-Xx-2Qn"/>
+                    <constraint firstItem="9OO-gh-3Oe" firstAttribute="leading" secondItem="HZy-2n-Ogf" secondAttribute="leading" constant="8" id="ifm-rE-KD2"/>
+                    <constraint firstAttribute="bottom" secondItem="9OO-gh-3Oe" secondAttribute="bottom" constant="8" id="lNy-rS-Lkr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="9OO-gh-3Oe" id="zEb-bD-Gf9"/>
+                <outlet property="iconLabel" destination="aj9-m2-gC7" id="zRy-ag-EdP"/>
+                <outlet property="linkLabel" destination="JRt-t5-TlM" id="2Cn-vG-MbL"/>
+            </connections>
+            <point key="canvasLocation" x="266" y="92"/>
+        </tableViewCell>
+    </objects>
+</document>
