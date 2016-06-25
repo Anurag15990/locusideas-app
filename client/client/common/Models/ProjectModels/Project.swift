@@ -13,6 +13,7 @@ class Project: BaseRequestBody {
     
     var id: String?
     var title: String?
+    var projectDescription: String?
     var createdAt: String?
     var updatedAt: String?
     var medias: MediaObject?
@@ -28,6 +29,7 @@ class Project: BaseRequestBody {
     override func mapping(map: Map) {
         id          <- map["id"]
         title       <- map["title"]
+        projectDescription <- map["description"]
         createdAt   <- map["createdAt"]
         updatedAt   <- map["updatedAt"]
         medias      <- map["medias"]
