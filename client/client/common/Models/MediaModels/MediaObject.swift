@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class MediaObject: NSObject, Mappable {
+class MediaObject: BaseRequestBody {
  
     var count: String?
     var initial: [InitialMedia]?
@@ -19,17 +19,17 @@ class MediaObject: NSObject, Mappable {
     }
     
     required init?(_ map: Map) {
-        
+        super.init(map)
     }
     
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         
         count   <- map["count"]
         initial <- map["initial"]
     
     }
     
-    class InitialMedia: NSObject, Mappable {
+    class InitialMedia: BaseRequestBody {
         
         var media: Media?
         var position: Int?
@@ -39,10 +39,10 @@ class MediaObject: NSObject, Mappable {
         }
         
         required init?(_ map: Map) {
-            
+            super.init(map)
         }
         
-        func mapping(map: Map) {
+        override func mapping(map: Map) {
             
             media   <- map["media"]
             position    <- map["position"]

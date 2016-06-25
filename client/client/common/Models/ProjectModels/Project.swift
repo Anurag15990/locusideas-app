@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Project: NSObject, Mappable {
+class Project: BaseRequestBody {
     
     var id: String?
     var title: String?
@@ -22,10 +22,10 @@ class Project: NSObject, Mappable {
     }
     
     required init?(_ map: Map) {
-        
+        super.init(map)
     }
     
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         id          <- map["id"]
         title       <- map["title"]
         createdAt   <- map["createdAt"]
