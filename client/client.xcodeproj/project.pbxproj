@@ -86,6 +86,14 @@
 		91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */; };
 		C5375B361CA7C9AE00AA5B06 /* ProjectHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5375B351CA7C9AE00AA5B06 /* ProjectHeaderView.xib */; };
 		C5375B381CA7CFC000AA5B06 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5375B371CA7CFC000AA5B06 /* ProjectHeaderView.swift */; };
+		C5376CEA1D1ECBB60003A531 /* DesignerLinksCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5376CE21D1ECBB60003A531 /* DesignerLinksCard.swift */; };
+		C5376CEB1D1ECBB60003A531 /* DesignerLinksCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5376CE31D1ECBB60003A531 /* DesignerLinksCard.xib */; };
+		C5376CEC1D1ECBB60003A531 /* DesignerSkillsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5376CE41D1ECBB60003A531 /* DesignerSkillsCard.swift */; };
+		C5376CED1D1ECBB60003A531 /* DesignerSkillsCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5376CE51D1ECBB60003A531 /* DesignerSkillsCard.xib */; };
+		C5376CEE1D1ECBB60003A531 /* DesignerStatsCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5376CE61D1ECBB60003A531 /* DesignerStatsCard.xib */; };
+		C5376CEF1D1ECBB60003A531 /* DesignerStatsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5376CE71D1ECBB60003A531 /* DesignerStatsCard.swift */; };
+		C5376CF01D1ECBB60003A531 /* DesignerContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5376CE81D1ECBB60003A531 /* DesignerContactCard.swift */; };
+		C5376CF11D1ECBB60003A531 /* DesignerContactCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5376CE91D1ECBB60003A531 /* DesignerContactCard.xib */; };
 		C540533E1CCA6F1F006DA888 /* DesignerWorkExpCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C540533D1CCA6F1F006DA888 /* DesignerWorkExpCard.xib */; };
 		C54053401CCA6F65006DA888 /* DesignerWorkExpCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C540533F1CCA6F65006DA888 /* DesignerWorkExpCard.swift */; };
 		C5D0C8CE1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D0C8CD1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift */; };
@@ -201,6 +209,14 @@
 		91FCB6A21C3D3D6400652E6B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C5375B351CA7C9AE00AA5B06 /* ProjectHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectHeaderView.xib; sourceTree = "<group>"; };
 		C5375B371CA7CFC000AA5B06 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
+		C5376CE21D1ECBB60003A531 /* DesignerLinksCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerLinksCard.swift; sourceTree = "<group>"; };
+		C5376CE31D1ECBB60003A531 /* DesignerLinksCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerLinksCard.xib; sourceTree = "<group>"; };
+		C5376CE41D1ECBB60003A531 /* DesignerSkillsCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerSkillsCard.swift; sourceTree = "<group>"; };
+		C5376CE51D1ECBB60003A531 /* DesignerSkillsCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerSkillsCard.xib; sourceTree = "<group>"; };
+		C5376CE61D1ECBB60003A531 /* DesignerStatsCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerStatsCard.xib; sourceTree = "<group>"; };
+		C5376CE71D1ECBB60003A531 /* DesignerStatsCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerStatsCard.swift; sourceTree = "<group>"; };
+		C5376CE81D1ECBB60003A531 /* DesignerContactCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerContactCard.swift; sourceTree = "<group>"; };
+		C5376CE91D1ECBB60003A531 /* DesignerContactCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerContactCard.xib; sourceTree = "<group>"; };
 		C540533D1CCA6F1F006DA888 /* DesignerWorkExpCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerWorkExpCard.xib; sourceTree = "<group>"; };
 		C540533F1CCA6F65006DA888 /* DesignerWorkExpCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerWorkExpCard.swift; sourceTree = "<group>"; };
 		C5D0C8CD1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerInfoDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -470,6 +486,14 @@
 		91954C8D1C6742AA001A0953 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C5376CE21D1ECBB60003A531 /* DesignerLinksCard.swift */,
+				C5376CE31D1ECBB60003A531 /* DesignerLinksCard.xib */,
+				C5376CE41D1ECBB60003A531 /* DesignerSkillsCard.swift */,
+				C5376CE51D1ECBB60003A531 /* DesignerSkillsCard.xib */,
+				C5376CE61D1ECBB60003A531 /* DesignerStatsCard.xib */,
+				C5376CE71D1ECBB60003A531 /* DesignerStatsCard.swift */,
+				C5376CE81D1ECBB60003A531 /* DesignerContactCard.swift */,
+				C5376CE91D1ECBB60003A531 /* DesignerContactCard.xib */,
 				91954C921C675BC9001A0953 /* DesignerProfileTableViewController.swift */,
 				915C84621C6B842E00736AD3 /* DesignerProfileInfoCard.xib */,
 				91F0849E1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift */,
@@ -688,6 +712,7 @@
 			files = (
 				91954C7A1C60D60E001A0953 /* ProjectDescription.xib in Resources */,
 				91C1B9251C41466300CF0ABC /* Montserrat-ExtraBold.otf in Resources */,
+				C5376CED1D1ECBB60003A531 /* DesignerSkillsCard.xib in Resources */,
 				91C1B9211C41466300CF0ABC /* fontawesome-webfont.ttf in Resources */,
 				C540533E1CCA6F1F006DA888 /* DesignerWorkExpCard.xib in Resources */,
 				91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */,
@@ -698,12 +723,15 @@
 				91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */,
 				91C1B9221C41466300CF0ABC /* materialdesignicons-webfont (1).ttf in Resources */,
 				915C84631C6B842E00736AD3 /* DesignerProfileInfoCard.xib in Resources */,
+				C5376CF11D1ECBB60003A531 /* DesignerContactCard.xib in Resources */,
 				91FA8ABE1C609D3C0000F6A8 /* ProjectInfo.xib in Resources */,
 				91C1B9261C41466300CF0ABC /* Montserrat-Hairline.otf in Resources */,
 				C5D0C8D01CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib in Resources */,
 				C5E539321CC3660B006964EE /* DesignerInfoDetailView.xib in Resources */,
 				C5375B361CA7C9AE00AA5B06 /* ProjectHeaderView.xib in Resources */,
 				91C1B91D1C41466300CF0ABC /* Asap-Medium.otf in Resources */,
+				C5376CEB1D1ECBB60003A531 /* DesignerLinksCard.xib in Resources */,
+				C5376CEE1D1ECBB60003A531 /* DesignerStatsCard.xib in Resources */,
 				91C1B91F1C41466300CF0ABC /* Asap-Regular.otf in Resources */,
 				91954C7E1C632150001A0953 /* ProjectGalleryCell.xib in Resources */,
 				754716B71C2EE9A4004ABFC6 /* LaunchScreen.storyboard in Resources */,
@@ -791,6 +819,9 @@
 			files = (
 				91954C971C678A0B001A0953 /* ExploreDesignersCard.swift in Sources */,
 				C5D0C8D21CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift in Sources */,
+				C5376CEA1D1ECBB60003A531 /* DesignerLinksCard.swift in Sources */,
+				C5376CF01D1ECBB60003A531 /* DesignerContactCard.swift in Sources */,
+				C5376CEC1D1ECBB60003A531 /* DesignerSkillsCard.swift in Sources */,
 				91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */,
 				91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */,
 				91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */,
@@ -801,6 +832,7 @@
 				75623E121D1C6BF100C83C89 /* Project.swift in Sources */,
 				755550411C9E651700B734D8 /* Designer.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
+				C5376CEF1D1ECBB60003A531 /* DesignerStatsCard.swift in Sources */,
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				753577301D1E97C000B3B043 /* ProjectResponse.swift in Sources */,
