@@ -25,9 +25,9 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: "backButtonPressed:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: #selector(DesignerProfileTableViewController.backButtonPressed(_:)))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_info_outline_white_18pt"), style: .Plain, target: self, action: "infoButtonPressed:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_info_outline_white_18pt"), style: .Plain, target: self, action: #selector(DesignerProfileTableViewController.infoButtonPressed(_:)))
         self.title = "Dipankar Rajiblochan Chatterjee"
     }
     

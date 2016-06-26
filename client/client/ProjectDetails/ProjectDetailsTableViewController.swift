@@ -27,7 +27,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: "backButtonPressed:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: #selector(ProjectDetailsTableViewController.backButtonPressed(_:)))
 
         
 //        self.setNeedsStatusBarAppearanceUpdate()

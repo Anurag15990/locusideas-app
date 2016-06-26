@@ -42,7 +42,7 @@ class SignInViewController: UIViewController {
         twitterSignInView.layer.cornerRadius = CGFloat(5)
         twitterSignInView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
-        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SignInViewController.handleTap(_:)))
         facebookSignInView.addGestureRecognizer(tap)
     }
     
