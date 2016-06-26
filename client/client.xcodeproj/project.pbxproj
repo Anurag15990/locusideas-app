@@ -97,6 +97,7 @@
 		C5376CF11D1ECBB60003A531 /* DesignerContactCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5376CE91D1ECBB60003A531 /* DesignerContactCard.xib */; };
 		C540533E1CCA6F1F006DA888 /* DesignerWorkExpCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C540533D1CCA6F1F006DA888 /* DesignerWorkExpCard.xib */; };
 		C54053401CCA6F65006DA888 /* DesignerWorkExpCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C540533F1CCA6F65006DA888 /* DesignerWorkExpCard.swift */; };
+		C5C4DE2B1D20272800898BFE /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C4DE2A1D20272800898BFE /* ValidationUtils.swift */; };
 		C5D0C8CE1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D0C8CD1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift */; };
 		C5D0C8D01CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D0C8CF1CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib */; };
 		C5D0C8D21CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D0C8D11CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift */; };
@@ -221,6 +222,7 @@
 		C5376CE91D1ECBB60003A531 /* DesignerContactCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerContactCard.xib; sourceTree = "<group>"; };
 		C540533D1CCA6F1F006DA888 /* DesignerWorkExpCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerWorkExpCard.xib; sourceTree = "<group>"; };
 		C540533F1CCA6F65006DA888 /* DesignerWorkExpCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerWorkExpCard.swift; sourceTree = "<group>"; };
+		C5C4DE2A1D20272800898BFE /* ValidationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
 		C5D0C8CD1CC7608400FAAD40 /* DesignerInfoDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerInfoDetailTableViewController.swift; sourceTree = "<group>"; };
 		C5D0C8CF1CC7664500FAAD40 /* DesignerWorkExperienceHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerWorkExperienceHeaderView.xib; sourceTree = "<group>"; };
 		C5D0C8D11CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerWorkExperienceHeaderView.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */,
 				91954C851C64BF00001A0953 /* UIImage_Gradient.swift */,
 				91954C871C64E51B001A0953 /* CAGradientLayer.swift */,
+				C5C4DE2A1D20272800898BFE /* ValidationUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				755550471C9E88B000B734D8 /* Phone.swift in Sources */,
 				7535772E1D1E863700B3B043 /* ProjectService.swift in Sources */,
 				91954C931C675BC9001A0953 /* DesignerProfileTableViewController.swift in Sources */,
+				C5C4DE2B1D20272800898BFE /* ValidationUtils.swift in Sources */,
 				91954C801C638A92001A0953 /* ProjectGalleryCell.swift in Sources */,
 				91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
