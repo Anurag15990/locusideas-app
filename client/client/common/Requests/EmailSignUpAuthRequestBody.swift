@@ -30,7 +30,7 @@ class EmailSignUpAuthRequestBody: BaseRequestBody {
         
         firstName       <- map["firstName"]
         lastName        <- map["lastName"]
-        emailId         <- map["emailId"]
+        emailId         <- map["emailAddress"]
         password        <- map["password"]
         confirmPassword <- map["confirmPassword"]
         

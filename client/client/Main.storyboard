@@ -46,7 +46,7 @@
         <!--Launch Screen View Controller-->
         <scene sceneID="eL1-hF-zGK">
             <objects>
-                <viewController id="Tkx-sK-wez" customClass="LaunchScreenViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchScreenViewController" id="Tkx-sK-wez" customClass="LaunchScreenViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DMU-C1-d9v"/>
                         <viewControllerLayoutGuide type="bottom" id="g6m-nf-NAM"/>
@@ -419,6 +419,9 @@
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonTapped" destination="gXm-Ew-Nrv" eventType="touchUpInside" id="iV4-MB-MaF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-Kq-Xf8">
                                 <rect key="frame" x="107" y="464" width="106" height="21"/>

@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Selected)
         
+        redirectBasedOnLoginStatus()
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
     }
@@ -59,6 +61,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginManager.logOut()
     }
 
+    func redirectBasedOnLoginStatus() {
+        
+        if NSUserDefaultsUtils.getAuthToken() != nil {
+            redirectToTabView()
+        } else {
+            redirectToLoginFlow()
+        }
+    }
+    
+    func redirectToTabView() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        self.window?.rootViewController = vc
+    }
+    
+    func redirectToLoginFlow() {
+     
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LaunchScreenViewController") as! LaunchScreenViewController
+        self.window?.rootViewController = vc
+        
+    }
 
 }
 
