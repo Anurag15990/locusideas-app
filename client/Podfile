@@ -2,10 +2,15 @@
 # platform :ios, '6.0'
 
 target 'client' do
-pod 'Alamofire', '~> 2.0.0'
-pod 'ObjectMapper', '~> 0.17'
-pod 'SDWebImage', '~> 3.7'
-pod 'AlamofireObjectMapper', '~> 0.9'
+pod 'Alamofire'
+pod 'ObjectMapper'
+pod 'Bolts'
+pod 'Kingfisher'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'Typhoon'
+pod 'Cloudinary'
+pod 'Bond'
 use_frameworks!
 end
 
