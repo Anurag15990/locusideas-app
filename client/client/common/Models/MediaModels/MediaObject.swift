@@ -31,6 +31,8 @@ class MediaObject: BaseRequestBody {
     
     class InitialMedia: BaseRequestBody {
         
+        var id: String?
+        var type: String?
         var media: Media?
         var position: Int?
         
@@ -44,6 +46,8 @@ class MediaObject: BaseRequestBody {
         
         override func mapping(map: Map) {
             
+            id      <- map["id"]
+            type    <- map["type"]
             media   <- map["media"]
             position    <- map["position"]
         

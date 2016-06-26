@@ -67,4 +67,31 @@ class ProjectService: NSObject {
             }
         }
     }
+    
+    
+    /**
+     Method to fetch Project Media By Project Id.
+     
+     - parameter projectId:       <#projectId description#>
+     - parameter successCallback: <#successCallback description#>
+     - parameter errorCallback:   <#errorCallback description#>
+     */
+    func fetchProjectMediaById(projectId: String,
+                               successCallback: ((media: ProjectMedia) -> Void),
+                               errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.ProjectRouteManager(ProjectRouter.GetProjectMediaByProjectId(projectId)))
+        .debugLog()
+        .responseString { (response) in
+            switch response.result {
+            case .Success(let value):
+                if let projectMedia = Mapper<ProjectMedia>().map(value) {
+                    successCallback(media: projectMedia)
+                }
+                
+            case .Failure(let error):
+                errorCallback(error: error)
+            }
+        }
+    }
 }
