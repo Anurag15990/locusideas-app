@@ -11,6 +11,9 @@ import Alamofire
 
 class AuthService: NSObject {
     
+    static let sharedInstance = AuthService()
+
+    
     /**
      Method to login via Facebook
      
@@ -31,6 +34,7 @@ class AuthService: NSObject {
                 switch response.result {
                 case .Success(let value):
                     if let token = value["token"] as? String {
+                        NSUserDefaultsUtils.setAuthToken(token)
                         successCallback(token: token)
                     }
                 case .Failure(let error):
@@ -57,6 +61,7 @@ class AuthService: NSObject {
             switch response.result {
             case .Success(let value):
                 if let token = value["token"] as? String {
+                    NSUserDefaultsUtils.setAuthToken(token)
                     successCallback(token: token)
                 }
             case .Failure(let error):
@@ -84,6 +89,7 @@ class AuthService: NSObject {
                 switch response.result {
                 case .Success(let value):
                     if let token = value["token"] as? String {
+                        NSUserDefaultsUtils.setAuthToken(token)
                         successCallback(token: token)
                     }
                 case .Failure(let error):

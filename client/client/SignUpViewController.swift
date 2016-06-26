@@ -83,24 +83,22 @@ class SignUpViewController : UIViewController {
     }
     
     func authenticateWithFacebook(request: FacebookAuthRequestBody){
-        Alamofire.request(BaseRouter.AuthRouterManager(AuthRouter.FacebookAuth(request)))
-            .debugLog()
-            .responseJSON {response in
-                print(response.result)
-                if response.result.isSuccess {
-                    print(response.result.value)
-                    if let value = response.result.value {
-                        if let token = value["token"] as? String{
-                            NSUserDefaultsUtils.setAuthToken(token)
-                            self.getUserDetails()
-                            self.pushToTabView()
-                        }
-                    }
-                    
-                }else {
-                    print(response.result.error)
-                }
+
+        AuthService.sharedInstance.loginWithFacebook(request, successCallback: { (token) in
+            self.getUserDetails()
+            self.pushToTabView()
+            }) { (error) in
+                print(error.localizedDescription)
+        }
+    }
     
+    func registerWithEmail(request: EmailSignUpAuthRequestBody) {
+        
+        AuthService.sharedInstance.registerWithEmail(request, successCallback: { (token) in
+            self.getUserDetails()
+            self.pushToTabView()
+            }) { (error) in
+                print(error.localizedDescription)
         }
     }
     

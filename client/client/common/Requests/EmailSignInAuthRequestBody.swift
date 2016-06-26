@@ -24,7 +24,7 @@ class EmailSignInAuthRequestBody: BaseRequestBody {
     }
     
     override func mapping(map: Map) {
-        emailId     <- map["emailId"]
+        emailId     <- map["emailAddress"]
         password    <- map["password"]
     }
 }

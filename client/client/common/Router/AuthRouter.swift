@@ -25,10 +25,10 @@ enum AuthRouter: BaseRouterProtocol {
         switch self {
      
         case .EmailSignIn:
-            return ""
+            return "/api/users/login"
             
         case .EmailSignUp:
-            return ""
+            return "/api/users/register"
         
         case .FacebookAuth:
             return "/api/users/auth"

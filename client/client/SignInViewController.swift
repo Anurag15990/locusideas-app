@@ -80,22 +80,21 @@ class SignInViewController: UIViewController {
     
     func authenticateWithFacebook(request: FacebookAuthRequestBody) {
 
-        Alamofire.request(BaseRouter.AuthRouterManager(AuthRouter.FacebookAuth(request)))
-        .debugLog()
-            .responseJSON {response in
-                print(response.result)
-                if response.result.isSuccess {
-                    print(response.result.value)
-                    if let value = response.result.value {
-                        if let token = value["token"] as? String {
-                        NSUserDefaultsUtils.setAuthToken(token)
-                        self.getUserDetails()
-                        self.pushToTabView()
-                        }
-                    }
-                } else {
-                    print(response.result.error)
-                }
+        AuthService.sharedInstance.loginWithFacebook(request, successCallback: { (token) in
+            self.getUserDetails()
+            self.pushToTabView()
+            }) { (error) in
+                print(error.localizedDescription)
+        }
+    }
+    
+    func loginWithEmail(request: EmailSignInAuthRequestBody) {
+        
+        AuthService.sharedInstance.loginWithEmail(request, successCallback: { (token) in
+            self.getUserDetails()
+            self.pushToTabView()
+            }) { (error) in
+                print(error.localizedDescription)
         }
     }
     
@@ -114,6 +113,21 @@ class SignInViewController: UIViewController {
                     print(response.result.error)
                 }
         }
+    }
+    
+    @IBAction func signInButtonTapped() {
+        
+        if !ValidationUtils.isEmptyTextField(signInEmail) && ValidationUtils.isValidEmail(signInEmail.text!) && !ValidationUtils.isEmptyTextField(signInPassword) {
+            
+            let signInRequestBody = EmailSignInAuthRequestBody()
+            signInRequestBody.emailId = signInEmail.text
+            signInRequestBody.password = signInPassword.text
+            
+            self.loginWithEmail(signInRequestBody)
+        } else {
+            print("Validation Failed!")
+        }
+        
     }
     
     func pushToTabView() {
