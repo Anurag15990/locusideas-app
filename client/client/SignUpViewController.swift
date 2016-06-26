@@ -120,6 +120,20 @@ class SignUpViewController : UIViewController {
         }
     }
     
+    @IBAction func signUpButtonTapped() {
+    
+        if !ValidationUtils.isEmptyTextField(signUpEmail) && ValidationUtils.isValidEmail(signUpEmail.text!) && !ValidationUtils.isEmptyTextField(signUpPassword) && !ValidationUtils.isEmptyTextField(signUpName) && !ValidationUtils.isEmptyTextField(confirmPassword) {
+            
+            let signUpRequestBody = EmailSignUpAuthRequestBody()
+            signUpRequestBody.emailId = signUpEmail.text
+            signUpRequestBody.password = signUpPassword.text
+            
+            self.registerWithEmail(signUpRequestBody)
+        } else {
+            print("Validation Failed!")
+        }
+    }
+    
     func pushToTabView() {
         
         let vc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
