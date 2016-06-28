@@ -33,6 +33,7 @@
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
 		759B5CF71CF77D6300BC6ACE /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B5CF61CF77D6300BC6ACE /* ApplicationAssembly.swift */; };
+		75A0CC271D2300E8004CA024 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0CC261D2300E8004CA024 /* UserResponse.swift */; };
 		75BD35C41CFCBB6600804682 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD35C31CFCBB6600804682 /* AuthService.swift */; };
 		75BD35C61CFCC01600804682 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD35C51CFCC01600804682 /* UserService.swift */; };
 		75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */; };
@@ -155,6 +156,7 @@
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		759B5CF61CF77D6300BC6ACE /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		75A0CC261D2300E8004CA024 /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		75BD35C31CFCBB6600804682 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		75BD35C51CFCC01600804682 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				75F61E931C536ED80042C765 /* User.swift */,
 				755550441C9E7F6200B734D8 /* Office.swift */,
 				755550461C9E88AF00B734D8 /* Phone.swift */,
+				75A0CC261D2300E8004CA024 /* UserResponse.swift */,
 			);
 			path = UserModels;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
 				753577301D1E97C000B3B043 /* ProjectResponse.swift in Sources */,
 				755550471C9E88B000B734D8 /* Phone.swift in Sources */,
+				75A0CC271D2300E8004CA024 /* UserResponse.swift in Sources */,
 				7535772E1D1E863700B3B043 /* ProjectService.swift in Sources */,
 				91954C931C675BC9001A0953 /* DesignerProfileTableViewController.swift in Sources */,
 				C5C4DE2B1D20272800898BFE /* ValidationUtils.swift in Sources */,

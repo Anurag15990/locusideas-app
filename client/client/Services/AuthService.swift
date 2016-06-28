@@ -12,7 +12,6 @@ import Alamofire
 class AuthService: NSObject {
     
     static let sharedInstance = AuthService()
-
     
     /**
      Method to login via Facebook

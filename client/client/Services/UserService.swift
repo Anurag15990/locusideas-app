@@ -12,6 +12,8 @@ import ObjectMapper
 
 class UserService: NSObject {
     
+    static let sharedInstance = UserService()
+    
     /**
      Method to get User Details from the API. Stores the user details in NSUserDefaults and returns the Locally Stored Object.
      
@@ -119,7 +121,8 @@ class UserService: NSObject {
         .responseString { (response) in
             switch response.result {
             case .Success(let value):
-                if let users = Mapper<User>().mapArray(value) {
+                let userResponse = Mapper<UserResponse>().map(value)
+                if let users = userResponse?.users {
                     successCallback(users: users)
                 }
             case .Failure(let error):
