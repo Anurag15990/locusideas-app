@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tkx-sK-wez">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tkx-sK-wez">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -571,7 +571,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRv-Fe-76r" id="6f2-P5-Bhd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -610,7 +610,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXJ-wH-aOz" id="i2f-D3-ma9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -667,11 +667,11 @@
             </objects>
             <point key="canvasLocation" x="1269" y="273"/>
         </scene>
-        <!--Trending-->
+        <!--Designs-->
         <scene sceneID="aSM-LR-ylm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q7Z-2U-tGi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trending" image="ic_trending_up_white_18pt" selectedImage="ic_trending_up_white_18pt" id="Sb3-if-iZH"/>
+                    <tabBarItem key="tabBarItem" title="Designs" image="ic_trending_up_white_18pt" selectedImage="ic_trending_up_white_18pt" id="Sb3-if-iZH"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="K37-fC-Jh7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U0E-0z-Qz0">
@@ -864,11 +864,11 @@
             </objects>
             <point key="canvasLocation" x="1793" y="1265"/>
         </scene>
-        <!--Explore-->
+        <!--Designers-->
         <scene sceneID="xb7-ry-bf4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wmc-A0-mB5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="ic_explore_white_18pt" selectedImage="ic_explore_white_18pt" id="Agy-Wp-xmc"/>
+                    <tabBarItem key="tabBarItem" title="Designers" image="ic_explore_white_18pt" selectedImage="ic_explore_white_18pt" id="Agy-Wp-xmc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dYW-To-7Ju">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
