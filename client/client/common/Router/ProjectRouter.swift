@@ -30,7 +30,7 @@ enum ProjectRouter: BaseRouterProtocol {
             return "/api/projects/\(projectId)"
             
         case .GetProjectMediaByProjectId(let projectId):
-            return "/api/projects/\(projectId)/media"
+            return "/api/projects/\(projectId)/medias"
         
         }
     }
