@@ -19,6 +19,8 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
         tableView.registerNib(UINib(nibName: "DesignerWorkExperienceHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "DesignerWorkExperienceHeaderView")
         tableView.registerNib(UINib(nibName: "DesignerSkillsCard", bundle: nil), forCellReuseIdentifier: "DesignerSkillsCard")
         tableView.registerNib(UINib(nibName: "DesignerLinksCard", bundle: nil), forCellReuseIdentifier: "DesignerLinksCard")
+        tableView.registerNib(UINib(nibName: "DesignerContactCard", bundle: nil), forCellReuseIdentifier: "DesignerContactCard")
+
 
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]

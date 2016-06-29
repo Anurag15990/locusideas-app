@@ -19,6 +19,7 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         tableView.registerNib(UINib(nibName: "ProjectHeaderView", bundle: nil), forCellReuseIdentifier: "ProjectHeaderView")
         tableView.registerNib(UINib(nibName: "StreamDesignCard", bundle: nil), forCellReuseIdentifier: "StreamDesignCard")
         
+        
         tableView.separatorStyle = .None
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
