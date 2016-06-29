@@ -12,6 +12,10 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
     
     @IBOutlet weak var tableView : UITableView!
     
+    var user: User!
+    
+    var viewModel: DesignerProfileViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +26,11 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         
         tableView.separatorStyle = .None
         
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -29,7 +38,8 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: #selector(DesignerProfileTableViewController.backButtonPressed(_:)))
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_info_outline_white_18pt"), style: .Plain, target: self, action: #selector(DesignerProfileTableViewController.infoButtonPressed(_:)))
-        self.title = "Dipankar Rajiblochan Chatterjee"
+        
+        self.title = viewModel.fetchUserName()
     }
     
     func backButtonPressed(sender: UIButton) {
@@ -63,14 +73,33 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
+            
             let cell = tableView.dequeueReusableCellWithIdentifier("DesignerProfileInfoCard", forIndexPath: indexPath) as! DesignerProfileInfoCard
+            
+            if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
+                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
+            }
+
+            if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl() {
+                cell.profileImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
+            }
+            
+            cell.nameLabel.text = viewModel.fetchUserName()
+            cell.locationLabel.attributedText = viewModel.fetchLocationText()
+            
+            cell.locationLabel.textAlignment = .Center
             return cell
+        
         } else if indexPath.row == 1 {
+            
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectHeaderView", forIndexPath: indexPath) as! ProjectHeaderView
             return cell
+        
         } else {
+        
             let cell = tableView.dequeueReusableCellWithIdentifier("StreamDesignCard", forIndexPath: indexPath) as! StreamDesignCard
             return cell
+        
         }
     }
     
@@ -81,4 +110,5 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
 }

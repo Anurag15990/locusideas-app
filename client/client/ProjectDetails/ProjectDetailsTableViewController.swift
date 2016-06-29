@@ -165,17 +165,32 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         return 0
     }
     
+    /**
+     Method to Get Media Count
+     
+     - returns: <#return value description#>
+     */
     func getProjectMediaCount() -> Int {
         
         return self.medias.count
         
     }
     
+    /**
+     Method to Get Project Title.
+     
+     - returns: <#return value description#>
+     */
     func getProjectTitle() -> String {
         
         return self.project!.title!
     }
     
+    /**
+     Method to Get Project Owner Name
+     
+     - returns: <#return value description#>
+     */
     func getProjectOwnerName() -> String {
         
         var fullName = ""
@@ -190,6 +205,11 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         return fullName
     }
     
+    /**
+     Method to Get Profile Image of the User.
+     
+     - returns: <#return value description#>
+     */
     func getProfileImage() -> String? {
         
         return self.project.owner?.user?.picture?.url
@@ -206,6 +226,13 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     
     }
     
+    /**
+     Method to Open Gallery Image View with all Photos Array and Selected Photo Index.
+     
+     - parameter photos:       <#photos description#>
+     - parameter animatedView: <#animatedView description#>
+     - parameter index:        <#index description#>
+     */
     func showImage(photos: [IDMPhoto], animatedView:UIView, index: UInt) {
         let browser:IDMPhotoBrowser = IDMPhotoBrowser(photos: photos,animatedFromView: animatedView)
         browser.displayArrowButton = true
