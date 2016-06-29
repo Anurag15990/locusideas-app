@@ -42,13 +42,36 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
      Method to Assign Media Array.
      */
     func assignMediasArray() {
-        self.medias = self.getProjectMedia()
         
-        for media in self.medias {
-            self.photos.append(constructIDMPhoto(media))
+        ProjectService.sharedInstance.fetchProjectMediaById(self.project.id!, successCallback: { (media) in
+           
+            if let projectMedias = media.projectMedias {
+                
+                self.medias = projectMedias
+                
+                for media in self.medias {
+                    self.photos.append(self.constructIDMPhoto(media))
+                }
+                
+                self.tableView.reloadData()
+            
+            }
+            
+            
+        }) { (error) in
+                print(error.localizedDescription)
         }
+        
+       
     }
     
+    /**
+     Method to Construct IDM Photo from Media Object.
+     
+     - parameter media: <#media description#>
+     
+     - returns: <#return value description#>
+     */
     func constructIDMPhoto(media: MediaObject.InitialMedia) -> IDMPhoto {
         let photoObj:IDMPhoto = IDMPhoto()
         
@@ -95,7 +118,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectGalleryCell", forIndexPath: indexPath) as! ProjectGalleryCell
-            let media = self.getProjectMedia()[indexPath.row - 2].media
+            let media = self.medias[indexPath.row - 2].media
             cell.galleryImageView.kf_setImageWithURL(NSURL(string: (media?.url)!)!)
             return cell
         }
@@ -103,7 +126,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row != 0 && indexPath.row != 1 {
-            showImage(self.photos, animatedView: tableView.cellForRowAtIndexPath(indexPath)!.contentView)
+            showImage(self.photos, animatedView: tableView.cellForRowAtIndexPath(indexPath)!.contentView, index: UInt(indexPath.row - 2))
         }
     }
     
@@ -183,13 +206,14 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     
     }
     
-    func showImage(photos: [IDMPhoto], animatedView:UIView) {
+    func showImage(photos: [IDMPhoto], animatedView:UIView, index: UInt) {
         let browser:IDMPhotoBrowser = IDMPhotoBrowser(photos: photos,animatedFromView: animatedView)
         browser.displayArrowButton = true
         browser.displayCounterLabel = false
         browser.displayActionButton = false
         browser.displayDoneButton = true
         browser.delegate = self
+        browser.setInitialPageIndex(index)
         self.presentViewController(browser, animated: true, completion: nil)
     }
 
