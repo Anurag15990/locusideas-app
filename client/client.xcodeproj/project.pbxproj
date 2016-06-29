@@ -14,6 +14,7 @@
 		753577301D1E97C000B3B043 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772F1D1E97C000B3B043 /* ProjectResponse.swift */; };
 		753577321D20169500B3B043 /* ProjectMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577311D20169500B3B043 /* ProjectMedia.swift */; };
 		753577531D21746300B3B043 /* ExploreDesignersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577521D21746300B3B043 /* ExploreDesignersViewModel.swift */; };
+		753C569C1D245FC7008EB35E /* DesignerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C569B1D245FC7008EB35E /* DesignerProfileViewModel.swift */; };
 		754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */; };
 		754716B41C2EE9A4004ABFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754716B31C2EE9A4004ABFC6 /* Assets.xcassets */; };
 		754716B71C2EE9A4004ABFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754716B51C2EE9A4004ABFC6 /* LaunchScreen.storyboard */; };
@@ -131,6 +132,7 @@
 		7535772F1D1E97C000B3B043 /* ProjectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
 		753577311D20169500B3B043 /* ProjectMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMedia.swift; sourceTree = "<group>"; };
 		753577521D21746300B3B043 /* ExploreDesignersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExploreDesignersViewModel.swift; path = ../ExploreDesignersViewModel.swift; sourceTree = "<group>"; };
+		753C569B1D245FC7008EB35E /* DesignerProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileViewModel.swift; sourceTree = "<group>"; };
 		754716A71C2EE9A4004ABFC6 /* LocusIdeas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocusIdeas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754716AA1C2EE9A4004ABFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754716B31C2EE9A4004ABFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -281,6 +283,14 @@
 			isa = PBXGroup;
 			children = (
 				753577521D21746300B3B043 /* ExploreDesignersViewModel.swift */,
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+		753C569A1D245FBA008EB35E /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				753C569B1D245FC7008EB35E /* DesignerProfileViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -503,6 +513,7 @@
 		91954C8D1C6742AA001A0953 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				753C569A1D245FBA008EB35E /* viewModels */,
 				C5376CE21D1ECBB60003A531 /* DesignerLinksCard.swift */,
 				C5376CE31D1ECBB60003A531 /* DesignerLinksCard.xib */,
 				C5376CE41D1ECBB60003A531 /* DesignerSkillsCard.swift */,
@@ -889,6 +900,7 @@
 				75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */,
 				755550491C9E9B5300B734D8 /* UserRouter.swift in Sources */,
 				753577531D21746300B3B043 /* ExploreDesignersViewModel.swift in Sources */,
+				753C569C1D245FC7008EB35E /* DesignerProfileViewModel.swift in Sources */,
 				7555504C1C9EA00000B734D8 /* UserFollowRequestBody.swift in Sources */,
 				75623E0D1D1C639B00C83C89 /* CloudinaryService.swift in Sources */,
 				91954C911C675A49001A0953 /* UploadTableViewController.swift in Sources */,

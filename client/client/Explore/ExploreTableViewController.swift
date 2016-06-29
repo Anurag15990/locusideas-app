@@ -66,6 +66,8 @@ class ExploreTableViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let vc = storyboard?.instantiateViewControllerWithIdentifier("DesignerProfileTableViewController") as! DesignerProfileTableViewController
+        let designerViewModel = DesignerProfileViewModel(user: viewModel.designersObservableArray[indexPath.row])
+        vc.viewModel = designerViewModel
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

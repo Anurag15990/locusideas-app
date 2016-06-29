@@ -31,7 +31,7 @@ class DesignerProfileInfoCard : UITableViewCell {
         
         profileImageView.layer.cornerRadius = 5.0
         profileImageView.layer.borderWidth = 2
-        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        profileImageView.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.60).CGColor
         profileImageView.clipsToBounds = true
         
         coverImageView.clipsToBounds = true
