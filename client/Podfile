@@ -11,6 +11,8 @@ pod 'FBSDKLoginKit'
 pod 'Typhoon'
 pod 'Cloudinary'
 pod 'Bond'
+pod 'IDMPhotoBrowser'
+
 use_frameworks!
 end
 

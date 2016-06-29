@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import IDMPhotoBrowser
+import Kingfisher
 
-class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, IDMPhotoBrowserDelegate {
 
     @IBOutlet weak var tableView : UITableView!
     
     var project : Project!
+    
+    var medias =  Array<MediaObject.InitialMedia>()
+    
+    var photos = [IDMPhoto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +35,36 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: #selector(ProjectDetailsTableViewController.backButtonPressed(_:)))
 
+        self.assignMediasArray()
+    }
+    
+    /**
+     Method to Assign Media Array.
+     */
+    func assignMediasArray() {
+        self.medias = self.getProjectMedia()
         
-//        self.setNeedsStatusBarAppearanceUpdate()
+        for media in self.medias {
+            self.photos.append(constructIDMPhoto(media))
+        }
+    }
+    
+    func constructIDMPhoto(media: MediaObject.InitialMedia) -> IDMPhoto {
+        let photoObj:IDMPhoto = IDMPhoto()
         
+        if let url = media.media?.url {
+            
+            photoObj.photoURL = NSURL(string: url)
+
+        }
+        
+        return photoObj
     }
     
     func backButtonPressed(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
     }
     
-//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return .LightContent
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,6 +98,12 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
             let media = self.getProjectMedia()[indexPath.row - 2].media
             cell.galleryImageView.kf_setImageWithURL(NSURL(string: (media?.url)!)!)
             return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row != 0 && indexPath.row != 1 {
+            showImage(self.photos, animatedView: tableView.cellForRowAtIndexPath(indexPath)!.contentView)
         }
     }
     
@@ -114,7 +144,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
     
     func getProjectMediaCount() -> Int {
         
-        return self.project!.medias!.initial!.count
+        return self.medias.count
         
     }
     
@@ -151,6 +181,16 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         
         return self.project!.medias!.initial!
     
+    }
+    
+    func showImage(photos: [IDMPhoto], animatedView:UIView) {
+        let browser:IDMPhotoBrowser = IDMPhotoBrowser(photos: photos,animatedFromView: animatedView)
+        browser.displayArrowButton = true
+        browser.displayCounterLabel = false
+        browser.displayActionButton = false
+        browser.displayDoneButton = true
+        browser.delegate = self
+        self.presentViewController(browser, animated: true, completion: nil)
     }
 
     /*
