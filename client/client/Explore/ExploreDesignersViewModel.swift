@@ -25,7 +25,7 @@ class ExploreDesignersViewModel: NSObject {
      */
     func fetchUsers() {
         
-        UserService.sharedInstance.getUsers({ (users) in
+        UserService.sharedInstance.getDesigners({ (users) in
             self.designersObservableArray.removeAll()
             self.designersObservableArray.appendContentsOf(users)
             }) { (error) in

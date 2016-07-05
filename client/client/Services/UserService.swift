@@ -130,4 +130,28 @@ class UserService: NSObject {
             }
         }
     }
+    
+    /**
+     Method to Fetch All Users.
+     
+     - parameter successCallback: Returns an Array of Users
+     - parameter errorCallback:   Returns an Error if Request Fails.
+     */
+    func getDesigners(successCallback: ((users: [User]) -> Void),
+                  errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetDesigners()))
+            .debugLog()
+            .responseString { (response) in
+                switch response.result {
+                case .Success(let value):
+                    let userResponse = Mapper<UserResponse>().map(value)
+                    if let users = userResponse?.userDesigners {
+                        successCallback(users: users)
+                    }
+                case .Failure(let error):
+                    errorCallback(error: error)
+                }
+        }
+    }
 }

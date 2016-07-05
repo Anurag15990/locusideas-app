@@ -12,6 +12,7 @@ import ObjectMapper
 class UserResponse: NSObject, Mappable {
     
     var users: [User]?
+    var userDesigners: [User]?
     
     override init() {
         super.init()
@@ -23,5 +24,6 @@ class UserResponse: NSObject, Mappable {
     
     func mapping(map: Map) {
         users <- map["users"]
+        userDesigners <- map["userDesigners"]
     }
 }
