@@ -17,6 +17,7 @@ enum UserRouter: BaseRouterProtocol {
     case UpdateUserRequest(String, User)
     case GetUser(String)
     case GetUsers()
+    case GetDesigners()
     
     var path: String {
         
@@ -39,6 +40,9 @@ enum UserRouter: BaseRouterProtocol {
             
         case .GetUsers:
             return "/api/users"
+            
+        case .GetDesigners:
+            return "/api/users/designers"
         }
     
     }
@@ -63,6 +67,9 @@ enum UserRouter: BaseRouterProtocol {
             return .GET
             
         case .GetUsers:
+            return .GET
+            
+        case .GetDesigners:
             return .GET
         }
     
