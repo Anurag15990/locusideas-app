@@ -8,16 +8,23 @@
 
 import UIKit
 import Kingfisher
+import NVActivityIndicatorView
 
 class StreamTableViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView : UITableView!
     
     var viewModel: StreamViewModel!
-
+    
+    var loaderContainerView: UIView!
+    var loadingView: NVActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        constructLoaderView()
+        
         viewModel = StreamViewModel()
         
         setupNavigationBar()
@@ -58,6 +65,21 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
             
             return cell
         }
+        
+        viewModel.progressObservable.observe { (progress) in
+            switch progress {
+            case .None:
+                break
+                
+            case .InProgress:
+                self.loaderContainerView.hidden = false
+                break
+                
+            case .Finished:
+                self.loaderContainerView.hidden = true
+                break
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +88,18 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
     }
 
 
+    func constructLoaderView() {
+        self.loaderContainerView = UIView(frame: self.view.frame)
+        loaderContainerView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
+        self.loadingView = NVActivityIndicatorView(frame: CGRectMake(UIScreen.mainScreen().bounds.width / 2 - 25, UIScreen.mainScreen().bounds.height / 2 - 80, 50, 50))
+        loadingView.color = UIColor(red: 72.0/255.0, green: 172.0/255.0, blue: 158.0/255.0, alpha: 1.0)
+        loadingView.type = .BallClipRotate
+        loadingView.startAnimation()
+        loaderContainerView.addSubview(loadingView)
+        self.view.addSubview(loaderContainerView)
+        self.loaderContainerView.hidden = true
+    }
+    
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 430

@@ -18,6 +18,7 @@ PODS:
     - pop
     - SDWebImage
   - Kingfisher (2.4.1)
+  - NVActivityIndicatorView (2.9)
   - ObjectMapper (1.1.5)
   - pop (1.0.9)
   - SDWebImage (3.8.1):
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - IDMPhotoBrowser
   - Kingfisher
+  - NVActivityIndicatorView
   - ObjectMapper
   - Typhoon
 
@@ -49,6 +51,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   IDMPhotoBrowser: b574fe3229754e701f32df271afbc4ac7e4e1997
   Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
+  NVActivityIndicatorView: 0084f6be71bdf4735b5424ebfb530b1e3db3276c
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91

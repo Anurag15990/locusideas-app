@@ -12,6 +12,7 @@ pod 'Typhoon'
 pod 'Cloudinary'
 pod 'Bond'
 pod 'IDMPhotoBrowser'
+pod 'NVActivityIndicatorView'
 
 use_frameworks!
 end

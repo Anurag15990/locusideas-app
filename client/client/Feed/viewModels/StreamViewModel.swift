@@ -13,6 +13,7 @@ class StreamViewModel: NSObject {
     
     var streamArrayObservable = ObservableArray<Project>()
     var errorMessage = Observable<String>("")
+    var progressObservable = Observable<ProgressIndicator>(.None)
     
     override init() {
         super.init()
@@ -23,14 +24,17 @@ class StreamViewModel: NSObject {
      Method to fetch Projects.
      */
     func fetchProjects() {
+        progressObservable.next(.InProgress)
         ProjectService.sharedInstance.fetchProjects(
             { (projects) in
                 
                 self.streamArrayObservable.removeAll()
                 self.streamArrayObservable.appendContentsOf(projects)
+                self.progressObservable.next(.Finished)
             
             }) { (error) in
                 self.errorMessage.next(error.localizedDescription)
+                self.progressObservable.next(.Finished)
         }
     }
     
