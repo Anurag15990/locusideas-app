@@ -14,6 +14,10 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
 
     @IBOutlet weak var tableView : UITableView!
     
+    private var screenWidth = UIScreen.mainScreen().bounds.size.width
+    private var imageViewHeight: CGFloat = 300
+
+    
     var project : Project!
     
     var medias =  Array<MediaObject.InitialMedia>()
@@ -160,7 +164,14 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
                 return calculateHeightForString(text)
             }
         }else {
-            return 300
+            if let media = self.medias[indexPath.row - 2].media {
+                let imageRatio: CGFloat = CGFloat(media.height!) / CGFloat(media.width!)
+                if imageRatio == 0 || imageRatio < 0 {
+                    return imageViewHeight
+                }
+                return screenWidth * imageRatio
+            }
+            return imageViewHeight
         }
         return 0
     }
