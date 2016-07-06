@@ -95,4 +95,17 @@ class ExploreTableViewController: UIViewController, UITableViewDelegate {
         vc.viewModel = designerViewModel
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= 0 {
+            if let total = viewModel.paging?.total {
+                if viewModel.designersObservableArray.array.count < total {
+                    viewModel.fetchNextSetOfUsers()
+                }
+            }
+        }
+    }
 }

@@ -18,6 +18,19 @@ enum UserRouter: BaseRouterProtocol {
     case GetUser(String)
     case GetUsers()
     case GetDesigners()
+    case GetDesignersByURL(String)
+    
+    var baseURL: String {
+        switch  self {
+        
+        case .GetDesignersByURL(let url):
+            return url
+        
+        default:
+            return BaseRouter.baseURL
+        
+        }
+    }
     
     var path: String {
         
@@ -43,6 +56,9 @@ enum UserRouter: BaseRouterProtocol {
             
         case .GetDesigners:
             return "/api/users/designers"
+            
+        case .GetDesignersByURL:
+            return ""
         }
     
     }
@@ -71,6 +87,10 @@ enum UserRouter: BaseRouterProtocol {
             
         case .GetDesigners:
             return .GET
+            
+        case .GetDesignersByURL:
+            return .GET
+            
         }
     
     }

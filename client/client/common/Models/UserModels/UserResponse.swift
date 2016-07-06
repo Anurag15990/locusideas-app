@@ -13,6 +13,7 @@ class UserResponse: NSObject, Mappable {
     
     var users: [User]?
     var userDesigners: [User]?
+    var paging: Pagination?
     
     override init() {
         super.init()
@@ -25,5 +26,6 @@ class UserResponse: NSObject, Mappable {
     func mapping(map: Map) {
         users <- map["users"]
         userDesigners <- map["userDesigners"]
+        paging  <- map["paging"]
     }
 }

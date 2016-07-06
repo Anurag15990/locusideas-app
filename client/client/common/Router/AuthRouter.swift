@@ -20,6 +20,10 @@ enum AuthRouter: BaseRouterProtocol {
     case EmailSignUp(EmailSignUpAuthRequestBody)
     case FacebookAuth(FacebookAuthRequestBody)
     
+    var baseURL: String {
+        return BaseRouter.baseURL
+    }
+    
     var path: String {
         
         switch self {

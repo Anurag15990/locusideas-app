@@ -16,6 +16,14 @@ enum ProjectRouter: BaseRouterProtocol {
     case UpdateProject(String, Project)
     case GetProjectMediaByProjectId(String)
     
+    var baseURL: String {
+        switch self {
+       
+        default:
+            return BaseRouter.baseURL
+        }
+    }
+    
     var path: String {
         
         switch self {

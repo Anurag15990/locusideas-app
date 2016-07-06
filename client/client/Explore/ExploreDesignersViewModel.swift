@@ -13,6 +13,8 @@ class ExploreDesignersViewModel: NSObject {
     
     var designersObservableArray = ObservableArray<User>()
     
+    var paging: Pagination?
+    
     var errorObservable = Observable<String>("")
     var progressObservable = Observable<ProgressIndicator>(.None)
     
@@ -26,13 +28,31 @@ class ExploreDesignersViewModel: NSObject {
      */
     func fetchUsers() {
         progressObservable.next(.InProgress)
-        UserService.sharedInstance.getDesigners({ (users) in
+        UserService.sharedInstance.getDesigners({ (users, paging) in
+            self.paging = paging
             self.designersObservableArray.removeAll()
             self.designersObservableArray.appendContentsOf(users)
             self.progressObservable.next(.Finished)
             }) { (error) in
                 self.errorObservable.value = error.localizedDescription
                 self.progressObservable.next(.Finished)
+        }
+    }
+    
+    /**
+     Method to fetch Next Set of Users.
+     */
+    func fetchNextSetOfUsers() {
+        if let nextURL = paging?.next {
+            progressObservable.next(.InProgress)
+            UserService.sharedInstance.getDesignersByURL(nextURL, successCallback: { (users, paging) in
+                self.paging = paging
+                self.designersObservableArray.appendContentsOf(users)
+                self.progressObservable.next(.Finished)
+            }) { (error) in
+                self.errorObservable.value = error.localizedDescription
+                self.progressObservable.next(.Finished)
+            }
         }
     }
     
