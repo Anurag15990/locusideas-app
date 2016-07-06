@@ -21,12 +21,19 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var facebookSignInView : UIView! = FBSDKLoginButton()
     @IBOutlet weak var twitterSignInView : UIView!
     
+    var loaderContainerView: LoaderView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        constructLoaderView()
         setupInitialView()
     }
   
+    func constructLoaderView() {
+        loaderContainerView = LoaderView(frame: self.view.frame)
+        self.view.addSubview(loaderContainerView)
+        loaderContainerView.hidden = true
+    }
     
     /**
      Initial Setup For the view components
@@ -61,7 +68,7 @@ class SignInViewController: UIViewController {
     }
     
     func getFBUserData() {
-        
+        loaderContainerView.hidden = false
         let params = ["fields": "id, name, first_name, last_name, picture.type(large), email, work, location, education, friends, birthday, gender"]
         
         if((FBSDKAccessToken.currentAccessToken()) != nil) {
@@ -81,6 +88,7 @@ class SignInViewController: UIViewController {
     func authenticateWithFacebook(request: FacebookAuthRequestBody) {
 
         AuthService.sharedInstance.loginWithFacebook(request, successCallback: { (token) in
+            self.loaderContainerView.hidden = true
             self.getUserDetails()
             self.pushToTabView()
             }) { (error) in
@@ -89,9 +97,10 @@ class SignInViewController: UIViewController {
     }
     
     func loginWithEmail(request: EmailSignInAuthRequestBody) {
-        
+        self.loaderContainerView.hidden = false
         AuthService.sharedInstance.loginWithEmail(request, successCallback: { (token) in
             self.getUserDetails()
+            self.loaderContainerView.hidden = true
             self.pushToTabView()
             }) { (error) in
                 print(error.localizedDescription)

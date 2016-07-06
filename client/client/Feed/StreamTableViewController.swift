@@ -8,16 +8,21 @@
 
 import UIKit
 import Kingfisher
+import NVActivityIndicatorView
 
 class StreamTableViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView : UITableView!
     
     var viewModel: StreamViewModel!
-
+    
+    var loaderContainerView: LoaderView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        constructLoaderView()
+        
         viewModel = StreamViewModel()
         
         setupNavigationBar()
@@ -58,6 +63,21 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
             
             return cell
         }
+        
+        viewModel.progressObservable.observe { (progress) in
+            switch progress {
+            case .None:
+                break
+                
+            case .InProgress:
+                self.loaderContainerView.hidden = false
+                break
+                
+            case .Finished:
+                self.loaderContainerView.hidden = true
+                break
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +86,11 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
     }
 
 
+    func constructLoaderView() {
+        loaderContainerView = LoaderView(frame: self.view.frame)
+        self.view.addSubview(loaderContainerView)
+    }
+    
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 430
