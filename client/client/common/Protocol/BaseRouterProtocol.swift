@@ -15,6 +15,8 @@ import Alamofire
 
 protocol BaseRouterProtocol {
     
+    var baseURL: String { get }
+    
     var path: String { get }
 
     var method: Alamofire.Method { get }

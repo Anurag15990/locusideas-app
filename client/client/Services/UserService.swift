@@ -137,7 +137,7 @@ class UserService: NSObject {
      - parameter successCallback: Returns an Array of Users
      - parameter errorCallback:   Returns an Error if Request Fails.
      */
-    func getDesigners(successCallback: ((users: [User]) -> Void),
+    func getDesigners(successCallback: ((users: [User], pagination: Pagination?) -> Void),
                   errorCallback: ((error: NSError) -> Void)) {
         
         Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetDesigners()))
@@ -147,11 +147,37 @@ class UserService: NSObject {
                 case .Success(let value):
                     let userResponse = Mapper<UserResponse>().map(value)
                     if let users = userResponse?.userDesigners {
-                        successCallback(users: users)
+                        successCallback(users: users, pagination: userResponse?.paging)
                     }
                 case .Failure(let error):
                     errorCallback(error: error)
                 }
+        }
+    }
+    
+    /**
+     Method to fetch designers by URL. 
+     
+     - parameter url:             <#url description#>
+     - parameter successCallback: <#successCallback description#>
+     - parameter errorCallback:   <#errorCallback description#>
+     */
+    func getDesignersByURL(url: String,
+                           successCallback: ((users: [User], pagination: Pagination?) -> Void),
+                           errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetDesignersByURL(url)))
+        .debugLog()
+        .responseString { (response) in
+            switch response.result {
+            case .Success(let value):
+                let userResponse = Mapper<UserResponse>().map(value)
+                if let users = userResponse?.userDesigners {
+                    successCallback(users: users, pagination: userResponse?.paging)
+                }
+            case .Failure(let error):
+                errorCallback(error: error)
+            }
         }
     }
 }

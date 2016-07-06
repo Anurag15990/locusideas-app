@@ -104,6 +104,19 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
         vc.project = project
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= 0 {
+            if let total = viewModel.paging?.total {
+                if viewModel.streamArrayObservable.array.count < total {
+                    viewModel.fetchNextSetOfProjects()
+                }
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

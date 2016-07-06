@@ -39,6 +39,7 @@
 		75BD35C61CFCC01600804682 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD35C51CFCC01600804682 /* UserService.swift */; };
 		75BE37FB1D2CF88300508B97 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FA1D2CF88300508B97 /* ProgressIndicator.swift */; };
 		75BE37FD1D2D065A00508B97 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FC1D2D065A00508B97 /* LoaderView.swift */; };
+		75BE37FF1D2D255100508B97 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FE1D2D255100508B97 /* Pagination.swift */; };
 		75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */; };
 		75F61E941C536ED80042C765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* User.swift */; };
 		75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */; };
@@ -165,6 +166,7 @@
 		75BD35C51CFCC01600804682 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		75BE37FA1D2CF88300508B97 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		75BE37FC1D2D065A00508B97 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		75BE37FE1D2D255100508B97 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
 		75F61E931C536ED80042C765 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		75F61E951C53708D0042C765 /* EmailSignInAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailSignInAuthRequestBody.swift; path = ../EmailSignInAuthRequestBody.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				75623E131D1C6CE700C83C89 /* MediaModels */,
 				75623E101D1C6BE800C83C89 /* ProjectModels */,
 				7555503F1C9E64F100B734D8 /* UserModels */,
+				75BE37FE1D2D255100508B97 /* Pagination.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */,
 				75BE37FB1D2CF88300508B97 /* ProgressIndicator.swift in Sources */,
 				75BD35C61CFCC01600804682 /* UserService.swift in Sources */,
+				75BE37FF1D2D255100508B97 /* Pagination.swift in Sources */,
 				759B5CF71CF77D6300BC6ACE /* ApplicationAssembly.swift in Sources */,
 				753577291D1D8C2400B3B043 /* ProjectRouter.swift in Sources */,
 				7555504E1C9EA0BA00B734D8 /* UserUnfollowRequestBody.swift in Sources */,

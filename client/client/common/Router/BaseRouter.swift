@@ -52,7 +52,7 @@ enum BaseRouter: URLRequestConvertible {
      */
     func configureRequest(requestObj: BaseRouterProtocol) -> NSMutableURLRequest {
         
-        let url = NSURL(string: BaseRouter.baseURL)!
+        let url = NSURL(string: requestObj.baseURL)!
         
         /// Set Request Path
         let mutableURLRequest = NSMutableURLRequest(URL: url.URLByAppendingPathComponent(requestObj.path))
