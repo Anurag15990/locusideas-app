@@ -16,9 +16,7 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
     
     var viewModel: StreamViewModel!
     
-    var loaderContainerView: UIView!
-    var loadingView: NVActivityIndicatorView!
-    
+    var loaderContainerView: LoaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,15 +87,8 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
 
 
     func constructLoaderView() {
-        self.loaderContainerView = UIView(frame: self.view.frame)
-        loaderContainerView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
-        self.loadingView = NVActivityIndicatorView(frame: CGRectMake(UIScreen.mainScreen().bounds.width / 2 - 25, UIScreen.mainScreen().bounds.height / 2 - 80, 50, 50))
-        loadingView.color = UIColor(red: 72.0/255.0, green: 172.0/255.0, blue: 158.0/255.0, alpha: 1.0)
-        loadingView.type = .BallClipRotate
-        loadingView.startAnimation()
-        loaderContainerView.addSubview(loadingView)
+        loaderContainerView = LoaderView(frame: self.view.frame)
         self.view.addSubview(loaderContainerView)
-        self.loaderContainerView.hidden = true
     }
     
     

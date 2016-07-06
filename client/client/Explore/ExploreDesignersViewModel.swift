@@ -14,6 +14,7 @@ class ExploreDesignersViewModel: NSObject {
     var designersObservableArray = ObservableArray<User>()
     
     var errorObservable = Observable<String>("")
+    var progressObservable = Observable<ProgressIndicator>(.None)
     
     override init() {
         super.init()
@@ -24,12 +25,14 @@ class ExploreDesignersViewModel: NSObject {
      Method to fetch Users from the API.
      */
     func fetchUsers() {
-        
+        progressObservable.next(.InProgress)
         UserService.sharedInstance.getDesigners({ (users) in
             self.designersObservableArray.removeAll()
             self.designersObservableArray.appendContentsOf(users)
+            self.progressObservable.next(.Finished)
             }) { (error) in
                 self.errorObservable.value = error.localizedDescription
+                self.progressObservable.next(.Finished)
         }
     }
     

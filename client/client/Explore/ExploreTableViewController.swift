@@ -13,9 +13,14 @@ class ExploreTableViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView : UITableView!
     
     var viewModel: ExploreDesignersViewModel!
+
+    var loaderContainerView: LoaderView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.constructLoaderView()
         
         viewModel = ExploreDesignersViewModel()
         tableView.registerNib(UINib(nibName: "ExploreDesignersCard", bundle: nil), forCellReuseIdentifier: "ExploreDesignersCard")
@@ -57,6 +62,26 @@ class ExploreTableViewController: UIViewController, UITableViewDelegate {
             cell.designerNameLabel.text = self.viewModel.fetchUserName(user)
             return cell
         }
+        
+        viewModel.progressObservable.observe { (progressStatus) in
+            switch progressStatus {
+            case .None:
+                break
+                
+            case .InProgress:
+                self.loaderContainerView.hidden = false
+                break
+                
+            case .Finished:
+                self.loaderContainerView.hidden = true
+                break
+            }
+        }
+    }
+    
+    func constructLoaderView() {
+        loaderContainerView = LoaderView(frame: self.view.frame)
+        self.view.addSubview(loaderContainerView)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
