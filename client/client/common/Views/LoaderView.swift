@@ -26,4 +26,15 @@ class LoaderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
+        self.loadingView = NVActivityIndicatorView(frame: CGRectMake(self.frame.size.width / 2, self.frame.size.height / 2, 50, 50))
+        loadingView.color = UIColor(red: 72.0/255.0, green: 172.0/255.0, blue: 158.0/255.0, alpha: 1.0)
+        loadingView.type = .BallClipRotate
+        loadingView.startAnimation()
+        self.addSubview(loadingView)
+    }
 }

@@ -21,7 +21,7 @@ enum ProjectRouter: BaseRouterProtocol {
         switch self {
             
         case .GetProjectsByURL(let url):
-            return url
+            return "http:" + url
             
         default:
             return BaseRouter.baseURL

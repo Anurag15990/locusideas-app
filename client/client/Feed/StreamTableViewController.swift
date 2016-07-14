@@ -16,15 +16,13 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
     
     var viewModel: StreamViewModel!
     
-    var loaderContainerView: LoaderView!
+    @IBOutlet weak var loaderContainerView: LoaderView!
     
     private var screenWidth = UIScreen.mainScreen().bounds.size.width
     private var imageViewHeight: CGFloat = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        constructLoaderView()
         
         viewModel = StreamViewModel()
         
@@ -74,7 +72,6 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
                 
             case .InProgress:
                 self.loaderContainerView.hidden = false
-                self.view.bringSubviewToFront(self.loaderContainerView)
                 break
                 
             case .Finished:
@@ -88,13 +85,6 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    func constructLoaderView() {
-        loaderContainerView = LoaderView(frame: self.view.frame)
-        self.view.addSubview(loaderContainerView)
-    }
-    
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let project = viewModel.streamArrayObservable.array[indexPath.row]
