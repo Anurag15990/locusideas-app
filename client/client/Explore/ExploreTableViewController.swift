@@ -14,14 +14,12 @@ class ExploreTableViewController: UIViewController, UITableViewDelegate {
     
     var viewModel: ExploreDesignersViewModel!
 
-    var loaderContainerView: LoaderView!
+    @IBOutlet weak var loaderContainerView: LoaderView!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.constructLoaderView()
-        
+                
         viewModel = ExploreDesignersViewModel()
         tableView.registerNib(UINib(nibName: "ExploreDesignersCard", bundle: nil), forCellReuseIdentifier: "ExploreDesignersCard")
         tableView.separatorStyle = .None
@@ -77,11 +75,6 @@ class ExploreTableViewController: UIViewController, UITableViewDelegate {
                 break
             }
         }
-    }
-    
-    func constructLoaderView() {
-        loaderContainerView = LoaderView(frame: self.view.frame)
-        self.view.addSubview(loaderContainerView)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
