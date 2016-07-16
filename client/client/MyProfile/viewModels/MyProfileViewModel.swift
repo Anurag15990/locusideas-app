@@ -88,19 +88,36 @@ class MyProfileViewModel: NSObject {
      
      - returns: <#return value description#>
      */
-    func fetchUserEmail() -> NSAttributedString? {
+    func fetchUserEmail() -> String? {
+        return self.user.emailPrimary?.address
+    }
+    
+    /**
+     Method to fetch User Primary Contact Number.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserPrimaryContact() -> String? {
+        return self.user.contact?.phone?.primary?.subscriberNumber
+    }
+    
+    /**
+     Method to fetch Number Of Sections For TableView Based on Data.
+     
+     - returns: <#return value description#>
+     */
+    func fetchNumberOfRowsForTableView() -> Int {
         
-        if let email = user.emailPrimary?.address {
-            
-            let emailText = ""
-            
-            let attributedText = NSMutableAttributedString(string: "\(emailText)  \(email)", attributes: [NSFontAttributeName:UIFont(name: "Asap-Medium", size: 14.0)!])
-            
-            attributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "MaterialDesignIcons", size: 15.0)!, range: NSRange(location: 0, length: 1))
-            
-            return attributedText
+        var initialValue = 1
+        
+        if let _ = user.emailPrimary?.address {
+            initialValue += 1
         }
         
-        return nil
+        if let _ = user.contact?.phone?.primary {
+            initialValue += 1
+        }
+        
+        return initialValue
     }
 }

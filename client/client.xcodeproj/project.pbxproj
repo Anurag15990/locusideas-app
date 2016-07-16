@@ -42,6 +42,7 @@
 		75BE37FB1D2CF88300508B97 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FA1D2CF88300508B97 /* ProgressIndicator.swift */; };
 		75BE37FD1D2D065A00508B97 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FC1D2D065A00508B97 /* LoaderView.swift */; };
 		75BE37FF1D2D255100508B97 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FE1D2D255100508B97 /* Pagination.swift */; };
+		75D5A4A01D3A276900728CD9 /* ProfileContactInfoReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */; };
 		75E8E4661D39666600D42401 /* UserMeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8E4651D39666600D42401 /* UserMeResponse.swift */; };
 		75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */; };
 		75F61E941C536ED80042C765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* User.swift */; };
@@ -172,6 +173,7 @@
 		75BE37FA1D2CF88300508B97 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		75BE37FC1D2D065A00508B97 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		75BE37FE1D2D255100508B97 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContactInfoReusableCell.swift; sourceTree = "<group>"; };
 		75E8E4651D39666600D42401 /* UserMeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMeResponse.swift; sourceTree = "<group>"; };
 		75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
 		75F61E931C536ED80042C765 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				755AF2071D39531F0028601C /* MyProfileHeaderCell.swift */,
+				75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */,
 			);
 			name = views;
 			path = View;
@@ -930,6 +933,7 @@
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
 				91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */,
 				91F0849F1C7AEE9400BA3B80 /* DesignerProfileInfoCard.swift in Sources */,
+				75D5A4A01D3A276900728CD9 /* ProfileContactInfoReusableCell.swift in Sources */,
 				75F61E941C536ED80042C765 /* User.swift in Sources */,
 				C54053401CCA6F65006DA888 /* DesignerWorkExpCard.swift in Sources */,
 				753577321D20169500B3B043 /* ProjectMedia.swift in Sources */,

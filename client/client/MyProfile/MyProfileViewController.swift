@@ -13,6 +13,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView! 
     
     var profileHeaderCellIdentifier = "MyProfileHeaderCell"
+    var profileContactInfoReusableCell = "ProfileContactInfoReusableCell"
     var viewModel: MyProfileViewModel!
     
     override func viewDidLoad() {
@@ -31,28 +32,51 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.viewModel.fetchNumberOfRowsForTableView()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 300
+        if indexPath.row == 0 {
+            return 300
+        }
+        
+        return 53
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(self.profileHeaderCellIdentifier, forIndexPath: indexPath) as! MyProfileHeaderCell
         
-        if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
-            cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
+        switch  indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier(self.profileHeaderCellIdentifier, forIndexPath: indexPath) as! MyProfileHeaderCell
+            
+            if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
+                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
+            }
+            
+            if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl() {
+                cell.profilePictureImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
+            }
+            
+            cell.nameLabel.text = self.viewModel.fetchUserName()
+            cell.locationLabel.attributedText = self.viewModel.fetchUserLocation()
+            
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
+            cell.typeIconLabel.text = ""
+            cell.dataLabel.text = self.viewModel.fetchUserEmail()
+            return cell
+            
+        case 2:
+            let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
+            cell.typeIconLabel.text = ""
+            cell.dataLabel.text = self.viewModel.fetchUserPrimaryContact()
+            return cell
+            
+        default:
+            return UITableViewCell()
         }
-        
-        if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl() {
-            cell.profilePictureImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
-        }
-        
-        cell.nameLabel.text = self.viewModel.fetchUserName()
-        cell.locationLabel.attributedText = self.viewModel.fetchUserLocation()
-        
-        return cell
     }
     
     /*
