@@ -101,23 +101,85 @@ class MyProfileViewModel: NSObject {
         return self.user.contact?.phone?.primary?.subscriberNumber
     }
     
+    func fetchUserWebsite() -> String? {
+        return self.user.links?.website?.primary
+    }
+    
+    func fetchUserSocialLink(index: Int) -> (String, String)? {
+        if let social = self.user.links?.social {
+            let socialObject = social[index]
+            
+            switch  socialObject.type! {
+            
+            case "facebook":
+                return ("", socialObject.url!)
+            
+            case "twitter":
+                return ("", socialObject.url!)
+                
+            case "instagram":
+                return ("", socialObject.url!)
+                
+            case "linkedIn":
+                return ("", socialObject.url!)
+            
+            default:
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    
     /**
      Method to fetch Number Of Sections For TableView Based on Data.
      
      - returns: <#return value description#>
      */
-    func fetchNumberOfRowsForTableView() -> Int {
+    func fetchNumberOfRowsForTableView(section: Int) -> Int {
         
-        var initialValue = 1
-        
-        if let _ = user.emailPrimary?.address {
-            initialValue += 1
+        switch  section {
+        case 0:
+            return 1
+            
+        case 1:
+            
+            var initialValue = 0
+            
+            if let _ = user.emailPrimary?.address {
+                initialValue += 1
+            }
+            
+            if let _ = user.contact?.phone?.primary {
+                initialValue += 1
+            }
+            
+            return initialValue
+            
+        case 2:
+            var initialValue = 0
+            
+            if let _ = self.user.links?.website {
+                initialValue += 1
+            }
+            
+            if let socialLinks = self.user.links?.social {
+                initialValue += socialLinks.count
+            }
+            
+            if let articles = self.user.links?.articles {
+                initialValue += articles.count
+            }
+            
+            if let others = self.user.links?.others {
+                initialValue += others.count
+            }
+            
+            return initialValue
+        default:
+            return 0
         }
         
-        if let _ = user.contact?.phone?.primary {
-            initialValue += 1
-        }
-        
-        return initialValue
     }
 }

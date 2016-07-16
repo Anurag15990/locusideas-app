@@ -43,6 +43,8 @@
 		75BE37FD1D2D065A00508B97 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FC1D2D065A00508B97 /* LoaderView.swift */; };
 		75BE37FF1D2D255100508B97 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE37FE1D2D255100508B97 /* Pagination.swift */; };
 		75D5A4A01D3A276900728CD9 /* ProfileContactInfoReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */; };
+		75D5A4A21D3A4F1200728CD9 /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A4A11D3A4F1200728CD9 /* MyProfileHeaderView.swift */; };
+		75D5A4A41D3A4F2800728CD9 /* MyProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D5A4A31D3A4F2800728CD9 /* MyProfileHeaderView.xib */; };
 		75E8E4661D39666600D42401 /* UserMeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8E4651D39666600D42401 /* UserMeResponse.swift */; };
 		75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */; };
 		75F61E941C536ED80042C765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* User.swift */; };
@@ -174,6 +176,8 @@
 		75BE37FC1D2D065A00508B97 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		75BE37FE1D2D255100508B97 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContactInfoReusableCell.swift; sourceTree = "<group>"; };
+		75D5A4A11D3A4F1200728CD9 /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
+		75D5A4A31D3A4F2800728CD9 /* MyProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileHeaderView.xib; sourceTree = "<group>"; };
 		75E8E4651D39666600D42401 /* UserMeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMeResponse.swift; sourceTree = "<group>"; };
 		75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
 		75F61E931C536ED80042C765 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
@@ -402,6 +406,8 @@
 			children = (
 				755AF2071D39531F0028601C /* MyProfileHeaderCell.swift */,
 				75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */,
+				75D5A4A11D3A4F1200728CD9 /* MyProfileHeaderView.swift */,
+				75D5A4A31D3A4F2800728CD9 /* MyProfileHeaderView.xib */,
 			);
 			name = views;
 			path = View;
@@ -792,6 +798,7 @@
 				C540533E1CCA6F1F006DA888 /* DesignerWorkExpCard.xib in Resources */,
 				91C1B9291C41466300CF0ABC /* Montserrat-SemiBold.otf in Resources */,
 				91C1B9271C41466300CF0ABC /* Montserrat-Light.otf in Resources */,
+				75D5A4A41D3A4F2800728CD9 /* MyProfileHeaderView.xib in Resources */,
 				91C1B92A1C41466300CF0ABC /* Montserrat-UltraLight.otf in Resources */,
 				91C1B9201C41466300CF0ABC /* CoveredByYourGrace.ttf in Resources */,
 				91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */,
@@ -947,6 +954,7 @@
 				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
 				91954C8F1C675151001A0953 /* ExploreTableViewController.swift in Sources */,
 				75F61E981C5371900042C765 /* AuthRouter.swift in Sources */,
+				75D5A4A21D3A4F1200728CD9 /* MyProfileHeaderView.swift in Sources */,
 				75E8E4661D39666600D42401 /* UserMeResponse.swift in Sources */,
 				754716AB1C2EE9A4004ABFC6 /* AppDelegate.swift in Sources */,
 				7555503E1C9D4D9D00B734D8 /* FacebookAuthRequestBody.swift in Sources */,

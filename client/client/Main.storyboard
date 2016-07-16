@@ -740,10 +740,16 @@
         <scene sceneID="drS-tx-8G1">
             <objects>
                 <viewController id="MB3-aj-Dkm" customClass="MyProfileViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="190" sectionHeaderHeight="28" sectionFooterHeight="28" id="8hs-lO-1fv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="190" sectionHeaderHeight="28" sectionFooterHeight="28" id="8hs-lO-1fv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Vdj-nP-ZQ9">
+                            <rect key="frame" x="0.0" y="463" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyProfileHeaderCell" rowHeight="310" id="xYW-zm-sZP" customClass="MyProfileHeaderCell" customModule="LocusIdeas" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="310"/>

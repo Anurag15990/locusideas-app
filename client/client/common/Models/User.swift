@@ -132,7 +132,7 @@ class User: BaseRequestBody {
     
     class Links: NSObject, Mappable {
         
-        var primary: String?
+        var website: Website?
         var social: [LinkType]?
         var articles: [LinkType]?
         var others: [LinkType]?
@@ -146,7 +146,7 @@ class User: BaseRequestBody {
         }
         
         func mapping(map: Map) {
-            primary     <- map["primary"]
+            website     <- map["website"]
             social      <- map["social"]
             articles    <- map["articles"]
             others      <- map["others"]
@@ -170,7 +170,24 @@ class User: BaseRequestBody {
             func mapping(map: Map) {
                 type    <- map["type"]
                 title   <- map["title"]
-                url     <- map["url"]
+                url     <- map["uri"]
+            }
+        }
+        
+        class Website: NSObject, Mappable {
+            
+            var primary: String?
+            
+            override init() {
+                super.init()
+            }
+            
+            required init?(_ map: Map) {
+                
+            }
+            
+            func mapping(map: Map) {
+                primary     <- map["primary"]
             }
         }
     }

@@ -14,6 +14,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var profileHeaderCellIdentifier = "MyProfileHeaderCell"
     var profileContactInfoReusableCell = "ProfileContactInfoReusableCell"
+    var profileHeaderView = "MyProfileHeaderView"
     var viewModel: MyProfileViewModel!
     
     override func viewDidLoad() {
@@ -24,19 +25,20 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         setupNavigationBar()
         
         self.viewModel = MyProfileViewModel()
+        tableView.registerNib(UINib(nibName: profileHeaderView, bundle: nil), forHeaderFooterViewReuseIdentifier: profileHeaderView)
         self.tableView.reloadData()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.fetchNumberOfRowsForTableView()
+        return self.viewModel.fetchNumberOfRowsForTableView(section)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             return 300
         }
         
@@ -45,7 +47,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        switch  indexPath.row {
+        switch  indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier(self.profileHeaderCellIdentifier, forIndexPath: indexPath) as! MyProfileHeaderCell
             
@@ -63,19 +65,68 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
             return cell
             
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
-            cell.typeIconLabel.text = ""
-            cell.dataLabel.text = self.viewModel.fetchUserEmail()
-            return cell
+            
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
+                cell.typeIconLabel.text = ""
+                cell.dataLabel.text = self.viewModel.fetchUserEmail()
+                return cell
+                
+            case 1:
+                let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
+                cell.typeIconLabel.text = ""
+                cell.dataLabel.text = self.viewModel.fetchUserPrimaryContact()
+                return cell
+                
+            default: return UITableViewCell()
+            
+            }
             
         case 2:
-            let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
-            cell.typeIconLabel.text = ""
-            cell.dataLabel.text = self.viewModel.fetchUserPrimaryContact()
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
+                cell.typeIconLabel.text = ""
+                cell.dataLabel.text = self.viewModel.fetchUserWebsite()
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
+                if let socialObject = viewModel.fetchUserSocialLink(indexPath.row - 1) {
+                    cell.typeIconLabel.text = socialObject.0
+                    cell.dataLabel.text = socialObject.1
+                }
+                return cell
+            }
             
         default:
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(self.profileHeaderView) as! MyProfileHeaderView
+        
+        switch section {
+        case 1:
+            headerView.headerLabel.text = "Contact Information"
+        
+        case 2:
+            headerView.headerLabel.text = "Social Information"
+        
+        default: break
+        
+        }
+        
+        return headerView
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 1,2:
+            return 21
+        default:
+            return 0
         }
     }
     
