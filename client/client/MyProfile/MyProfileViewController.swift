@@ -69,7 +69,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier(self.profileContactInfoReusableCell, forIndexPath: indexPath) as! ProfileContactInfoReusableCell
-                cell.typeIconLabel.text = ""
+                cell.typeIconLabel.text = ""
                 cell.dataLabel.text = self.viewModel.fetchUserEmail()
                 return cell
                 
@@ -139,7 +139,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         self.title = "Profile"
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_settings_white_18pt"), style: .Plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_settings_white_18pt"), style: .Plain, target: self, action: #selector(MyProfileViewController.openSettingsScreen))
     }
 
     override func didReceiveMemoryWarning() {
@@ -147,6 +147,13 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     Method to open Settings Screen
+     */
+    func openSettingsScreen() {
+        let settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
+    }
 
     /*
     // MARK: - Navigation
