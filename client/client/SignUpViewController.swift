@@ -111,20 +111,8 @@ class SignUpViewController : UIViewController {
     }
     
     func getUserDetails() {
-        
-        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetMeRequest()))
-            .debugLog()
-            .responseString {response in
-                print(response.result)
-                if response.result.isSuccess {
-                    print(response.result.value)
-                    if let value = response.result.value {
-                        NSUserDefaultsUtils.setUserDetails(value)
-                    }
-                }
-                else {
-                    print(response.result.error)
-                }
+        UserService.sharedInstance.getMeRequest({ (user) in }) { (error) in
+                print(error.localizedDescription)
         }
     }
     

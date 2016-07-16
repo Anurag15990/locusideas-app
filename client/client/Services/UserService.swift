@@ -48,7 +48,8 @@ class UserService: NSObject {
     static func getUser() -> User?  {
         
         if let userString = NSUserDefaultsUtils.getUserDetails() {
-            return Mapper<User>().map(userString)
+            let userMeResponse =  Mapper<UserMeResponse>().map(userString)
+            return userMeResponse?.user
         }
         
         return nil

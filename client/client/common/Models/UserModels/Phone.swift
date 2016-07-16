@@ -25,10 +25,8 @@ class Phone: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        
         subscriberNumber    <- map["subscriberNumber"]
         countryCode         <- map["countryCode"]
         isVerified          <- map["isVerified"]
-        
     }
 }
