@@ -109,10 +109,10 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         
         switch section {
         case 1:
-            headerView.headerLabel.text = "Contact Information"
+            headerView.headerLabel.text = "Contact"
         
         case 2:
-            headerView.headerLabel.text = "Social Information"
+            headerView.headerLabel.text = "Social"
         
         default: break
         
@@ -124,7 +124,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 1,2:
-            return 21
+            return 30
         default:
             return 0
         }
