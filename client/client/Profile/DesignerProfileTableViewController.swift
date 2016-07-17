@@ -62,7 +62,8 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.row == 0 {
-            return 345
+            return 300
+            
         } else if indexPath.row == 1 {
             return 36
         } else {
@@ -74,18 +75,21 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         
         if indexPath.row == 0 {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("DesignerProfileInfoCard", forIndexPath: indexPath) as! DesignerProfileInfoCard
+            let cell = tableView.dequeueReusableCellWithIdentifier("DesignerProfileHeaderCell", forIndexPath: indexPath) as! DesignerProfileHeaderCell
             
             if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
                 cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
             }
 
             if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl() {
-                cell.profileImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
+                cell.profilePictureImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
             }
             
             cell.nameLabel.text = viewModel.fetchUserName()
             cell.locationLabel.attributedText = viewModel.fetchLocationText()
+            
+            cell.locationLabelHeightConstraint.constant = viewModel.fetchLocationLabelHeight()
+            cell.locationLabelTopConstraint.constant = viewModel.fetchLocationLabelPadding()
             
             cell.locationLabel.textAlignment = .Center
             return cell

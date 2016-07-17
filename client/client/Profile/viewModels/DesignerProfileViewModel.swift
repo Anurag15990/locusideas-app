@@ -82,7 +82,7 @@ class DesignerProfileViewModel: NSObject {
             
             let locationLabelText = locationIcon + location
             
-            let myMutableString = NSMutableAttributedString(string: locationLabelText, attributes: [NSFontAttributeName: UIFont(name: "Montserrat-Regular", size: 12.0)!])
+            let myMutableString = NSMutableAttributedString(string: locationLabelText, attributes: [NSFontAttributeName: UIFont(name: "Asap-Regular", size: 16.0)!])
             
             myMutableString.addAttribute(NSFontAttributeName, value: UIFont(name: "MaterialDesignIcons", size: 16.0)!, range: NSRange(location: 0, length: 1))
             
@@ -92,6 +92,28 @@ class DesignerProfileViewModel: NSObject {
         }
         
         return nil
+    }
+    
+    /**
+     Fetch Location Label Height Constant.
+     
+     - returns: <#return value description#>
+     */
+    func fetchLocationLabelHeight() -> CGFloat {
+        
+        if let _ = self.fetchLocationText() {
+            return 21
+        }
+
+        return 0
+    }
+    
+    func fetchLocationLabelPadding() -> CGFloat {
+        if let _ = self.fetchLocationText() {
+            return 8
+        }
+        
+        return 0
     }
     
 }
