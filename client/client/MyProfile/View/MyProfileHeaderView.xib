@@ -25,11 +25,11 @@
                                 <constraint firstAttribute="height" constant="21" id="osI-of-zH5"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Asap-Bold" family="Asap" pointSize="15"/>
-                            <color key="textColor" red="1" green="0.9697013207709515" blue="0.94254108587162266" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.36862745098039218" green="0.71764705882352942" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.36862745098039218" green="0.71764705882352942" blue="0.75686274509803919" alpha="0.98259698275862073" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="0.98259698275862073" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="nJd-ns-Hh3" firstAttribute="centerY" secondItem="QeJ-ms-Miw" secondAttribute="centerY" id="bjm-sU-y4J"/>
                         <constraint firstAttribute="trailing" secondItem="nJd-ns-Hh3" secondAttribute="trailing" constant="8" id="qaW-DB-AGd"/>

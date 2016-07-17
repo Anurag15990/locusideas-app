@@ -138,4 +138,13 @@ public struct NSUserDefaultsUtils {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         return userDefaults.objectForKey(key)
     }
+    
+    /**
+     Method to clear User Defaults.
+     */
+    public static func clearUserDefaults() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(userAuthToken)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(userAnonymousToken)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(userDetails)
+    }
 }

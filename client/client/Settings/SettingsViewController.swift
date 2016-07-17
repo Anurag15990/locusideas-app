@@ -53,6 +53,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 53
     }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let settingsObject = self.viewModel.settingsDataSourceArray.array[indexPath.row]
+        switch settingsObject.1 {
+        case "Logout":
+            self.logoutUser()
+            break
+        default:
+            break
+        }
+    }
+    
+    /**
+     Method to logout User From the App.
+     */
+    func logoutUser() {
+        NSUserDefaultsUtils.clearUserDefaults()
+        (UIApplication.sharedApplication().delegate as! AppDelegate).redirectToLoginFlow()
+    }
+    
     /*
     // MARK: - Navigation
 

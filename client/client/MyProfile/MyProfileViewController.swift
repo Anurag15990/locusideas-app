@@ -124,7 +124,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 1,2:
-            return 30
+            return 40
         default:
             return 0
         }
