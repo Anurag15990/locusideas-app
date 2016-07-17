@@ -78,9 +78,11 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
             let cell = tableView.dequeueReusableCellWithIdentifier("DesignerProfileHeaderCell", forIndexPath: indexPath) as! DesignerProfileHeaderCell
             
             if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
-                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
+                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!, placeholderImage: UIImage(named: "Placeholder"))
+            } else {
+                cell.coverImageView.image = UIImage(named: "Placeholder")
             }
-
+            
             if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl() {
                 cell.profilePictureImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
             }

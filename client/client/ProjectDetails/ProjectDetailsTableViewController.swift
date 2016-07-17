@@ -123,7 +123,7 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectGalleryCell", forIndexPath: indexPath) as! ProjectGalleryCell
             let media = self.medias[indexPath.row - 2].media
-            cell.galleryImageView.kf_setImageWithURL(NSURL(string: (media?.url)!)!)
+            cell.galleryImageView.kf_setImageWithURL(NSURL(string: (media?.url)!)!, placeholderImage: UIImage(named: "Placeholder"))
             return cell
         }
     }
