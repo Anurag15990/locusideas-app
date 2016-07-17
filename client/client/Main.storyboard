@@ -11,6 +11,7 @@
         </mutableArray>
         <mutableArray key="Asap-Regular.otf">
             <string>Asap-Regular</string>
+            <string>Asap-Regular</string>
         </mutableArray>
         <mutableArray key="Montserrat-Bold.otf">
             <string>Montserrat-Bold</string>
@@ -43,6 +44,7 @@
             <string>Montserrat-SemiBold</string>
         </mutableArray>
         <mutableArray key="materialdesignicons-webfont (1).ttf">
+            <string>MaterialDesignIcons</string>
             <string>MaterialDesignIcons</string>
             <string>MaterialDesignIcons</string>
             <string>MaterialDesignIcons</string>
@@ -751,7 +753,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyProfileHeaderCell" rowHeight="310" id="xYW-zm-sZP" customClass="MyProfileHeaderCell" customModule="LocusIdeas" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyProfileHeaderCell" rowHeight="310" id="xYW-zm-sZP" customClass="MyProfileHeaderCell" customModule="LocusIdeas" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="310"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xYW-zm-sZP" id="vog-Q1-ePs">
@@ -839,7 +841,7 @@
                                     <outlet property="profilePictureImageView" destination="jkS-1p-7II" id="kdi-21-2t2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileContactInfoReusableCell" rowHeight="61" id="t6w-gY-WJ3" customClass="ProfileContactInfoReusableCell" customModule="LocusIdeas" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileContactInfoReusableCell" rowHeight="61" id="t6w-gY-WJ3" customClass="ProfileContactInfoReusableCell" customModule="LocusIdeas" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="402" width="320" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t6w-gY-WJ3" id="5Mf-qE-oia">
@@ -891,6 +893,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhM-r3-KS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2120" y="1265"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Ap6-QI-Xis">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o6K-FC-fs6" customClass="SettingsViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="taF-Cf-w8C"/>
+                        <viewControllerLayoutGuide type="bottom" id="CdH-tQ-9mn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bmo-tC-c28">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DJV-57-xr1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="ep4-F4-Rgp">
+                                    <rect key="frame" x="0.0" y="89" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" rowHeight="61" id="hBS-my-B84" customClass="SettingTableViewCell" customModule="LocusIdeas" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hBS-my-B84" id="dI9-lj-pmg">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUZ-g4-gTc">
+                                                    <rect key="frame" x="16" y="14" width="30" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="S6i-8h-MJU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="MaterialDesignIcons" family="MaterialDesignIcons" pointSize="22"/>
+                                                    <color key="textColor" red="0.33652875789999998" green="0.42858795150000001" blue="0.46956928949999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-O5-ke4">
+                                                    <rect key="frame" x="54" y="15" width="258" height="29"/>
+                                                    <fontDescription key="fontDescription" name="Asap-Regular" family="Asap" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.65835129309999996" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="3cz-O5-ke4" secondAttribute="trailing" constant="8" id="K0z-0F-vPV"/>
+                                                <constraint firstAttribute="bottom" secondItem="3cz-O5-ke4" secondAttribute="bottom" constant="16.5" id="Ypb-8L-rNd"/>
+                                                <constraint firstItem="TUZ-g4-gTc" firstAttribute="top" secondItem="dI9-lj-pmg" secondAttribute="top" constant="14" id="cXH-pf-zjo"/>
+                                                <constraint firstItem="3cz-O5-ke4" firstAttribute="leading" secondItem="TUZ-g4-gTc" secondAttribute="trailing" constant="8" id="e7o-v6-YLS"/>
+                                                <constraint firstAttribute="bottom" secondItem="TUZ-g4-gTc" secondAttribute="bottom" constant="13" id="ozF-jr-FDY"/>
+                                                <constraint firstItem="TUZ-g4-gTc" firstAttribute="leading" secondItem="dI9-lj-pmg" secondAttribute="leading" constant="16" id="uyx-9O-D3E"/>
+                                                <constraint firstItem="3cz-O5-ke4" firstAttribute="top" secondItem="dI9-lj-pmg" secondAttribute="top" constant="15" id="y9V-KL-vFW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dataLabel" destination="3cz-O5-ke4" id="Jn5-1f-JZC"/>
+                                            <outlet property="typeIconLabel" destination="TUZ-g4-gTc" id="bUL-BI-rsw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="o6K-FC-fs6" id="s1t-J4-Jn9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DJV-57-xr1" secondAttribute="trailing" id="6D9-gv-8UI"/>
+                            <constraint firstItem="CdH-tQ-9mn" firstAttribute="top" secondItem="DJV-57-xr1" secondAttribute="bottom" id="ac3-aF-KnT"/>
+                            <constraint firstItem="DJV-57-xr1" firstAttribute="top" secondItem="taF-Cf-w8C" secondAttribute="bottom" id="iaK-1R-VfB"/>
+                            <constraint firstItem="DJV-57-xr1" firstAttribute="leading" secondItem="Bmo-tC-c28" secondAttribute="leading" id="p5c-02-xrh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="DJV-57-xr1" id="fAG-H4-met"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCV-UI-OMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2489" y="1265"/>
         </scene>
         <!--Explore Table View Controller-->
         <scene sceneID="9cj-Bs-CM4">

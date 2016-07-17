@@ -45,6 +45,9 @@
 		75D5A4A01D3A276900728CD9 /* ProfileContactInfoReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */; };
 		75D5A4A21D3A4F1200728CD9 /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A4A11D3A4F1200728CD9 /* MyProfileHeaderView.swift */; };
 		75D5A4A41D3A4F2800728CD9 /* MyProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D5A4A31D3A4F2800728CD9 /* MyProfileHeaderView.xib */; };
+		75D5A4A71D3A92B400728CD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A4A61D3A92B400728CD9 /* SettingsViewController.swift */; };
+		75D5A4AB1D3A935000728CD9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A4AA1D3A935000728CD9 /* SettingsViewModel.swift */; };
+		75D5A4AD1D3A94BE00728CD9 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5A4AC1D3A94BE00728CD9 /* SettingTableViewCell.swift */; };
 		75E8E4661D39666600D42401 /* UserMeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8E4651D39666600D42401 /* UserMeResponse.swift */; };
 		75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */; };
 		75F61E941C536ED80042C765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F61E931C536ED80042C765 /* User.swift */; };
@@ -178,6 +181,9 @@
 		75D5A49F1D3A276900728CD9 /* ProfileContactInfoReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContactInfoReusableCell.swift; sourceTree = "<group>"; };
 		75D5A4A11D3A4F1200728CD9 /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
 		75D5A4A31D3A4F2800728CD9 /* MyProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileHeaderView.xib; sourceTree = "<group>"; };
+		75D5A4A61D3A92B400728CD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		75D5A4AA1D3A935000728CD9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		75D5A4AC1D3A94BE00728CD9 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		75E8E4651D39666600D42401 /* UserMeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMeResponse.swift; sourceTree = "<group>"; };
 		75F61E901C535EBE0042C765 /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
 		75F61E931C536ED80042C765 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
@@ -330,6 +336,7 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				75D5A4A51D3A928700728CD9 /* Settings */,
 				75BD35C21CFCBB4700804682 /* Services */,
 				759B5CF51CF77D4C00BC6ACE /* Assembly */,
 				91F084A41C7AFF5300BA3B80 /* MyProfile */,
@@ -516,6 +523,32 @@
 				75BE37FA1D2CF88300508B97 /* ProgressIndicator.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		75D5A4A51D3A928700728CD9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				75D5A4A91D3A934600728CD9 /* viewModels */,
+				75D5A4A81D3A933200728CD9 /* views */,
+				75D5A4A61D3A92B400728CD9 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		75D5A4A81D3A933200728CD9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				75D5A4AC1D3A94BE00728CD9 /* SettingTableViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		75D5A4A91D3A934600728CD9 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75D5A4AA1D3A935000728CD9 /* SettingsViewModel.swift */,
+			);
+			path = viewModels;
 			sourceTree = "<group>";
 		};
 		75F61E8F1C535EAE0042C765 /* Utils */ = {
@@ -915,6 +948,7 @@
 				91ECEC551C4FC6760010A352 /* StreamDesignCard.swift in Sources */,
 				75623E121D1C6BF100C83C89 /* Project.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
+				75D5A4AD1D3A94BE00728CD9 /* SettingTableViewCell.swift in Sources */,
 				C5376CEF1D1ECBB60003A531 /* DesignerStatsCard.swift in Sources */,
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
@@ -946,6 +980,7 @@
 				753577321D20169500B3B043 /* ProjectMedia.swift in Sources */,
 				755550451C9E7F6200B734D8 /* Office.swift in Sources */,
 				C5375B381CA7CFC000AA5B06 /* ProjectHeaderView.swift in Sources */,
+				75D5A4AB1D3A935000728CD9 /* SettingsViewModel.swift in Sources */,
 				75BD35C41CFCBB6600804682 /* AuthService.swift in Sources */,
 				75F61E911C535EBE0042C765 /* NSUserDefaultsUtils.swift in Sources */,
 				91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */,
@@ -962,6 +997,7 @@
 				75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */,
 				755550491C9E9B5300B734D8 /* UserRouter.swift in Sources */,
 				753C569C1D245FC7008EB35E /* DesignerProfileViewModel.swift in Sources */,
+				75D5A4A71D3A92B400728CD9 /* SettingsViewController.swift in Sources */,
 				7555504C1C9EA00000B734D8 /* UserFollowRequestBody.swift in Sources */,
 				75623E0D1D1C639B00C83C89 /* CloudinaryService.swift in Sources */,
 				91954C911C675A49001A0953 /* UploadTableViewController.swift in Sources */,
