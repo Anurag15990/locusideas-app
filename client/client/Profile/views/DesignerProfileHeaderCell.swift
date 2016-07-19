@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DesignerProfileHeaderCell: UITableViewCell {
+class DesignerProfileHeaderCell: UICollectionViewCell {
 
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
@@ -28,11 +28,4 @@ class DesignerProfileHeaderCell: UITableViewCell {
         
         // Initialization code
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
