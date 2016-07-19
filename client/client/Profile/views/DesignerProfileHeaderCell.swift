@@ -18,6 +18,8 @@ class DesignerProfileHeaderCell: UITableViewCell {
     @IBOutlet weak var locationLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var locationLabelTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var followButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

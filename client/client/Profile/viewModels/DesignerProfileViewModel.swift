@@ -95,6 +95,24 @@ class DesignerProfileViewModel: NSObject {
     }
     
     /**
+     Method to Construct Follow Button Text.
+     
+     - returns: <#return value description#>
+     */
+    func constructFollowButtonText() -> NSAttributedString? {
+        
+        let followIcon = ""
+        
+        let followText = followIcon + " Follow"
+        
+        let attributedString = NSMutableAttributedString(string: followText, attributes: [NSFontAttributeName: UIFont(name: "Asap-Medium", size: 16.0)!])
+        
+        attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "MaterialDesignIcons", size: 16.0)!, range: NSRange(location: 0, length: 1))
+        
+        return attributedString
+    }
+    
+    /**
      Fetch Location Label Height Constant.
      
      - returns: <#return value description#>
