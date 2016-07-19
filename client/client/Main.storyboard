@@ -637,7 +637,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.015686274510000001" green="0.61960784310000006" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.13725490196078433" green="0.16470588235294117" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="q7Z-2U-tGi" kind="relationship" relationship="viewControllers" id="HiA-j4-6o2"/>

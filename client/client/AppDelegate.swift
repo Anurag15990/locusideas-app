@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = UIColor(red: 2.0/255.0, green: 193.0/255.0, blue: 186.0/255.0, alpha: 1.0)
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Asap-Medium", size: 13)!], forState: .Normal)
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 2.0/255.0, green: 193.0/255.0, blue: 186.0/255.0, alpha: 1.0)], forState: .Selected)
         
         NSThread.sleepForTimeInterval(2.0)
         
