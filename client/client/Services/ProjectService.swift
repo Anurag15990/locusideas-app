@@ -41,6 +41,33 @@ class ProjectService: NSObject {
         }
     }
     
+    /**
+     Method to fetch Projects By Owner.
+     
+     - parameter owner:           <#owner description#>
+     - parameter successCallback: <#successCallback description#>
+     - parameter errorCallback:   <#errorCallback description#>
+     */
+    func fetchProjectsByOwner(owner: String,
+                              successCallback: ((projects: [Project], paging: Pagination?) -> Void),
+                              errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.ProjectRouteManager(ProjectRouter.GetProjectsByOwner(owner)))
+            .debugLog()
+            .responseString { (response) in
+                switch response.result {
+                case .Success(let value):
+                    if let projectResponse = Mapper<ProjectResponse>().map(value) {
+                        if let projects = projectResponse.projects {
+                            successCallback(projects: projects, paging: projectResponse.paging)
+                        }
+                    }
+                    
+                case .Failure(let error):
+                    errorCallback(error: error)
+                }
+        }
+    }
     
     /**
      Method to fetch Projects By Given URL.

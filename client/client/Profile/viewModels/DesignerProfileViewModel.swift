@@ -8,14 +8,39 @@
 
 import Foundation
 import UIKit
+import Bond
 
 class DesignerProfileViewModel: NSObject {
     
     var user: User!
+    var projects =  ObservableArray<Project>()
+    var paging: Pagination!
     
     init(user: User) {
         super.init()
         self.user = user
+        self.fetchProjectsForOwner()
+    }
+    
+    /**
+     Method to fetch projects for User.
+     */
+    func fetchProjectsForOwner() {
+        ProjectService.sharedInstance.fetchProjectsByOwner(self.user.id!, successCallback: { (projects, paging) in
+            self.projects.removeAll()
+            self.projects.appendContentsOf(projects)
+            self.paging = paging
+            }) { (error) in
+                //TODO: Handle Error.
+        }
+    }
+    
+    func fetchProjectInitialImage(project: Project) -> String? {
+        return project.medias?.initial?.first?.media?.url
+    }
+    
+    func fetchProjectName(project: Project) -> String? {
+        return project.title
     }
     
     /**
@@ -82,7 +107,7 @@ class DesignerProfileViewModel: NSObject {
             
             let locationLabelText = locationIcon + location
             
-            let myMutableString = NSMutableAttributedString(string: locationLabelText, attributes: [NSFontAttributeName: UIFont(name: "Montserrat-Regular", size: 12.0)!])
+            let myMutableString = NSMutableAttributedString(string: locationLabelText, attributes: [NSFontAttributeName: UIFont(name: "Asap-Regular", size: 16.0)!])
             
             myMutableString.addAttribute(NSFontAttributeName, value: UIFont(name: "MaterialDesignIcons", size: 16.0)!, range: NSRange(location: 0, length: 1))
             
@@ -92,6 +117,46 @@ class DesignerProfileViewModel: NSObject {
         }
         
         return nil
+    }
+    
+    /**
+     Method to Construct Follow Button Text.
+     
+     - returns: <#return value description#>
+     */
+    func constructFollowButtonText() -> NSAttributedString? {
+        
+        let followIcon = ""
+        
+        let followText = followIcon + " Follow"
+        
+        let attributedString = NSMutableAttributedString(string: followText, attributes: [NSFontAttributeName: UIFont(name: "Asap-Medium", size: 16.0)!])
+        
+        attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "MaterialDesignIcons", size: 16.0)!, range: NSRange(location: 0, length: 1))
+        
+        return attributedString
+    }
+    
+    /**
+     Fetch Location Label Height Constant.
+     
+     - returns: <#return value description#>
+     */
+    func fetchLocationLabelHeight() -> CGFloat {
+        
+        if let _ = self.fetchLocationText() {
+            return 21
+        }
+
+        return 0
+    }
+    
+    func fetchLocationLabelPadding() -> CGFloat {
+        if let _ = self.fetchLocationText() {
+            return 8
+        }
+        
+        return 0
     }
     
 }

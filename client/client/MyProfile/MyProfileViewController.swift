@@ -52,7 +52,9 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
             let cell = tableView.dequeueReusableCellWithIdentifier(self.profileHeaderCellIdentifier, forIndexPath: indexPath) as! MyProfileHeaderCell
             
             if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
-                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
+                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!, placeholderImage: UIImage(named: "Placeholder"))
+            } else {
+                cell.coverImageView.image = UIImage(named: "Placeholder")
             }
             
             if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl() {
@@ -61,6 +63,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
             
             cell.nameLabel.text = self.viewModel.fetchUserName()
             cell.locationLabel.attributedText = self.viewModel.fetchUserLocation()
+            cell.bioLabel.text = self.viewModel.fetchUserBio()
             
             return cell
             

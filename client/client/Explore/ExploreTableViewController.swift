@@ -46,9 +46,9 @@ class ExploreTableViewController: UIViewController, UITableViewDelegate {
             let user = dataSource[indexPath.section][indexPath.row]
             
             if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl(user) {
-                cell.designCarouselView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
+                cell.designCarouselView.kf_setImageWithURL(NSURL(string: coverImageUrl)!, placeholderImage: UIImage(named: "Placeholder"))
             } else {
-                cell.designCarouselView.image = nil
+                cell.designCarouselView.image = UIImage(named: "Placeholder")
             }
             
             if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl(user) {

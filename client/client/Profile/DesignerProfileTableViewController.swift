@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DesignerProfileTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DesignerProfileTableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var collectionView : UICollectionView!
     
     var user: User!
     
@@ -19,14 +19,8 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "DesignerProfileInfoCard", bundle: nil), forCellReuseIdentifier: "DesignerProfileInfoCard")
-        tableView.registerNib(UINib(nibName: "ProjectHeaderView", bundle: nil), forCellReuseIdentifier: "ProjectHeaderView")
-        tableView.registerNib(UINib(nibName: "StreamDesignCard", bundle: nil), forCellReuseIdentifier: "StreamDesignCard")
-        
-        
-        tableView.separatorStyle = .None
-        
         setupNavigationBar()
+        bindViewModel()
     }
     
     func setupNavigationBar() {
@@ -42,6 +36,12 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         self.title = viewModel.fetchUserName()
     }
     
+    func bindViewModel() {
+        self.viewModel.projects.observe { (array) in
+            self.collectionView.reloadData()
+        }
+    }
+    
     func backButtonPressed(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
     }
@@ -51,64 +51,102 @@ class DesignerProfileTableViewController: UIViewController, UITableViewDataSourc
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 2
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        if indexPath.row == 0 {
-            return 345
-        } else if indexPath.row == 1 {
-            return 36
-        } else {
-            return 430
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch  section{
+        case 0:
+            return 1
+        case 1:
+            return viewModel.projects.array.count
+        default:
+            return 0
         }
+        
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        if indexPath.row == 0 {
-            
-            let cell = tableView.dequeueReusableCellWithIdentifier("DesignerProfileInfoCard", forIndexPath: indexPath) as! DesignerProfileInfoCard
+        switch  indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerProfileHeaderCell", forIndexPath: indexPath) as! DesignerProfileHeaderCell
             
             if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
-                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!)
+                cell.coverImageView.kf_setImageWithURL(NSURL(string: coverImageUrl)!, placeholderImage: UIImage(named: "Placeholder"))
+            } else {
+                cell.coverImageView.image = UIImage(named: "Placeholder")
             }
-
+            
             if let profilePictureUrl = self.viewModel.fetchUserProfilePictureUrl() {
-                cell.profileImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
+                cell.profilePictureImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl)!)
             }
             
             cell.nameLabel.text = viewModel.fetchUserName()
             cell.locationLabel.attributedText = viewModel.fetchLocationText()
+            cell.followButton.setAttributedTitle(viewModel.constructFollowButtonText(), forState: .Normal)
+            
+            cell.locationLabelHeightConstraint.constant = viewModel.fetchLocationLabelHeight()
+            cell.locationLabelTopConstraint.constant = viewModel.fetchLocationLabelPadding()
             
             cell.locationLabel.textAlignment = .Center
             return cell
-        
-        } else if indexPath.row == 1 {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("ProjectHeaderView", forIndexPath: indexPath) as! ProjectHeaderView
+        case 1:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerProfileProjectsCell", forIndexPath: indexPath) as! DesignerProfileProjectsCell
+            let project = viewModel.projects.array[indexPath.row]
+            cell.projectName.text = viewModel.fetchProjectName(project)
+            
+            if let initialImageUrl = viewModel.fetchProjectInitialImage(project) {
+                cell.coverImage.kf_setImageWithURL(NSURL(string: initialImageUrl)!, placeholderImage: UIImage(named: "Placeholder"))
+            } else {
+                cell.coverImage.image = UIImage(named: "Placeholder")
+            }
+            
             return cell
+        default:
+            return UICollectionViewCell()
+        }
         
-        } else {
         
-            let cell = tableView.dequeueReusableCellWithIdentifier("StreamDesignCard", forIndexPath: indexPath) as! StreamDesignCard
-            return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        switch indexPath.section {
+        case 0:
+            return CGSizeMake(UIScreen.mainScreen().bounds.width, 300)
+            
+        case 1:
+            return CGSizeMake(UIScreen.mainScreen().bounds.width/2, UIScreen.mainScreen().bounds.width/2)
         
+        default:
+            return CGSizeZero
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if indexPath.row > 1 {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
             let vc = storyboard?.instantiateViewControllerWithIdentifier("ProjectDetailsTableViewController") as! ProjectDetailsTableViewController
+            let project = viewModel.projects.array[indexPath.row]
+            vc.project = project
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsZero
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(<#T##elementKind: String##String#>, withReuseIdentifier: <#T##String#>, forIndexPath: <#T##NSIndexPath#>)
+    }
 }

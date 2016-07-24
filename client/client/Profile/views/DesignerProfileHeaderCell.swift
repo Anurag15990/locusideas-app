@@ -1,21 +1,25 @@
 //
-//  MyProfileHeaderCell.swift
+//  DesignerProfileHeaderCell.swift
 //  client
 //
-//  Created by Anurag Agnihotri on 15/07/16.
+//  Created by Anurag Agnihotri on 17/07/16.
 //  Copyright © 2016 LocusIdeas. All rights reserved.
 //
 
 import UIKit
 
-class MyProfileHeaderCell: UITableViewCell {
+class DesignerProfileHeaderCell: UICollectionViewCell {
 
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var bioLabel: UILabel!
-
+    
+    @IBOutlet weak var locationLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var locationLabelTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var followButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -24,11 +28,4 @@ class MyProfileHeaderCell: UITableViewCell {
         
         // Initialization code
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

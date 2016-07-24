@@ -53,7 +53,9 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
             let project = dataSource[indexPath.section][indexPath.row]
             
             if let url = self.viewModel.fetchProjectPictureUrl(project) {
-                cell.designCoverImage.kf_setImageWithURL(NSURL(string: url)!)
+                cell.designCoverImage.kf_setImageWithURL(NSURL(string: url)!, placeholderImage: UIImage(named: "Placeholder"))
+            } else {
+                cell.designCoverImage.image = UIImage(named: "Placeholder")
             }
             
             if let title = self.viewModel.fetchProjectTitle(project) {
