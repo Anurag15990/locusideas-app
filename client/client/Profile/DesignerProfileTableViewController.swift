@@ -20,6 +20,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         super.viewDidLoad()
         
         setupNavigationBar()
+        bindViewModel()
     }
     
     func setupNavigationBar() {
@@ -33,6 +34,12 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_info_outline_white_18pt"), style: .Plain, target: self, action: #selector(DesignerProfileTableViewController.infoButtonPressed(_:)))
         
         self.title = viewModel.fetchUserName()
+    }
+    
+    func bindViewModel() {
+        self.viewModel.projects.observe { (array) in
+            self.collectionView.reloadData()
+        }
     }
     
     func backButtonPressed(sender: UIButton) {
@@ -53,7 +60,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         case 0:
             return 1
         case 1:
-            return 4
+            return viewModel.projects.array.count
         default:
             return 0
         }
@@ -88,6 +95,15 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             
         case 1:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerProfileProjectsCell", forIndexPath: indexPath) as! DesignerProfileProjectsCell
+            let project = viewModel.projects.array[indexPath.row]
+            cell.projectName.text = viewModel.fetchProjectName(project)
+            
+            if let initialImageUrl = viewModel.fetchProjectInitialImage(project) {
+                cell.coverImage.kf_setImageWithURL(NSURL(string: initialImageUrl)!, placeholderImage: UIImage(named: "Placeholder"))
+            } else {
+                cell.coverImage.image = UIImage(named: "Placeholder")
+            }
+            
             return cell
         default:
             return UICollectionViewCell()
@@ -109,6 +125,15 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         }
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("ProjectDetailsTableViewController") as! ProjectDetailsTableViewController
+            let project = viewModel.projects.array[indexPath.row]
+            vc.project = project
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsZero
     }
@@ -119,5 +144,9 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(<#T##elementKind: String##String#>, withReuseIdentifier: <#T##String#>, forIndexPath: <#T##NSIndexPath#>)
     }
 }

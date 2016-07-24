@@ -8,14 +8,39 @@
 
 import Foundation
 import UIKit
+import Bond
 
 class DesignerProfileViewModel: NSObject {
     
     var user: User!
+    var projects =  ObservableArray<Project>()
+    var paging: Pagination!
     
     init(user: User) {
         super.init()
         self.user = user
+        self.fetchProjectsForOwner()
+    }
+    
+    /**
+     Method to fetch projects for User.
+     */
+    func fetchProjectsForOwner() {
+        ProjectService.sharedInstance.fetchProjectsByOwner(self.user.id!, successCallback: { (projects, paging) in
+            self.projects.removeAll()
+            self.projects.appendContentsOf(projects)
+            self.paging = paging
+            }) { (error) in
+                //TODO: Handle Error.
+        }
+    }
+    
+    func fetchProjectInitialImage(project: Project) -> String? {
+        return project.medias?.initial?.first?.media?.url
+    }
+    
+    func fetchProjectName(project: Project) -> String? {
+        return project.title
     }
     
     /**

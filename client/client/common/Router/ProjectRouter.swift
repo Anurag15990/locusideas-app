@@ -16,6 +16,7 @@ enum ProjectRouter: BaseRouterProtocol {
     case UpdateProject(String, Project)
     case GetProjectMediaByProjectId(String)
     case GetProjectsByURL(String)
+    case GetProjectsByOwner(String)
     
     var baseURL: String {
         switch self {
@@ -46,6 +47,9 @@ enum ProjectRouter: BaseRouterProtocol {
         
         case .GetProjectsByURL:
             return ""
+            
+        case .GetProjectsByOwner(let ownerId):
+            return "/api/projects/owner/\(ownerId)"
         }
     }
     
@@ -66,6 +70,9 @@ enum ProjectRouter: BaseRouterProtocol {
             return .GET
             
         case .GetProjectsByURL:
+            return .GET
+            
+        case .GetProjectsByOwner:
             return .GET
         }
     }
