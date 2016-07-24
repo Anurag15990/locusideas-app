@@ -63,6 +63,7 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
             
             cell.nameLabel.text = self.viewModel.fetchUserName()
             cell.locationLabel.attributedText = self.viewModel.fetchUserLocation()
+            cell.bioLabel.text = self.viewModel.fetchUserBio()
             
             return cell
             

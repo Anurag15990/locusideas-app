@@ -803,7 +803,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CTO &amp; Founder at LocusIdeas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIr-eh-BUn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIr-eh-BUn">
                                                     <rect key="frame" x="8" y="259" width="304" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="fuQ-yv-Pmj"/>
@@ -841,6 +841,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bioLabel" destination="wIr-eh-BUn" id="r31-b3-JlU"/>
                                     <outlet property="coverImageView" destination="Doi-4T-AGk" id="QiU-bi-Ne2"/>
                                     <outlet property="locationLabel" destination="nCV-2s-CJ0" id="6z1-a4-aX8"/>
                                     <outlet property="nameLabel" destination="le6-Nl-cAs" id="G0N-ke-jrk"/>

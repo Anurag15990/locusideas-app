@@ -14,7 +14,11 @@ class User: BaseRequestBody {
     
     var id: String?
     var name: UserName?
+    var bio: Bio?
     var emailPrimary: Email?
+    var phonePrimary: Phone?
+    var emailOthers: [Email]?
+    var phoneOthers: [Phone]?
     var location: UserLocation?
     var picture: Media?
     var cover: Media?
@@ -23,7 +27,6 @@ class User: BaseRequestBody {
     var profile: DesignerProfile?
     var links: Links?
     var offices: OfficeCollection?
-    var contact: Contact?
    
     //TODO: Handle Location for the user.
     
@@ -43,13 +46,16 @@ class User: BaseRequestBody {
     override func mapping(map: Map) {
         id              <- map["id"]
         name            <- map["name"]
+        bio             <- map["bio"]
         emailPrimary    <- map["emailPrimary"]
+        phonePrimary    <- map["phonePrimary"]
+        emailOthers     <- map["emailOthers"]
+        phoneOthers     <- map["phoneOthers"]
         location        <- map["location"]
         picture         <- map["picture"]
         cover           <- map["cover"]
         profile         <- map["profile"]
         links           <- map["links"]
-        contact         <- map["contact"]
         offices         <- map["offices"]
         createdAt       <- map["createdAt"]
         updatedAt       <- map["updatedAt"]
@@ -72,6 +78,22 @@ class User: BaseRequestBody {
         override func mapping(map: Map) {
             firstName   <- map["firstName"]
             lastName    <- map["lastName"]
+        }
+    }
+    
+    class Bio: BaseRequestBody {
+        var short: String?
+        
+        override init() {
+            super.init()
+        }
+        
+        required init?(_ map: Map) {
+            super.init(map)
+        }
+        
+        override func mapping(map: Map) {
+            short <- map["short"]
         }
     }
     
@@ -207,42 +229,6 @@ class User: BaseRequestBody {
         func mapping(map: Map) {
             headquarter     <- map["headquarter"]
             others          <- map["others"]
-        }
-    }
-    
-    class Contact: NSObject, Mappable {
-        var phone: PhoneCollection?
-        
-        override init() {
-            phone = PhoneCollection()
-            super.init()
-        }
-        
-        required init?(_ map: Map) {
-            phone = PhoneCollection(map)!
-        }
-        
-        func mapping(map: Map) {
-            phone   <- map["phone"]
-        }
-        
-        class PhoneCollection: NSObject, Mappable {
-            
-            var primary: Phone?
-            var others: [Phone]?
-            
-            override init() {
-                super.init()
-            }
-            
-            required init?(_ map: Map) {
-                
-            }
-            
-            func mapping(map: Map) {
-                primary     <- map["primary"]
-                others      <- map["others"]
-            }
         }
     }
     

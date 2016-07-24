@@ -98,7 +98,11 @@ class MyProfileViewModel: NSObject {
      - returns: <#return value description#>
      */
     func fetchUserPrimaryContact() -> String? {
-        return self.user.contact?.phone?.primary?.subscriberNumber
+        return self.user.phonePrimary?.subscriberNumber
+    }
+    
+    func fetchUserBio() -> String? {
+        return self.user.bio?.short
     }
     
     func fetchUserWebsite() -> String? {
@@ -151,7 +155,7 @@ class MyProfileViewModel: NSObject {
                 initialValue += 1
             }
             
-            if let _ = user.contact?.phone?.primary {
+            if let _ = user.phonePrimary?.subscriberNumber {
                 initialValue += 1
             }
             
