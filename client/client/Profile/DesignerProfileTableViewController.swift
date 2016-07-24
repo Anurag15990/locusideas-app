@@ -147,6 +147,14 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(<#T##elementKind: String##String#>, withReuseIdentifier: <#T##String#>, forIndexPath: <#T##NSIndexPath#>)
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath)
+        return headerView
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 1 {
+            return CGSizeMake(UIScreen.mainScreen().bounds.width,40)
+        }
+        return CGSizeZero
     }
 }
