@@ -9,6 +9,25 @@
 import Foundation
 import ObjectMapper
 
+class Duration: BaseRequestBody {
+    
+    var from: String?
+    var to: String?
+    
+    override init() {
+        super.init()
+    }
+    
+    required init?(_ map: Map) {
+        super.init(map)
+    }
+    
+    override func mapping(map: Map) {
+        from    <- map["from"]
+        to      <- map["to"]
+    }
+}
+
 /// User Profile Object
 class User: BaseRequestBody {
     
@@ -26,6 +45,8 @@ class User: BaseRequestBody {
     var updatedAt: String?
     var profile: DesignerProfile?
     var links: Links?
+    var work: Work?
+    var education: Education?
     var offices: OfficeCollection?
    
     //TODO: Handle Location for the user.
@@ -56,11 +77,94 @@ class User: BaseRequestBody {
         cover           <- map["cover"]
         profile         <- map["profile"]
         links           <- map["links"]
+        work            <- map["work"]
+        education       <- map["education"]
         offices         <- map["offices"]
         createdAt       <- map["createdAt"]
         updatedAt       <- map["updatedAt"]
     }
     
+    class Work: BaseRequestBody {
+        
+        var experience: [WorkExperience]?
+        
+        override init() {
+            super.init()
+        }
+        
+        required init?(_ map: Map) {
+            super.init(map)
+        }
+        
+        override func mapping(map: Map) {
+            experience  <- map["experience"]
+        }
+        
+        class WorkExperience: BaseRequestBody {
+            
+            var id: String?
+            var organization: String?
+            var designation: String?
+            var duration: Duration?
+            
+            override init() {
+                super.init()
+            }
+            
+            required init?(_ map: Map) {
+                super.init(map)
+            }
+            
+            override func mapping(map: Map) {
+                
+                id              <- map["id"]
+                organization    <- map["organization"]
+                designation     <- map["designation"]
+                duration        <- map["duration"]
+            }
+        }
+    }
+    
+    class Education: BaseRequestBody {
+        
+        var experience: [EducationExperience]?
+        
+        override init() {
+            super.init()
+        }
+        
+        required init?(_ map: Map) {
+            super.init(map)
+        }
+        
+        override func mapping(map: Map) {
+            experience  <- map["experience"]
+        }
+        
+        class EducationExperience: BaseRequestBody {
+            
+            var id: String?
+            var school: String?
+            var degree: String?
+            var duration: Duration?
+            
+            override init() {
+                super.init()
+            }
+            
+            required init?(_ map: Map) {
+                super.init(map)
+            }
+            
+            override func mapping(map: Map) {
+                
+                id              <- map["id"]
+                school    <- map["school"]
+                degree     <- map["degree"]
+                duration        <- map["duration"]
+            }
+        }
+    }
     
     class UserName: BaseRequestBody {
         

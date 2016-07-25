@@ -35,10 +35,24 @@ class DesignerProfileViewModel: NSObject {
         }
     }
     
+    /**
+     Method to fetch Project Initial Image.
+     
+     - parameter project: <#project description#>
+     
+     - returns: <#return value description#>
+     */
     func fetchProjectInitialImage(project: Project) -> String? {
         return project.medias?.initial?.first?.media?.url
     }
     
+    /**
+     Method to fetch Project Name.
+     
+     - parameter project: <#project description#>
+     
+     - returns: <#return value description#>
+     */
     func fetchProjectName(project: Project) -> String? {
         return project.title
     }
@@ -84,6 +98,11 @@ class DesignerProfileViewModel: NSObject {
         return fullName
     }
     
+    /**
+     Method to fetch User Location.
+     
+     - returns: <#return value description#>
+     */
     func fetchUserLocation() -> String? {
         return user.location?.currentCity
     }
@@ -120,6 +139,32 @@ class DesignerProfileViewModel: NSObject {
     }
     
     /**
+     Method to fetch User Bio.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserBio() -> String? {
+        return self.user.bio?.short
+    }
+    
+    /**
+     Method to fetch User Work Experience.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserWorkExperience() -> User.Work? {
+        return self.user.work
+    }
+    
+    /**
+     Method to fetch User Education Experience.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserEducationExperience() -> User.Education? {
+        return self.user.education
+    }
+    /**
      Method to Construct Follow Button Text.
      
      - returns: <#return value description#>
@@ -151,6 +196,11 @@ class DesignerProfileViewModel: NSObject {
         return 0
     }
     
+    /**
+     Fetch Location Label Padding.
+     
+     - returns: <#return value description#>
+     */
     func fetchLocationLabelPadding() -> CGFloat {
         if let _ = self.fetchLocationText() {
             return 8
