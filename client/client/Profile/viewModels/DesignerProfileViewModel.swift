@@ -35,10 +35,24 @@ class DesignerProfileViewModel: NSObject {
         }
     }
     
+    /**
+     Method to fetch Project Initial Image.
+     
+     - parameter project: <#project description#>
+     
+     - returns: <#return value description#>
+     */
     func fetchProjectInitialImage(project: Project) -> String? {
         return project.medias?.initial?.first?.media?.url
     }
     
+    /**
+     Method to fetch Project Name.
+     
+     - parameter project: <#project description#>
+     
+     - returns: <#return value description#>
+     */
     func fetchProjectName(project: Project) -> String? {
         return project.title
     }
@@ -84,6 +98,11 @@ class DesignerProfileViewModel: NSObject {
         return fullName
     }
     
+    /**
+     Method to fetch User Location.
+     
+     - returns: <#return value description#>
+     */
     func fetchUserLocation() -> String? {
         return user.location?.currentCity
     }
@@ -120,6 +139,93 @@ class DesignerProfileViewModel: NSObject {
     }
     
     /**
+     Method to fetch User Bio.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserBio() -> String? {
+        return self.user.bio?.short
+    }
+    
+    /**
+     Method to fetch User Work Experience.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserWorkExperience() -> User.Work? {
+        return self.user.work
+    }
+    
+    /**
+     Method to fetch User Education Experience.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserEducationExperience() -> User.Education? {
+        return self.user.education
+    }
+    
+    /**
+     Method for fetching User's Primary Website
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserWebsite() -> String? {
+        return self.user.links?.website?.primary
+    }
+    
+    /**
+     Method fo fetching User's Links.
+     
+     - parameter index: <#index description#>
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserSocialLink(index: Int) -> (String, String)? {
+        if let social = self.user.links?.social {
+            let socialObject = social[index]
+            
+            switch  socialObject.type! {
+                
+            case "facebook":
+                return ("", socialObject.url!)
+                
+            case "twitter":
+                return ("", socialObject.url!)
+                
+            case "instagram":
+                return ("", socialObject.url!)
+                
+            case "linkedIn":
+                return ("", socialObject.url!)
+                
+            default:
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    /**
+     Method to fetch User Email.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserEmail() -> String? {
+        return self.user.emailPrimary?.address
+    }
+    
+    /**
+     Method to fetch User Primary Contact Number.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserPrimaryContact() -> String? {
+        return self.user.phonePrimary?.subscriberNumber
+    }
+    
+    /**
      Method to Construct Follow Button Text.
      
      - returns: <#return value description#>
@@ -151,6 +257,11 @@ class DesignerProfileViewModel: NSObject {
         return 0
     }
     
+    /**
+     Fetch Location Label Padding.
+     
+     - returns: <#return value description#>
+     */
     func fetchLocationLabelPadding() -> CGFloat {
         if let _ = self.fetchLocationText() {
             return 8
