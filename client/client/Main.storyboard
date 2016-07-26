@@ -5,9 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Asap-Bold.otf">
-            <string>Asap-Bold</string>
-        </mutableArray>
         <mutableArray key="Asap-Medium.otf">
             <string>Asap-Medium</string>
             <string>Asap-Medium</string>
@@ -1193,6 +1190,7 @@
                                             <outlet property="locationLabelTopConstraint" destination="Amy-Nb-9o7" id="p3H-oU-Vyf"/>
                                             <outlet property="nameLabel" destination="KMc-G4-tWM" id="dEC-Ea-zvz"/>
                                             <outlet property="profilePictureImageView" destination="KzB-eu-QEx" id="1gJ-8k-0SA"/>
+                                            <outlet property="specializationLabel" destination="dJl-IC-DK5" id="c68-rL-zZj"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DesignerProfileProjectsCell" id="Zjf-Pd-03f" customClass="DesignerProfileProjectsCell" customModule="LocusIdeas" customModuleProvider="target">
@@ -1253,24 +1251,27 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerView" id="xDh-Vp-0fS">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerView" id="xDh-Vp-0fS" customClass="DesignerProfileHeaderView" customModule="LocusIdeas" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SL-qd-khj">
-                                            <rect key="frame" x="8" y="8" width="304" height="34"/>
-                                            <fontDescription key="fontDescription" name="Asap-Bold" family="Asap" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESIGNS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SL-qd-khj">
+                                            <rect key="frame" x="16" y="8" width="296" height="34"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.7097084747282052" blue="0.68978122910066009" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.94014423076923082" green="0.94014423076923082" blue="0.94014423076923082" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.97668269230769234" green="0.97668269230769234" blue="0.97668269230769234" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="2SL-qd-khj" secondAttribute="bottom" constant="8" id="25Z-ft-xf2"/>
                                         <constraint firstAttribute="trailing" secondItem="2SL-qd-khj" secondAttribute="trailing" constant="8" id="8Ip-aW-ifx"/>
                                         <constraint firstItem="2SL-qd-khj" firstAttribute="top" secondItem="xDh-Vp-0fS" secondAttribute="top" constant="8" id="SYg-bk-Ua4"/>
-                                        <constraint firstItem="2SL-qd-khj" firstAttribute="leading" secondItem="xDh-Vp-0fS" secondAttribute="leading" constant="8" id="f1i-qb-mCb"/>
+                                        <constraint firstItem="2SL-qd-khj" firstAttribute="leading" secondItem="xDh-Vp-0fS" secondAttribute="leading" constant="16" id="f1i-qb-mCb"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="2SL-qd-khj" id="eBH-D4-GPt"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="I4s-7C-geI" id="iLr-hg-g38"/>

@@ -14,6 +14,7 @@ class DesignerProfileHeaderCell: UICollectionViewCell {
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var specializationLabel: UILabel!
     
     @IBOutlet weak var locationLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var locationLabelTopConstraint: NSLayoutConstraint!

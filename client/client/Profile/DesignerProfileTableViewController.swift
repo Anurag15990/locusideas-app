@@ -19,6 +19,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.registerNib(UINib(nibName: "DesignerBioCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DesignerBioCollectionViewCell")
+        
         setupNavigationBar()
         bindViewModel()
     }
@@ -52,7 +54,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,6 +62,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         case 0:
             return 1
         case 1:
+            return 1
+        case 2:
             return viewModel.projects.array.count
         default:
             return 0
@@ -85,6 +89,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             
             cell.nameLabel.text = viewModel.fetchUserName()
             cell.locationLabel.attributedText = viewModel.fetchLocationText()
+            cell.specializationLabel.text = viewModel.fetchUserSpecialization()
             cell.followButton.setAttributedTitle(viewModel.constructFollowButtonText(), forState: .Normal)
             
             cell.locationLabelHeightConstraint.constant = viewModel.fetchLocationLabelHeight()
@@ -94,6 +99,10 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             return cell
             
         case 1:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerBioCollectionViewCell", forIndexPath: indexPath) as! DesignerBioCollectionViewCell
+            cell.bioLabel.text = viewModel.fetchUserBio()
+            return cell
+        case 2:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerProfileProjectsCell", forIndexPath: indexPath) as! DesignerProfileProjectsCell
             let project = viewModel.projects.array[indexPath.row]
             cell.projectName.text = viewModel.fetchProjectName(project)
@@ -116,8 +125,10 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         switch indexPath.section {
         case 0:
             return CGSizeMake(UIScreen.mainScreen().bounds.width, 300)
-            
+        
         case 1:
+            return CGSizeMake(UIScreen.mainScreen().bounds.width, self.viewModel.fetchHeightForBioLabel())
+        case 2:
             return CGSizeMake(UIScreen.mainScreen().bounds.width/2, UIScreen.mainScreen().bounds.width/2)
         
         default:
@@ -147,14 +158,24 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath) as! DesignerProfileHeaderView
+        switch indexPath.section {
+        case 1:
+            headerView.titleLabel.text =  "ABOUT"
+        case 2:
+            headerView.titleLabel.text = "DESIGNS"
+        default:
+            break
+        }
         return headerView
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 1 {
+        switch section {
+        case 1,2:
             return CGSizeMake(UIScreen.mainScreen().bounds.width,40)
+        default:
+            return CGSizeZero
         }
-        return CGSizeZero
     }
 }
