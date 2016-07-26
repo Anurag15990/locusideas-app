@@ -1190,6 +1190,7 @@
                                             <outlet property="locationLabelTopConstraint" destination="Amy-Nb-9o7" id="p3H-oU-Vyf"/>
                                             <outlet property="nameLabel" destination="KMc-G4-tWM" id="dEC-Ea-zvz"/>
                                             <outlet property="profilePictureImageView" destination="KzB-eu-QEx" id="1gJ-8k-0SA"/>
+                                            <outlet property="specializationLabel" destination="dJl-IC-DK5" id="c68-rL-zZj"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DesignerProfileProjectsCell" id="Zjf-Pd-03f" customClass="DesignerProfileProjectsCell" customModule="LocusIdeas" customModuleProvider="target">

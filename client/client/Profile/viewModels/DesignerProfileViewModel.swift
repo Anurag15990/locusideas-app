@@ -108,6 +108,15 @@ class DesignerProfileViewModel: NSObject {
     }
     
     /**
+     Method to fetch User Specialization.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserSpecialization() -> String? {
+        return user.profile?.designer?.specialization
+    }
+    
+    /**
      Method to fetch Location Text for label.
      
      - parameter location: <#location description#>

@@ -89,6 +89,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             
             cell.nameLabel.text = viewModel.fetchUserName()
             cell.locationLabel.attributedText = viewModel.fetchLocationText()
+            cell.specializationLabel.text = viewModel.fetchUserSpecialization()
             cell.followButton.setAttributedTitle(viewModel.constructFollowButtonText(), forState: .Normal)
             
             cell.locationLabelHeightConstraint.constant = viewModel.fetchLocationLabelHeight()
