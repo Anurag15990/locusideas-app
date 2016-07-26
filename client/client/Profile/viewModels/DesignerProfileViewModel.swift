@@ -270,4 +270,26 @@ class DesignerProfileViewModel: NSObject {
         return 0
     }
     
+    func fetchHeightForBioLabel() -> CGFloat {
+        let font = UIFont(name: "Asap-regular", size: 13)!
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 0.9
+        paragraphStyle.lineSpacing = 4.0
+        
+        if let shortBio = self.user.bio?.short {
+            let rect = NSString(string: shortBio).boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : font, NSParagraphStyleAttributeName: paragraphStyle], context: nil)
+            
+            let descriptionHeight = ceil(rect.height)
+            let height = descriptionHeight
+            
+            if height < 50 {
+                return 50
+            }
+            return height
+        }
+        
+        return 50
+    }
+    
 }
