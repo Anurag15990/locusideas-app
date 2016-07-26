@@ -164,6 +164,67 @@ class DesignerProfileViewModel: NSObject {
     func fetchUserEducationExperience() -> User.Education? {
         return self.user.education
     }
+    
+    /**
+     Method for fetching User's Primary Website
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserWebsite() -> String? {
+        return self.user.links?.website?.primary
+    }
+    
+    /**
+     Method fo fetching User's Links.
+     
+     - parameter index: <#index description#>
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserSocialLink(index: Int) -> (String, String)? {
+        if let social = self.user.links?.social {
+            let socialObject = social[index]
+            
+            switch  socialObject.type! {
+                
+            case "facebook":
+                return ("", socialObject.url!)
+                
+            case "twitter":
+                return ("", socialObject.url!)
+                
+            case "instagram":
+                return ("", socialObject.url!)
+                
+            case "linkedIn":
+                return ("", socialObject.url!)
+                
+            default:
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    /**
+     Method to fetch User Email.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserEmail() -> String? {
+        return self.user.emailPrimary?.address
+    }
+    
+    /**
+     Method to fetch User Primary Contact Number.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserPrimaryContact() -> String? {
+        return self.user.phonePrimary?.subscriberNumber
+    }
+    
     /**
      Method to Construct Follow Button Text.
      
