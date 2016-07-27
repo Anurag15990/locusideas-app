@@ -166,6 +166,15 @@ class DesignerProfileViewModel: NSObject {
     }
     
     /**
+     Method to fetch User Designer Skills.
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserSkills() -> [User.DesignerProfile.DesignerObject.Skill]? {
+        return user.profile?.designer?.skills
+    }
+    
+    /**
      Method to fetch User Education Experience.
      
      - returns: <#return value description#>

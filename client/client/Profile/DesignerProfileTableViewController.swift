@@ -20,6 +20,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         super.viewDidLoad()
         
         collectionView.registerNib(UINib(nibName: "DesignerBioCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DesignerBioCollectionViewCell")
+        collectionView.registerNib(UINib(nibName: "DesignerSkillsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DesignerSkillsCollectionViewCell")
+
         
         setupNavigationBar()
         bindViewModel()
@@ -54,7 +56,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,6 +66,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         case 1:
             return 1
         case 2:
+            return viewModel.fetchUserSkills()!.count
+        case 3:
             return viewModel.projects.array.count
         default:
             return 0
@@ -103,6 +107,10 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             cell.bioLabel.text = viewModel.fetchUserBio()
             return cell
         case 2:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerSkillsCollectionViewCell", forIndexPath: indexPath) as! DesignerSkillsCollectionViewCell
+            cell.skillsTitleLabel.text = viewModel.fetchUserSkills()![indexPath.row].title
+            return cell
+        case 3:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerProfileProjectsCell", forIndexPath: indexPath) as! DesignerProfileProjectsCell
             let project = viewModel.projects.array[indexPath.row]
             cell.projectName.text = viewModel.fetchProjectName(project)
@@ -129,6 +137,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         case 1:
             return CGSizeMake(UIScreen.mainScreen().bounds.width, self.viewModel.fetchHeightForBioLabel())
         case 2:
+            return CGSizeMake(UIScreen.mainScreen().bounds.width/2, 56)
+        case 3:
             return CGSizeMake(UIScreen.mainScreen().bounds.width/2, UIScreen.mainScreen().bounds.width/2)
         
         default:
@@ -163,6 +173,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
         case 1:
             headerView.titleLabel.text =  "ABOUT"
         case 2:
+            headerView.titleLabel.text = "SKILLS"
+        case 3:
             headerView.titleLabel.text = "DESIGNS"
         default:
             break
@@ -172,7 +184,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         switch section {
-        case 1,2:
+        case 1,2,3:
             return CGSizeMake(UIScreen.mainScreen().bounds.width,40)
         default:
             return CGSizeZero
