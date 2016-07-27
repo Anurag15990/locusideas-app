@@ -37,6 +37,8 @@
 		75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D491C4157880075FA37 /* BaseRouterProtocol.swift */; };
 		75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4B1C4157880075FA37 /* BaseRequestBody.swift */; };
 		75840D501C4157880075FA37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75840D4D1C4157880075FA37 /* BaseRouter.swift */; };
+		75847FA81D49302000FC9593 /* DesignerSkillsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847FA61D49302000FC9593 /* DesignerSkillsCollectionViewCell.swift */; };
+		75847FA91D49302000FC9593 /* DesignerSkillsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75847FA71D49302000FC9593 /* DesignerSkillsCollectionViewCell.xib */; };
 		758C3D8E1D470D900058842F /* DesignerBioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758C3D8C1D470D900058842F /* DesignerBioCollectionViewCell.swift */; };
 		758C3D8F1D470D900058842F /* DesignerBioCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 758C3D8D1D470D900058842F /* DesignerBioCollectionViewCell.xib */; };
 		758C3D911D4716B40058842F /* DesignerProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758C3D901D4716B40058842F /* DesignerProfileHeaderView.swift */; };
@@ -177,6 +179,8 @@
 		75840D491C4157880075FA37 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		75840D4B1C4157880075FA37 /* BaseRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBody.swift; sourceTree = "<group>"; };
 		75840D4D1C4157880075FA37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		75847FA61D49302000FC9593 /* DesignerSkillsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerSkillsCollectionViewCell.swift; sourceTree = "<group>"; };
+		75847FA71D49302000FC9593 /* DesignerSkillsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerSkillsCollectionViewCell.xib; sourceTree = "<group>"; };
 		758C3D8C1D470D900058842F /* DesignerBioCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerBioCollectionViewCell.swift; sourceTree = "<group>"; };
 		758C3D8D1D470D900058842F /* DesignerBioCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignerBioCollectionViewCell.xib; sourceTree = "<group>"; };
 		758C3D901D4716B40058842F /* DesignerProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				758C3D8C1D470D900058842F /* DesignerBioCollectionViewCell.swift */,
 				758C3D8D1D470D900058842F /* DesignerBioCollectionViewCell.xib */,
 				758C3D901D4716B40058842F /* DesignerProfileHeaderView.swift */,
+				75847FA61D49302000FC9593 /* DesignerSkillsCollectionViewCell.swift */,
+				75847FA71D49302000FC9593 /* DesignerSkillsCollectionViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -864,6 +870,7 @@
 				91C1B92A1C41466300CF0ABC /* Montserrat-UltraLight.otf in Resources */,
 				91C1B9201C41466300CF0ABC /* CoveredByYourGrace.ttf in Resources */,
 				91FCB6A11C3CFEE500652E6B /* Main.storyboard in Resources */,
+				75847FA91D49302000FC9593 /* DesignerSkillsCollectionViewCell.xib in Resources */,
 				91C1B91B1C41466300CF0ABC /* Asap-BoldItalic.otf in Resources */,
 				91C1B9221C41466300CF0ABC /* materialdesignicons-webfont (1).ttf in Resources */,
 				C5376CF11D1ECBB60003A531 /* DesignerContactCard.xib in Resources */,
@@ -963,6 +970,7 @@
 				91954C971C678A0B001A0953 /* ExploreDesignersCard.swift in Sources */,
 				C5D0C8D21CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift in Sources */,
 				C5376CEA1D1ECBB60003A531 /* DesignerLinksCard.swift in Sources */,
+				75847FA81D49302000FC9593 /* DesignerSkillsCollectionViewCell.swift in Sources */,
 				C5376CF01D1ECBB60003A531 /* DesignerContactCard.swift in Sources */,
 				C5376CEC1D1ECBB60003A531 /* DesignerSkillsCard.swift in Sources */,
 				91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */,
