@@ -52,6 +52,7 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     
     func infoButtonPressed(sender: UIButton) {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("DesignerInfoDetailTableViewController") as! DesignerInfoDetailTableViewController
+        vc.viewModel = self.viewModel
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
