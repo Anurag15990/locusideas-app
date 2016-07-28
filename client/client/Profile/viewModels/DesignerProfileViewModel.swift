@@ -10,16 +10,37 @@ import Foundation
 import UIKit
 import Bond
 
+enum DesignerProfileSection {
+    case HeaderSection
+    case AboutSection
+    case SkillsSection
+    case ProjectsSection
+}
+
 class DesignerProfileViewModel: NSObject {
     
     var user: User!
     var projects =  ObservableArray<Project>()
+    var sections = [DesignerProfileSection]()
     var paging: Pagination!
     
     init(user: User) {
         super.init()
         self.user = user
+        self.populateSections()
         self.fetchProjectsForOwner()
+    }
+    
+    func populateSections() {
+        self.sections.append(.HeaderSection)
+        
+        if let _ = self.fetchUserBio() {
+            self.sections.append(.AboutSection)
+        }
+        
+        if let _ = self.fetchUserSkills() {
+            self.sections.append(.SkillsSection)
+        }
     }
     
     /**
@@ -27,6 +48,7 @@ class DesignerProfileViewModel: NSObject {
      */
     func fetchProjectsForOwner() {
         ProjectService.sharedInstance.fetchProjectsByOwner(self.user.id!, successCallback: { (projects, paging) in
+            self.sections.append(.ProjectsSection)
             self.projects.removeAll()
             self.projects.appendContentsOf(projects)
             self.paging = paging
