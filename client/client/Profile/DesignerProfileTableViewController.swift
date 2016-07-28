@@ -56,29 +56,27 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 4
+        return self.viewModel.sections.count
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch  section{
-        case 0:
+        switch  self.viewModel.sections[section]{
+        case .HeaderSection:
             return 1
-        case 1:
+        case .AboutSection:
             return 1
-        case 2:
+        case .SkillsSection:
             return viewModel.fetchUserSkills()!.count
-        case 3:
+        case .ProjectsSection:
             return viewModel.projects.array.count
-        default:
-            return 0
         }
         
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        switch  indexPath.section {
-        case 0:
+        switch  self.viewModel.sections[indexPath.section]{
+        case .HeaderSection:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerProfileHeaderCell", forIndexPath: indexPath) as! DesignerProfileHeaderCell
             
             if let coverImageUrl = self.viewModel.fetchUserCoverImageUrl() {
@@ -102,15 +100,15 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             cell.locationLabel.textAlignment = .Center
             return cell
             
-        case 1:
+        case .AboutSection:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerBioCollectionViewCell", forIndexPath: indexPath) as! DesignerBioCollectionViewCell
             cell.bioLabel.text = viewModel.fetchUserBio()
             return cell
-        case 2:
+        case .SkillsSection:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerSkillsCollectionViewCell", forIndexPath: indexPath) as! DesignerSkillsCollectionViewCell
             cell.skillsTitleLabel.text = viewModel.fetchUserSkills()![indexPath.row].title
             return cell
-        case 3:
+        case .ProjectsSection:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DesignerProfileProjectsCell", forIndexPath: indexPath) as! DesignerProfileProjectsCell
             let project = viewModel.projects.array[indexPath.row]
             cell.projectName.text = viewModel.fetchProjectName(project)
@@ -122,36 +120,34 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             }
             
             return cell
-        default:
-            return UICollectionViewCell()
         }
         
         
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        switch indexPath.section {
-        case 0:
+        switch self.viewModel.sections[indexPath.section] {
+        case .HeaderSection:
             return CGSizeMake(UIScreen.mainScreen().bounds.width, 300)
         
-        case 1:
+        case .AboutSection:
             return CGSizeMake(UIScreen.mainScreen().bounds.width, self.viewModel.fetchHeightForBioLabel())
-        case 2:
+        case .SkillsSection:
             return CGSizeMake(UIScreen.mainScreen().bounds.width/2, 56)
-        case 3:
+        case .ProjectsSection:
             return CGSizeMake(UIScreen.mainScreen().bounds.width/2, UIScreen.mainScreen().bounds.width/2)
-        
-        default:
-            return CGSizeZero
         }
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 {
+        switch  self.viewModel.sections[indexPath.section] {
+        case .ProjectsSection:
             let vc = storyboard?.instantiateViewControllerWithIdentifier("ProjectDetailsTableViewController") as! ProjectDetailsTableViewController
             let project = viewModel.projects.array[indexPath.row]
             vc.project = project
             self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
         }
     }
     
@@ -169,12 +165,12 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath) as! DesignerProfileHeaderView
-        switch indexPath.section {
-        case 1:
+        switch self.viewModel.sections[indexPath.section] {
+        case .AboutSection:
             headerView.titleLabel.text =  "ABOUT"
-        case 2:
+        case .SkillsSection:
             headerView.titleLabel.text = "SKILLS"
-        case 3:
+        case .ProjectsSection:
             headerView.titleLabel.text = "DESIGNS"
         default:
             break
@@ -183,8 +179,10 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        switch section {
-        case 1,2,3:
+        switch self.viewModel.sections[section] {
+        case .ProjectsSection,
+             .SkillsSection,
+             .AboutSection:
             return CGSizeMake(UIScreen.mainScreen().bounds.width,40)
         default:
             return CGSizeZero
