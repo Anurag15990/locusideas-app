@@ -47,12 +47,19 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
 
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return self.viewModel.designerInfoSections.count
     }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.fetchUserEducationExperience()!.experience!.count
+        switch self.viewModel.designerInfoSections[section] {
+        case .EducationExperienceSection:
+            return viewModel.fetchUserEducationExperience()!.experience!.count
+        case .WorkExperienceSection:
+            return viewModel.fetchUserWorkExperience()!.experience!.count
+        default:
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -62,11 +69,23 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DesignersEducationExperienceCell", forIndexPath: indexPath) as! DesignersEducationExperienceCell
-        let education = self.viewModel.fetchUserEducationExperience()!.experience![indexPath.row]
-        cell.institutionLabel.text = education.school
-        cell.degreeLabel.text = education.degree
-        return cell
+        switch self.viewModel.designerInfoSections[indexPath.section] {
+        case .EducationExperienceSection:
+            let cell = tableView.dequeueReusableCellWithIdentifier("DesignersEducationExperienceCell", forIndexPath: indexPath) as! DesignersEducationExperienceCell
+            let education = self.viewModel.fetchUserEducationExperience()!.experience![indexPath.row]
+            cell.institutionLabel.text = education.school
+            cell.degreeLabel.text = education.degree
+            return cell
+        case .WorkExperienceSection:
+            let cell = tableView.dequeueReusableCellWithIdentifier("DesignersWorkExperienceCell", forIndexPath: indexPath) as! DesignersWorkExperienceCell
+            let work = self.viewModel.fetchUserWorkExperience()!.experience![indexPath.row]
+            cell.organizationLabel.text = work.organization
+            cell.designationLabel.text = work.designation
+            return cell
+        default:
+            return UITableViewCell()
+        }
+       
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -77,9 +96,12 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
         
         let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(self.profileHeaderView) as! MyProfileHeaderView
         
-        switch section {
-        case 0:
-            headerView.headerLabel.text = "EDUCATION"
+        switch self.viewModel.designerInfoSections[section] {
+        case .EducationExperienceSection:
+            headerView.headerLabel.text = "EDUCATION EXPERIENCE"
+            
+        case .WorkExperienceSection:
+            headerView.headerLabel.text = "WORK EXPERIENCE"
             
         default: break
             

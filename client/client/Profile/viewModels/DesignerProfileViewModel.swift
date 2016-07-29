@@ -15,6 +15,11 @@ enum DesignerProfileSection {
     case AboutSection
     case SkillsSection
     case ProjectsSection
+    
+    case WorkExperienceSection
+    case EducationExperienceSection
+    case ContactInformationSection
+    case SocialSection
 }
 
 class DesignerProfileViewModel: NSObject {
@@ -22,6 +27,7 @@ class DesignerProfileViewModel: NSObject {
     var user: User!
     var projects =  ObservableArray<Project>()
     var sections = [DesignerProfileSection]()
+    var designerInfoSections = [DesignerProfileSection]()
     var paging: Pagination!
     
     init(user: User) {
@@ -40,6 +46,20 @@ class DesignerProfileViewModel: NSObject {
         
         if let _ = self.fetchUserSkills() {
             self.sections.append(.SkillsSection)
+        }
+        
+        if let _ = self.fetchUserEducationExperience() {
+            self.designerInfoSections.append(.EducationExperienceSection)
+        }
+        
+        if let _ = self.fetchUserWorkExperience() {
+            self.designerInfoSections.append(.WorkExperienceSection)
+        }
+        
+        if let _ = self.fetchUserEmail() {
+            self.designerInfoSections.append(.ContactInformationSection)
+        } else if let _ = self.fetchUserPrimaryContact() {
+            self.designerInfoSections.append(.ContactInformationSection)
         }
     }
     

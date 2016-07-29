@@ -13,10 +13,8 @@
             <string>Asap-Medium</string>
             <string>Asap-Medium</string>
             <string>Asap-Medium</string>
-            <string>Asap-Medium</string>
         </mutableArray>
         <mutableArray key="Asap-Regular.otf">
-            <string>Asap-Regular</string>
             <string>Asap-Regular</string>
             <string>Asap-Regular</string>
             <string>Asap-Regular</string>
@@ -47,11 +45,14 @@
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
         <mutableArray key="Montserrat-SemiBold.otf">
             <string>Montserrat-SemiBold</string>
         </mutableArray>
         <mutableArray key="materialdesignicons-webfont (1).ttf">
+            <string>MaterialDesignIcons</string>
             <string>MaterialDesignIcons</string>
             <string>MaterialDesignIcons</string>
             <string>MaterialDesignIcons</string>
@@ -1322,27 +1323,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xut-fK-mk4">
-                                                    <rect key="frame" x="8" y="8" width="31" height="31"/>
+                                                    <rect key="frame" x="8" y="8" width="31" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="31" id="TiH-SQ-g8R"/>
-                                                        <constraint firstAttribute="height" constant="31" id="yww-wC-sMW"/>
+                                                        <constraint firstAttribute="height" constant="28" id="yww-wC-sMW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="MaterialDesignIcons" family="MaterialDesignIcons" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" name="MaterialDesignIcons" family="MaterialDesignIcons" pointSize="17"/>
                                                     <color key="textColor" red="0.15825387960000001" green="0.34094315609999998" blue="0.3211757623" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CO-yA-nrd">
-                                                    <rect key="frame" x="40" y="39" width="272" height="26.5"/>
-                                                    <fontDescription key="fontDescription" name="Asap-Regular" family="Asap" pointSize="15"/>
+                                                    <rect key="frame" x="40" y="36" width="272" height="29.5"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7g-SY-M3o">
-                                                    <rect key="frame" x="39" y="8" width="273" height="31"/>
+                                                    <rect key="frame" x="39" y="8" width="273" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="Ynv-xX-InY"/>
+                                                        <constraint firstAttribute="height" constant="28" id="Ynv-xX-InY"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Asap-Medium" family="Asap" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                     <color key="textColor" red="0.15825387960000001" green="0.34094315609999998" blue="0.3211757623" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1364,6 +1365,58 @@
                                         <connections>
                                             <outlet property="degreeLabel" destination="1CO-yA-nrd" id="U0J-fd-Hyf"/>
                                             <outlet property="institutionLabel" destination="L7g-SY-M3o" id="L2i-oY-14w"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DesignersWorkExperienceCell" rowHeight="74" id="ba8-15-JxJ" customClass="DesignersWorkExperienceCell" customModule="LocusIdeas" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="102" width="320" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ba8-15-JxJ" id="vwN-p6-GnL">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYy-FU-p6X">
+                                                    <rect key="frame" x="8" y="8" width="31" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="BRt-wt-Ozh"/>
+                                                        <constraint firstAttribute="width" constant="31" id="y8g-k2-hV8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="MaterialDesignIcons" family="MaterialDesignIcons" pointSize="17"/>
+                                                    <color key="textColor" red="0.15825387960000001" green="0.34094315609999998" blue="0.3211757623" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTJ-Vp-mA7">
+                                                    <rect key="frame" x="40" y="36" width="272" height="29.5"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9P9-nX-pVc">
+                                                    <rect key="frame" x="39" y="8" width="273" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="XGb-lT-HBG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.15825387960000001" green="0.34094315609999998" blue="0.3211757623" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XYy-FU-p6X" firstAttribute="top" secondItem="vwN-p6-GnL" secondAttribute="top" constant="8" id="4vX-7h-we9"/>
+                                                <constraint firstItem="9P9-nX-pVc" firstAttribute="leading" secondItem="XYy-FU-p6X" secondAttribute="trailing" id="691-pZ-4Gd"/>
+                                                <constraint firstAttribute="bottom" secondItem="QTJ-Vp-mA7" secondAttribute="bottom" constant="8" id="JcV-BA-85L"/>
+                                                <constraint firstAttribute="trailing" secondItem="QTJ-Vp-mA7" secondAttribute="trailing" constant="8" id="bAt-4E-vLS"/>
+                                                <constraint firstItem="9P9-nX-pVc" firstAttribute="leading" secondItem="XYy-FU-p6X" secondAttribute="trailing" id="d6D-3y-xKr"/>
+                                                <constraint firstItem="9P9-nX-pVc" firstAttribute="top" secondItem="vwN-p6-GnL" secondAttribute="top" constant="8" id="ecp-AR-Fws"/>
+                                                <constraint firstAttribute="trailing" secondItem="9P9-nX-pVc" secondAttribute="trailing" constant="8" id="emF-yc-1yT"/>
+                                                <constraint firstItem="XYy-FU-p6X" firstAttribute="leading" secondItem="vwN-p6-GnL" secondAttribute="leading" constant="8" id="jxi-AU-Jf3"/>
+                                                <constraint firstItem="QTJ-Vp-mA7" firstAttribute="top" secondItem="9P9-nX-pVc" secondAttribute="bottom" id="ngh-wE-hnt"/>
+                                                <constraint firstItem="QTJ-Vp-mA7" firstAttribute="leading" secondItem="vwN-p6-GnL" secondAttribute="leading" constant="40" id="vGr-WJ-SUA"/>
+                                                <constraint firstItem="QTJ-Vp-mA7" firstAttribute="top" secondItem="9P9-nX-pVc" secondAttribute="bottom" id="yeK-bi-ekx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="designationLabel" destination="QTJ-Vp-mA7" id="Rl7-wC-6CH"/>
+                                            <outlet property="organizationLabel" destination="9P9-nX-pVc" id="2Ea-3k-4e2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

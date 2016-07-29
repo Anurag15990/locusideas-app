@@ -70,6 +70,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             return viewModel.fetchUserSkills()!.count
         case .ProjectsSection:
             return viewModel.projects.array.count
+        default:
+            return 0
         }
         
     }
@@ -121,6 +123,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             }
             
             return cell
+        default:
+            return UICollectionViewCell()
         }
         
         
@@ -137,6 +141,8 @@ class DesignerProfileTableViewController: UIViewController, UICollectionViewData
             return CGSizeMake(UIScreen.mainScreen().bounds.width/2, 56)
         case .ProjectsSection:
             return CGSizeMake(UIScreen.mainScreen().bounds.width/2, UIScreen.mainScreen().bounds.width/2)
+        default:
+            return CGSizeZero
         }
     }
     
