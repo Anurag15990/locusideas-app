@@ -15,6 +15,11 @@ enum DesignerProfileSection {
     case AboutSection
     case SkillsSection
     case ProjectsSection
+    
+    case WorkExperienceSection
+    case EducationExperienceSection
+    case ContactInformationSection
+    case SocialSection
 }
 
 class DesignerProfileViewModel: NSObject {
@@ -22,6 +27,7 @@ class DesignerProfileViewModel: NSObject {
     var user: User!
     var projects =  ObservableArray<Project>()
     var sections = [DesignerProfileSection]()
+    var designerInfoSections = [DesignerProfileSection]()
     var paging: Pagination!
     
     init(user: User) {
@@ -41,6 +47,25 @@ class DesignerProfileViewModel: NSObject {
         if let _ = self.fetchUserSkills() {
             self.sections.append(.SkillsSection)
         }
+        
+        if let _ = self.fetchUserEducationExperience() {
+            self.designerInfoSections.append(.EducationExperienceSection)
+        }
+        
+        if let _ = self.fetchUserWorkExperience() {
+            self.designerInfoSections.append(.WorkExperienceSection)
+        }
+        
+        if let _ = self.fetchUserEmail() {
+            self.designerInfoSections.append(.ContactInformationSection)
+        } else if let _ = self.fetchUserPrimaryContact() {
+            self.designerInfoSections.append(.ContactInformationSection)
+        }
+        
+        if let _ = self.user.links {
+            self.designerInfoSections.append(.SocialSection)
+        }
+        
     }
     
     /**
@@ -55,6 +80,85 @@ class DesignerProfileViewModel: NSObject {
             }) { (error) in
                 //TODO: Handle Error.
         }
+    }
+    
+    /**
+     Method to return number of rows for Contact Section.
+     
+     - returns: <#return value description#>
+     */
+    func fetchNumberOfRowsForContactSection() -> Int {
+        var initialValue = 0
+        
+        if let _ = user.emailPrimary?.address {
+            initialValue += 1
+        }
+        
+        if let _ = user.phonePrimary?.subscriberNumber {
+            initialValue += 1
+        }
+        
+        return initialValue
+    }
+    
+    /**
+     Method to return number of rows for Links Section.
+     
+     - returns: <#return value description#>
+     */
+    func fetchNumberOfRowsForLinksSection() -> Int {
+        var initialValue = 0
+        
+        if let _ = self.user.links?.website {
+            initialValue += 1
+        }
+        
+        if let socialLinks = self.user.links?.social {
+            initialValue += socialLinks.count
+        }
+        
+        if let articles = self.user.links?.articles {
+            initialValue += articles.count
+        }
+        
+        if let others = self.user.links?.others {
+            initialValue += others.count
+        }
+        
+        return initialValue
+    }
+    
+    /**
+     Method to fetch User Social Link Object.
+     
+     - parameter index: <#index description#>
+     
+     - returns: <#return value description#>
+     */
+    func fetchUserSocialLink(index: Int) -> (String, String)? {
+        if let social = self.user.links?.social {
+            let socialObject = social[index]
+            
+            switch  socialObject.type! {
+                
+            case "facebook":
+                return ("", socialObject.url!)
+                
+            case "twitter":
+                return ("", socialObject.url!)
+                
+            case "instagram":
+                return ("", socialObject.url!)
+                
+            case "linkedIn":
+                return ("", socialObject.url!)
+                
+            default:
+                return nil
+            }
+        }
+        
+        return nil
     }
     
     /**
@@ -214,38 +318,6 @@ class DesignerProfileViewModel: NSObject {
         return self.user.links?.website?.primary
     }
     
-    /**
-     Method fo fetching User's Links.
-     
-     - parameter index: <#index description#>
-     
-     - returns: <#return value description#>
-     */
-    func fetchUserSocialLink(index: Int) -> (String, String)? {
-        if let social = self.user.links?.social {
-            let socialObject = social[index]
-            
-            switch  socialObject.type! {
-                
-            case "facebook":
-                return ("", socialObject.url!)
-                
-            case "twitter":
-                return ("", socialObject.url!)
-                
-            case "instagram":
-                return ("", socialObject.url!)
-                
-            case "linkedIn":
-                return ("", socialObject.url!)
-                
-            default:
-                return nil
-            }
-        }
-        
-        return nil
-    }
     
     /**
      Method to fetch User Email.

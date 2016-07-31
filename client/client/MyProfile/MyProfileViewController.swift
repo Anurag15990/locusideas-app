@@ -81,8 +81,8 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
                 cell.typeIconLabel.text = ""
                 cell.dataLabel.text = self.viewModel.fetchUserPrimaryContact()
                 return cell
-                
-            default: return UITableViewCell()
+            default:
+                return UITableViewCell()
             
             }
             
