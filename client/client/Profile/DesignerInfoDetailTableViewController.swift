@@ -11,6 +11,7 @@ import UIKit
 class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var profileHeaderView = "MyProfileHeaderView"
+    var profileContactInfoCell = "ProfileContactInfoReusableCell"
 
     @IBOutlet weak var tableView : UITableView!
     var viewModel : DesignerProfileViewModel!
@@ -57,6 +58,10 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
             return viewModel.fetchUserEducationExperience()!.experience!.count
         case .WorkExperienceSection:
             return viewModel.fetchUserWorkExperience()!.experience!.count
+        case .ContactInformationSection:
+            return viewModel.fetchNumberOfRowsForContactSection()
+        case .SocialSection:
+            return viewModel.fetchNumberOfRowsForLinksSection()
         default:
             return 0
         }
@@ -64,8 +69,13 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-       return 74
-        
+        switch viewModel.designerInfoSections[indexPath.section] {
+        case .ContactInformationSection,
+             .SocialSection:
+            return 60
+        default:
+            return 74
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -81,6 +91,33 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
             let work = self.viewModel.fetchUserWorkExperience()!.experience![indexPath.row]
             cell.organizationLabel.text = work.organization
             cell.designationLabel.text = work.designation
+            return cell
+        case .ContactInformationSection:
+            let cell = tableView.dequeueReusableCellWithIdentifier(profileContactInfoCell) as! ProfileContactInfoReusableCell
+            switch indexPath.row {
+            case 0:
+                cell.typeIconLabel.text = ""
+                cell.dataLabel.text = self.viewModel.fetchUserEmail()
+            case 1:
+                cell.typeIconLabel.text = ""
+                cell.dataLabel.text = self.viewModel.fetchUserPrimaryContact()
+            default:
+                break
+            }
+            return cell
+        case .SocialSection:
+            let cell = tableView.dequeueReusableCellWithIdentifier(profileContactInfoCell) as! ProfileContactInfoReusableCell
+            switch  indexPath.row {
+            case 0:
+                cell.typeIconLabel.text = ""
+                cell.dataLabel.text = self.viewModel.fetchUserWebsite()
+            default:
+                if let socialLinkObject = viewModel.fetchUserSocialLink(indexPath.row - 1) {
+                    cell.typeIconLabel.text = socialLinkObject.0
+                    cell.dataLabel.text = socialLinkObject.1
+                }
+            }
+            
             return cell
         default:
             return UITableViewCell()
@@ -103,6 +140,11 @@ class DesignerInfoDetailTableViewController: UIViewController, UITableViewDataSo
         case .WorkExperienceSection:
             headerView.headerLabel.text = "WORK EXPERIENCE"
             
+        case .ContactInformationSection:
+            headerView.headerLabel.text = "CONTACT INFORMATION"
+            
+        case .SocialSection:
+            headerView.headerLabel.text = "SOCIAL INFORMATION"
         default: break
             
         }
