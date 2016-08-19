@@ -19,6 +19,7 @@ enum UserRouter: BaseRouterProtocol {
     case GetUsers()
     case GetDesigners()
     case GetDesignersByURL(String)
+    case OnboardUser(String, UserOnboardingRequestBody)
     
     var baseURL: String {
         switch  self {
@@ -59,6 +60,9 @@ enum UserRouter: BaseRouterProtocol {
             
         case .GetDesignersByURL:
             return ""
+            
+        case .OnboardUser(let userId, _):
+            return "/api/users/\(userId)/onboarding"
         }
     
     }
@@ -91,6 +95,9 @@ enum UserRouter: BaseRouterProtocol {
         case .GetDesignersByURL:
             return .GET
             
+        case .OnboardUser:
+            return .POST
+            
         }
     
     }
@@ -118,7 +125,10 @@ enum UserRouter: BaseRouterProtocol {
         case .UpdateUserRequest(_, let request):
             return request
             
-        default: 
+        case .OnboardUser(_, let request):
+            return request
+            
+        default:
             return BaseRequestBody()
         }
     }
