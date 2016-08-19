@@ -109,6 +109,36 @@ class UserService: NSObject {
     }
     
     /**
+     Method to Onboard User.
+     
+     - parameter userId:          User Id of the User.
+     - parameter requestBody:     Onboarding Parameters/Details.
+     - parameter successCallback: SuccessCallback returns the User Object.
+     - parameter errorCallback:   ErrorCallback returns an NSError Object.
+     */
+    func onboardUser(userId: String,
+                     requestBody: UserOnboardingRequestBody,
+                     successCallback: ((user: User) -> Void),
+                     errorCallback: (error: NSError) -> Void) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.OnboardUser(userId, requestBody)))
+        .debugLog()
+        .responseString { (response) in
+            switch response.result {
+            
+            case .Success(let value):
+                if let user = Mapper<User>().map(value) {
+                    successCallback(user: user)
+                }
+                
+            case .Failure(let error):
+                errorCallback(error: error)
+            
+            }
+        }
+    }
+    
+    /**
      Method to Fetch All Users.
      
      - parameter successCallback: Returns an Array of Users
