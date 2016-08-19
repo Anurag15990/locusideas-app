@@ -22,6 +22,7 @@ enum BaseRouter: URLRequestConvertible {
     case AuthRouterManager(AuthRouter)
     case UserRouteManager(UserRouter)
     case ProjectRouteManager(ProjectRouter)
+    case CategoriesRouteManager(CategoriesRouter)
     
     /// URL Request is formed here.
     var URLRequest: NSMutableURLRequest {
@@ -38,6 +39,11 @@ enum BaseRouter: URLRequestConvertible {
         case .ProjectRouteManager(let request):
             let mutableUrlRequest = configureRequest(request)
             return mutableUrlRequest
+            
+        case .CategoriesRouteManager(let request):
+            let mutableUrlRequest = configureRequest(request)
+            return mutableUrlRequest
+            
         }
     }
     

@@ -11,6 +11,8 @@
 		7525C6501D6773570071728A /* UserOnboardingRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C64F1D6773570071728A /* UserOnboardingRequestBody.swift */; };
 		7525C6521D6782880071728A /* CategoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C6511D6782880071728A /* CategoriesRouter.swift */; };
 		7525C6551D67844D0071728A /* CategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C6541D67844D0071728A /* CategoriesRequest.swift */; };
+		7525C6571D678C200071728A /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C6561D678C200071728A /* CategoriesService.swift */; };
+		7525C65B1D678D9D0071728A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C65A1D678D9D0071728A /* Category.swift */; };
 		7534CBDD1D3B995400017C7A /* DesignerProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */; };
 		753577291D1D8C2400B3B043 /* ProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577281D1D8C2400B3B043 /* ProjectRouter.swift */; };
 		7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772B1D1E849C00B3B043 /* StreamViewModel.swift */; };
@@ -152,6 +154,8 @@
 		7525C64F1D6773570071728A /* UserOnboardingRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOnboardingRequestBody.swift; sourceTree = "<group>"; };
 		7525C6511D6782880071728A /* CategoriesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesRouter.swift; sourceTree = "<group>"; };
 		7525C6541D67844D0071728A /* CategoriesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesRequest.swift; sourceTree = "<group>"; };
+		7525C6561D678C200071728A /* CategoriesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
+		7525C65A1D678D9D0071728A /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileHeaderCell.swift; sourceTree = "<group>"; };
 		753577281D1D8C2400B3B043 /* ProjectRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRouter.swift; sourceTree = "<group>"; };
 		7535772B1D1E849C00B3B043 /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
@@ -571,6 +575,7 @@
 				75BD35C51CFCC01600804682 /* UserService.swift */,
 				75623E0C1D1C639B00C83C89 /* CloudinaryService.swift */,
 				7535772D1D1E863700B3B043 /* ProjectService.swift */,
+				7525C6561D678C200071728A /* CategoriesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				75623E101D1C6BE800C83C89 /* ProjectModels */,
 				7555503F1C9E64F100B734D8 /* UserModels */,
 				75BE37FE1D2D255100508B97 /* Pagination.swift */,
+				7525C65A1D678D9D0071728A /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -999,6 +1005,7 @@
 				C5376CEC1D1ECBB60003A531 /* DesignerSkillsCard.swift in Sources */,
 				91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */,
 				91C1B9081C412BBE00CF0ABC /* FontAwesome.swift in Sources */,
+				7525C65B1D678D9D0071728A /* Category.swift in Sources */,
 				91FA8AC01C60A27A0000F6A8 /* ProjectInfo.swift in Sources */,
 				91ECEC571C4FDB8A0010A352 /* StreamTableViewController.swift in Sources */,
 				755AF20E1D3954A70028601C /* ExploreDesignersViewModel.swift in Sources */,
@@ -1052,6 +1059,7 @@
 				91FA8ABB1C5F37250000F6A8 /* ShadowedContainerView.swift in Sources */,
 				75623E171D1C6E0900C83C89 /* MediaObject.swift in Sources */,
 				75840D4F1C4157880075FA37 /* BaseRequestBody.swift in Sources */,
+				7525C6571D678C200071728A /* CategoriesService.swift in Sources */,
 				75F61E9A1C5377010042C765 /* EmailSignUpAuthRequestBody.swift in Sources */,
 				75917D8F1D3EB22E001F178F /* DesignerProfileProjectsCell.swift in Sources */,
 				91954C8F1C675151001A0953 /* ExploreTableViewController.swift in Sources */,
