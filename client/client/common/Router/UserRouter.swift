@@ -56,7 +56,7 @@ enum UserRouter: BaseRouterProtocol {
             return "/api/users"
             
         case .GetDesigners:
-            return "/api/users/designers"
+            return "/api/designers"
             
         case .GetDesignersByURL:
             return ""
