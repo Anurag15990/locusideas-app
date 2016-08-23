@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSThread.sleepForTimeInterval(2.0)
         
         redirectBasedOnLoginStatus()
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyDJ1YoOR4TB3GmdtmzW3kDPVYA8GxFxIUQ")
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
