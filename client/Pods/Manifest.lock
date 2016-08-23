@@ -13,6 +13,34 @@ PODS:
     - Bolts (~> 1.5)
   - FBSDKLoginKit (4.10.0):
     - FBSDKCoreKit
+  - FirebaseAnalytics (3.2.1):
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.3)
+  - FirebaseInstanceID (1.0.7)
+  - Google/Core (3.0.3):
+    - FirebaseAnalytics (~> 3.2)
+  - Google/SignIn (3.0.3):
+    - Google/Core
+    - GoogleSignIn (~> 4.0)
+  - GoogleAppUtilities (1.1.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleAuthUtilities (2.0.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleInterchangeUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleNetworkingUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSignIn (4.0.0):
+    - GoogleAppUtilities (~> 1.1)
+    - GoogleAuthUtilities (~> 2.0)
+    - GoogleNetworkingUtilities (~> 1.2)
+    - GoogleUtilities (~> 1.3)
+  - GoogleSymbolUtilities (1.1.1)
+  - GoogleUtilities (1.3.1):
+    - GoogleSymbolUtilities (~> 1.0)
   - IDMPhotoBrowser (1.8.4):
     - DACircularProgress
     - pop
@@ -35,6 +63,7 @@ DEPENDENCIES:
   - Cloudinary
   - FBSDKCoreKit
   - FBSDKLoginKit
+  - Google/SignIn
   - IDMPhotoBrowser
   - Kingfisher
   - NVActivityIndicatorView
@@ -49,6 +78,16 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
+  FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
+  FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
+  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
+  GoogleAppUtilities: f1730f91f67767b453c289577040dd3f425ffdc7
+  GoogleAuthUtilities: d7a19615cd7627688afcf181737f1011ee8b5a23
+  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
+  GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
+  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
+  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   IDMPhotoBrowser: b574fe3229754e701f32df271afbc4ac7e4e1997
   Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
   NVActivityIndicatorView: 0084f6be71bdf4735b5424ebfb530b1e3db3276c
@@ -57,4 +96,6 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   Typhoon: 0953addabd5a10a930973fcc131c03badc88c4ba
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 40c925dde68072af0adb95301ae21a6cbdeb7940
+
+COCOAPODS: 1.0.1
