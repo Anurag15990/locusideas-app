@@ -16,6 +16,11 @@
 		7525C65B1D678D9D0071728A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C65A1D678D9D0071728A /* Category.swift */; };
 		7525C6631D6C20BB0071728A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7525C6621D6C20BB0071728A /* GoogleService-Info.plist */; };
 		7525C6681D6C30A90071728A /* GoogleAuthRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C6671D6C30A90071728A /* GoogleAuthRequestBody.swift */; };
+		7525C66D1D6CA00B0071728A /* SetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C66C1D6CA00B0071728A /* SetLocationViewController.swift */; };
+		7525C66F1D6CA4040071728A /* GooglePlacesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525C66E1D6CA4040071728A /* GooglePlacesServices.swift */; };
+		752F17D81D6CADCF0079F979 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17D71D6CADCF0079F979 /* StringConstants.swift */; };
+		752F17DB1D6CB9950079F979 /* DetectLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17DA1D6CB9950079F979 /* DetectLocationTableViewCell.swift */; };
+		752F17DD1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17DC1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift */; };
 		7534CBDD1D3B995400017C7A /* DesignerProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */; };
 		753577291D1D8C2400B3B043 /* ProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577281D1D8C2400B3B043 /* ProjectRouter.swift */; };
 		7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772B1D1E849C00B3B043 /* StreamViewModel.swift */; };
@@ -164,6 +169,11 @@
 		7525C6621D6C20BB0071728A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7525C6641D6C2CE80071728A /* LocusIdeas-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocusIdeas-Bridging-Header.h"; sourceTree = "<group>"; };
 		7525C6671D6C30A90071728A /* GoogleAuthRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAuthRequestBody.swift; sourceTree = "<group>"; };
+		7525C66C1D6CA00B0071728A /* SetLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationViewController.swift; sourceTree = "<group>"; };
+		7525C66E1D6CA4040071728A /* GooglePlacesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesServices.swift; sourceTree = "<group>"; };
+		752F17D71D6CADCF0079F979 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		752F17DA1D6CB9950079F979 /* DetectLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectLocationTableViewCell.swift; sourceTree = "<group>"; };
+		752F17DC1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePredictionsTableViewCell.swift; sourceTree = "<group>"; };
 		7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileHeaderCell.swift; sourceTree = "<group>"; };
 		753577281D1D8C2400B3B043 /* ProjectRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRouter.swift; sourceTree = "<group>"; };
 		7535772B1D1E849C00B3B043 /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
@@ -346,6 +356,24 @@
 			path = CategoriesRequest;
 			sourceTree = "<group>";
 		};
+		7525C6691D6C9D880071728A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				752F17D91D6CB9780079F979 /* views */,
+				7525C66C1D6CA00B0071728A /* SetLocationViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		752F17D91D6CB9780079F979 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				752F17DA1D6CB9950079F979 /* DetectLocationTableViewCell.swift */,
+				752F17DC1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		7534CBDB1D3B994200017C7A /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +431,7 @@
 		754716A91C2EE9A4004ABFC6 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				7525C6691D6C9D880071728A /* Onboarding */,
 				75D5A4A51D3A928700728CD9 /* Settings */,
 				75BD35C21CFCBB4700804682 /* Services */,
 				759B5CF51CF77D4C00BC6ACE /* Assembly */,
@@ -596,6 +625,7 @@
 				75623E0C1D1C639B00C83C89 /* CloudinaryService.swift */,
 				7535772D1D1E863700B3B043 /* ProjectService.swift */,
 				7525C6561D678C200071728A /* CategoriesService.swift */,
+				7525C66E1D6CA4040071728A /* GooglePlacesServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -641,6 +671,7 @@
 				91954C851C64BF00001A0953 /* UIImage_Gradient.swift */,
 				91954C871C64E51B001A0953 /* CAGradientLayer.swift */,
 				C5C4DE2A1D20272800898BFE /* ValidationUtils.swift */,
+				752F17D71D6CADCF0079F979 /* StringConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1247,6 +1278,7 @@
 			files = (
 				91954C971C678A0B001A0953 /* ExploreDesignersCard.swift in Sources */,
 				7525C6521D6782880071728A /* CategoriesRouter.swift in Sources */,
+				752F17D81D6CADCF0079F979 /* StringConstants.swift in Sources */,
 				C5D0C8D21CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift in Sources */,
 				C5376CEA1D1ECBB60003A531 /* DesignerLinksCard.swift in Sources */,
 				75847FA81D49302000FC9593 /* DesignerSkillsCollectionViewCell.swift in Sources */,
@@ -1267,9 +1299,11 @@
 				75623E121D1C6BF100C83C89 /* Project.swift in Sources */,
 				91FCB6A31C3D3D6400652E6B /* SignUpViewController.swift in Sources */,
 				75D5A4AD1D3A94BE00728CD9 /* SettingTableViewCell.swift in Sources */,
+				7525C66D1D6CA00B0071728A /* SetLocationViewController.swift in Sources */,
 				C5376CEF1D1ECBB60003A531 /* DesignerStatsCard.swift in Sources */,
 				91954C7C1C60D67E001A0953 /* ProjectDescription.swift in Sources */,
 				75840D501C4157880075FA37 /* BaseRouter.swift in Sources */,
+				752F17DD1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift in Sources */,
 				757980801D3EA19E00476AB8 /* UITabBarExtension.swift in Sources */,
 				753577301D1E97C000B3B043 /* ProjectResponse.swift in Sources */,
 				755550471C9E88B000B734D8 /* Phone.swift in Sources */,
@@ -1283,6 +1317,7 @@
 				91954C861C64BF00001A0953 /* UIImage_Gradient.swift in Sources */,
 				91FCB69F1C3CFB9100652E6B /* SignInViewController.swift in Sources */,
 				91954C881C64E51B001A0953 /* CAGradientLayer.swift in Sources */,
+				7525C66F1D6CA4040071728A /* GooglePlacesServices.swift in Sources */,
 				7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */,
 				755AF2081D39531F0028601C /* MyProfileHeaderCell.swift in Sources */,
 				75BE50F81D4B153C0025C66A /* DesignersWorkExperienceCell.swift in Sources */,
@@ -1302,6 +1337,7 @@
 				753577321D20169500B3B043 /* ProjectMedia.swift in Sources */,
 				755550451C9E7F6200B734D8 /* Office.swift in Sources */,
 				C5375B381CA7CFC000AA5B06 /* ProjectHeaderView.swift in Sources */,
+				752F17DB1D6CB9950079F979 /* DetectLocationTableViewCell.swift in Sources */,
 				75D5A4AB1D3A935000728CD9 /* SettingsViewModel.swift in Sources */,
 				75BD35C41CFCBB6600804682 /* AuthService.swift in Sources */,
 				75BE50F61D4A8DFD0025C66A /* DesignersEducationExperienceCell.swift in Sources */,

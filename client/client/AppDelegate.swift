@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         redirectBasedOnLoginStatus()
         
-        GMSPlacesClient.provideAPIKey("AIzaSyDJ1YoOR4TB3GmdtmzW3kDPVYA8GxFxIUQ")
+        GMSPlacesClient.provideAPIKey(GoogleConstants.googlePlacesAPIKey)
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -90,7 +90,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func redirectToTabView() {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+//        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("SetLocationViewController") as! SetLocationViewController
+
         self.window?.rootViewController = vc
     }
     
