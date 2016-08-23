@@ -25,7 +25,7 @@ class UserResponse: NSObject, Mappable {
     
     func mapping(map: Map) {
         users <- map["users"]
-        userDesigners <- map["userDesigners"]
+        userDesigners <- map["designers"]
         paging  <- map["paging"]
     }
 }

@@ -43,6 +43,35 @@ class AuthService: NSObject {
     }
     
     /**
+     Method to login via Google
+     
+     - parameter requestBody:     Google Auth Request body.
+     - parameter successCallback: Returns a valid auth token.
+     - parameter errorCallback:   Returns an NSError object on failure.
+     */
+    func loginWithGoogle(
+        requestBody: GoogleAuthRequestBody,
+        successCallback: ((token: String) -> Void),
+        errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(
+            BaseRouter.AuthRouterManager(AuthRouter.GoogleAuth(requestBody)))
+            .debugLog()
+            .responseJSON { (response) in
+                
+                switch response.result {
+                case .Success(let value):
+                    if let token = value["token"] as? String {
+                        NSUserDefaultsUtils.setAuthToken(token)
+                        successCallback(token: token)
+                    }
+                case .Failure(let error):
+                    errorCallback(error: error)
+                }
+        }
+    }
+    
+    /**
      Method to login via Email & Password.
      
      - parameter requestBody:     EmailSignInRequestBody Object.
