@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
@@ -28,10 +28,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSThread.sleepForTimeInterval(2.0)
         
+        initializeGoogleSignInDelegate()
         redirectBasedOnLoginStatus()
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+    }
+    
+    
+    func initializeGoogleSignInDelegate() {
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
+        if #available(iOS 9.0, *) {
+            return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: (options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String), annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+        } else {
+            // Fallback on earlier versions
+            return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: "", annotation: nil)
+        }
+
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -55,6 +76,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         FBSDKAppEvents.activateApp()
+    }
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        // TODO: Actual Login To Server.
     }
 
     func applicationWillTerminate(application: UIApplication) {
