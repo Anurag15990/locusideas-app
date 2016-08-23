@@ -24,7 +24,6 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb1045164165573995</string>
-				<string>fbauth2</string>
 			</array>
 		</dict>
 		<dict>
@@ -44,6 +43,7 @@
 	<string>LocusIdeas</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>com.googleusercontent.apps.7838458369-agnreiob67b0on8ulsks37rnm30vnvok</string>
 		<string>fbapi</string>
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>

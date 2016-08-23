@@ -12,7 +12,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Alamofire
 
-class SignUpViewController : UIViewController {
+class SignUpViewController : UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var signUpName : UITextField!
     @IBOutlet weak var signUpEmail : UITextField!
@@ -20,7 +20,7 @@ class SignUpViewController : UIViewController {
     @IBOutlet weak var confirmPassword : UITextField!
     @IBOutlet weak var signUpButton : UIButton!
     @IBOutlet weak var facebookSignUpView : UIView!
-    @IBOutlet weak var twitterSignUpView : UIView!
+    @IBOutlet weak var googleSignUpView : UIView!
     
     var loaderContainerView: LoaderView!
 
@@ -28,6 +28,7 @@ class SignUpViewController : UIViewController {
         super.viewDidLoad()
         constructLoaderView()
         setupInitialView()
+        initializeGoogleSignInDelegate()
         
     }
 
@@ -36,6 +37,16 @@ class SignUpViewController : UIViewController {
         self.view.addSubview(loaderContainerView)
         loaderContainerView.hidden = true
     }
+    
+    func initializeGoogleSignInDelegate() {
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+
     
     /**
      Setup Initial State of the View.
@@ -47,13 +58,19 @@ class SignUpViewController : UIViewController {
         facebookSignUpView.layer.cornerRadius = CGFloat(5)
         facebookSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
-        twitterSignUpView.layer.borderWidth = 2
-        twitterSignUpView.layer.cornerRadius = CGFloat(5)
-        twitterSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
+        googleSignUpView.layer.borderWidth = 2
+        googleSignUpView.layer.cornerRadius = CGFloat(5)
+        googleSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleTap(_:)))
         self.facebookSignUpView.addGestureRecognizer(tap)
         
+        let googleTap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleGoogleTap(_:)))
+        self.googleSignUpView.addGestureRecognizer(googleTap)
+    }
+    
+    func handleGoogleTap(gestureRecognizer: UITapGestureRecognizer) {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     func handleTap(gestureRecognizer: UITapGestureRecognizer) {
@@ -91,6 +108,29 @@ class SignUpViewController : UIViewController {
     func authenticateWithFacebook(request: FacebookAuthRequestBody){
 
         AuthService.sharedInstance.loginWithFacebook(request, successCallback: { (token) in
+            self.loaderContainerView.hidden = true
+            self.getUserDetails()
+            self.pushToTabView()
+            }) { (error) in
+                print(error.localizedDescription)
+        }
+    }
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        //TODO: Actual Sign Up to be done.
+        
+        loaderContainerView.hidden = false
+        
+        let requestBody = GoogleAuthRequestBody()
+        requestBody.id = user.userID
+        requestBody.accessToken = user.authentication.accessToken
+        requestBody.refreshToken = user.authentication.refreshToken
+        self.authenticateWithGoogle(requestBody)
+    }
+    
+    func authenticateWithGoogle(request: GoogleAuthRequestBody) {
+        
+        AuthService.sharedInstance.loginWithGoogle(request, successCallback: { (token) in
             self.loaderContainerView.hidden = true
             self.getUserDetails()
             self.pushToTabView()
@@ -139,5 +179,4 @@ class SignUpViewController : UIViewController {
     @IBAction func cancelButtonTapped() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
 }

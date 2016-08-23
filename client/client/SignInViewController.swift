@@ -12,14 +12,14 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Alamofire
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var signInEmail : UITextField!
     @IBOutlet weak var signInPassword : UITextField!
     @IBOutlet weak var forgotPassword : UIButton!
     @IBOutlet weak var signInButton : UIButton!
     @IBOutlet weak var facebookSignInView : UIView! = FBSDKLoginButton()
-    @IBOutlet weak var twitterSignInView : UIView!
+    @IBOutlet weak var googleSignInView : UIView!
     
     var loaderContainerView: LoaderView!
     
@@ -27,6 +27,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         constructLoaderView()
         setupInitialView()
+        initializeGoogleSignInDelegate()
     }
   
     func constructLoaderView() {
@@ -34,6 +35,17 @@ class SignInViewController: UIViewController {
         self.view.addSubview(loaderContainerView)
         loaderContainerView.hidden = true
     }
+    
+    
+    func initializeGoogleSignInDelegate() {
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+
     
     /**
      Initial Setup For the view components
@@ -45,12 +57,19 @@ class SignInViewController: UIViewController {
         facebookSignInView.layer.cornerRadius = CGFloat(5)
         facebookSignInView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
-        twitterSignInView.layer.borderWidth = 2
-        twitterSignInView.layer.cornerRadius = CGFloat(5)
-        twitterSignInView.layer.borderColor = UIColor .lightGrayColor().CGColor
+        googleSignInView.layer.borderWidth = 2
+        googleSignInView.layer.cornerRadius = CGFloat(5)
+        googleSignInView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignInViewController.handleTap(_:)))
         facebookSignInView.addGestureRecognizer(tap)
+        
+        let googleTap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleGoogleTap(_:)))
+        self.googleSignInView.addGestureRecognizer(googleTap)
+    }
+    
+    func handleGoogleTap(gestureRecognizer: UITapGestureRecognizer) {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     func handleTap(gestureRecognizer: UITapGestureRecognizer) {
@@ -96,6 +115,29 @@ class SignInViewController: UIViewController {
         }
     }
     
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        //TODO: Actual Sign Up to be done.
+        
+        loaderContainerView.hidden = false
+        
+        let requestBody = GoogleAuthRequestBody()
+        requestBody.id = user.userID
+        requestBody.accessToken = user.authentication.accessToken
+        requestBody.refreshToken = user.authentication.refreshToken
+        self.authenticateWithGoogle(requestBody)
+    }
+    
+    func authenticateWithGoogle(request: GoogleAuthRequestBody) {
+        
+        AuthService.sharedInstance.loginWithGoogle(request, successCallback: { (token) in
+            self.loaderContainerView.hidden = true
+            self.getUserDetails()
+            self.pushToTabView()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     func loginWithEmail(request: EmailSignInAuthRequestBody) {
         self.loaderContainerView.hidden = false
         AuthService.sharedInstance.loginWithEmail(request, successCallback: { (token) in
@@ -138,4 +180,5 @@ class SignInViewController: UIViewController {
     @IBAction func cancelButtonTapped() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
 }

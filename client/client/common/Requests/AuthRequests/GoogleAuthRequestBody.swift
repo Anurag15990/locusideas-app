@@ -13,6 +13,7 @@ class GoogleAuthRequestBody: BaseRequestBody {
     
     var type: String?
     var accessToken: String?
+    var refreshToken: String?
     var id: String?
     
     required init?(_ map: Map) {
@@ -29,6 +30,7 @@ class GoogleAuthRequestBody: BaseRequestBody {
         type            <- map["type"]
         accessToken     <- map["accessToken"]
         id              <- map["id"]
+        refreshToken    <- map["refreshToken"]
     }
 
     
