@@ -16,10 +16,13 @@ class UserOnboardingRequestBody: BaseRequestBody {
 
     override init() {
         super.init()
+        self.preferences = UserOnboardingPreferences()
     }
     
     required init?(_ map: Map) {
         super.init(map)
+        self.preferences = UserOnboardingPreferences(map)
+
     }
     
     override func mapping(map: Map) {

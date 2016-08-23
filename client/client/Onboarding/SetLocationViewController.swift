@@ -16,11 +16,24 @@ class SetLocationViewController: UIViewController {
     
     var googlePredictions = [GMSAutocompletePrediction]()
     
+    var viewModel: OnboardingViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+        setupNavigationBar()
         
+        viewModel = OnboardingViewModel()
         // Do any additional setup after loading the view.
+    }
+    
+    /**
+     Method to setup Navigation Bar.
+     */
+    func setupNavigationBar() {
+        navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.title = "Select A Location"
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +91,15 @@ extension SetLocationViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCellWithIdentifier("GooglePredictionsTableViewCell", forIndexPath: indexPath) as! GooglePredictionsTableViewCell
             cell.predictionLabel.attributedText = self.googlePredictions[indexPath.row - 1].attributedPrimaryText
             return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            
+        } else {
+            self.viewModel.setLocationInRequestBody(self.googlePredictions[indexPath.row - 1].attributedPrimaryText.string)
+            print(viewModel.onboardingRequestBody.preferences?.city)
         }
     }
 }
