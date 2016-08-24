@@ -94,6 +94,13 @@ class SelectCategoriesViewController: UIViewController {
         
         self.viewModel.setCategoriesInRequestBody(categoryNames)
         print(self.viewModel.onboardingRequestBody.preferences?.categories)
+        self.navigateToEnterBioViewController()
+    }
+    
+    func navigateToEnterBioViewController() {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("EnterBioViewController") as! EnterBioViewController
+        vc.viewModel = self.viewModel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /*

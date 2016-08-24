@@ -19,6 +19,9 @@ pod 'GoogleMaps'
 pod 'NVActivityIndicatorView'
 pod 'SDWebImage'
 pod 'TTGTagCollectionView'
+pod 'NextGrowingTextView'
+
+
 
 use_frameworks!
 end

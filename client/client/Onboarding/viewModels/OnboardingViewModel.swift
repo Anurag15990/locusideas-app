@@ -24,4 +24,18 @@ class OnboardingViewModel: NSObject {
     func setCategoriesInRequestBody(categories: [String]) {
         self.onboardingRequestBody.preferences!.categories = categories
     }
+    
+    func setBio(bio: String) {
+        self.onboardingRequestBody.bio = bio
+    }
+    
+    func onboardUser(successCallback: (() -> Void),
+                     errorCallback: ((error: NSError) -> Void)) {
+        
+        UserService.sharedInstance.onboardUser(UserService.getUser()!.id!, requestBody: self.onboardingRequestBody, successCallback: { (user) in
+            successCallback()
+            }) { (error) in
+                errorCallback(error: error)
+        }
+    }
 }

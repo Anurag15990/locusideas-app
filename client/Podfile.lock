@@ -56,6 +56,7 @@ PODS:
     - pop
     - SDWebImage
   - Kingfisher (2.4.3)
+  - NextGrowingTextView (0.7.3)
   - NVActivityIndicatorView (2.10)
   - ObjectMapper (1.4.0)
   - pop (1.0.9)
@@ -80,6 +81,7 @@ DEPENDENCIES:
   - GooglePlaces
   - IDMPhotoBrowser (= 1.8.1)
   - Kingfisher
+  - NextGrowingTextView
   - NVActivityIndicatorView
   - ObjectMapper
   - SDWebImage
@@ -109,6 +111,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   IDMPhotoBrowser: 99eccfe6431e182f64e2fe57ac654316fbf81576
   Kingfisher: 322a9c1c5b03212c1e741d6bece72d387b01a77a
+  NextGrowingTextView: 8092e8723a52a739b8002df1492083451092551d
   NVActivityIndicatorView: 5568608c3511690a42c4dd02f7a1de4361d670ae
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce

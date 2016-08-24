@@ -127,7 +127,8 @@ class UserService: NSObject {
             switch response.result {
             
             case .Success(let value):
-                if let user = Mapper<User>().map(value) {
+                NSUserDefaultsUtils.setUserDetails(value)
+                if let user = UserService.getUser() {
                     successCallback(user: user)
                 }
                 
