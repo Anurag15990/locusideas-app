@@ -63,6 +63,11 @@ class SetLocationViewController: UIViewController {
 
     }
 
+    func navigateToCategoriesView() {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCategoriesViewController") as! SelectCategoriesViewController
+        vc.viewModel = self.viewModel
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 
@@ -134,6 +139,7 @@ extension SetLocationViewController: UITableViewDelegate, UITableViewDataSource 
         } else {
             self.viewModel.setLocationInRequestBody(self.googlePredictions[indexPath.row].attributedPrimaryText.string)
             print(viewModel.onboardingRequestBody.preferences?.city)
+            self.navigateToCategoriesView()
         }
     }
     
@@ -177,6 +183,7 @@ extension SetLocationViewController: CLLocationManagerDelegate {
                 let placeMark: CLPlacemark = placemarks![0] as CLPlacemark
                 self.viewModel.setLocationInRequestBody(placeMark.locality!)
                 print(self.viewModel.onboardingRequestBody.preferences?.city)
+                self.navigateToCategoriesView()
             }
         }
     }

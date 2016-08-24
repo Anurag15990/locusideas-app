@@ -32,19 +32,22 @@ class Category: NSObject, Mappable {
     var id: String?
     var name: String?
     var categoryDescription: String?
+    var selected: Bool?
     
     override init() {
+        selected = false
         super.init()
     }
     
     required init?(_ map: Map) {
-        
+        selected = false
     }
     
     func mapping(map: Map) {
         id                  <- map["id"]
         name                <- map["name"]
         categoryDescription <- map["description"]
+        selected = false
     }
     
 }

@@ -22,6 +22,7 @@
 		752F17DB1D6CB9950079F979 /* DetectLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17DA1D6CB9950079F979 /* DetectLocationTableViewCell.swift */; };
 		752F17DD1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17DC1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift */; };
 		752F17E01D6CD5340079F979 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17DF1D6CD5340079F979 /* OnboardingViewModel.swift */; };
+		752F17E41D6DB9460079F979 /* SelectCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17E31D6DB9460079F979 /* SelectCategoriesViewController.swift */; };
 		7534CBDD1D3B995400017C7A /* DesignerProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */; };
 		753577291D1D8C2400B3B043 /* ProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577281D1D8C2400B3B043 /* ProjectRouter.swift */; };
 		7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772B1D1E849C00B3B043 /* StreamViewModel.swift */; };
@@ -176,6 +177,7 @@
 		752F17DA1D6CB9950079F979 /* DetectLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectLocationTableViewCell.swift; sourceTree = "<group>"; };
 		752F17DC1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePredictionsTableViewCell.swift; sourceTree = "<group>"; };
 		752F17DF1D6CD5340079F979 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		752F17E31D6DB9460079F979 /* SelectCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategoriesViewController.swift; sourceTree = "<group>"; };
 		7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileHeaderCell.swift; sourceTree = "<group>"; };
 		753577281D1D8C2400B3B043 /* ProjectRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRouter.swift; sourceTree = "<group>"; };
 		7535772B1D1E849C00B3B043 /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			children = (
 				752F17DA1D6CB9950079F979 /* DetectLocationTableViewCell.swift */,
 				752F17DC1D6CB9CE0079F979 /* GooglePredictionsTableViewCell.swift */,
+				752F17E31D6DB9460079F979 /* SelectCategoriesViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1293,6 +1296,7 @@
 				C5D0C8D21CC76FE500FAAD40 /* DesignerWorkExperienceHeaderView.swift in Sources */,
 				C5376CEA1D1ECBB60003A531 /* DesignerLinksCard.swift in Sources */,
 				75847FA81D49302000FC9593 /* DesignerSkillsCollectionViewCell.swift in Sources */,
+				752F17E41D6DB9460079F979 /* SelectCategoriesViewController.swift in Sources */,
 				C5376CF01D1ECBB60003A531 /* DesignerContactCard.swift in Sources */,
 				C5376CEC1D1ECBB60003A531 /* DesignerSkillsCard.swift in Sources */,
 				91FA8AC21C60ACDB0000F6A8 /* ProjectDetailsTableViewController.swift in Sources */,

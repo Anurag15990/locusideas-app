@@ -62,6 +62,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - TTGTagCollectionView (0.4.0)
   - Typhoon (3.5.1):
     - Typhoon/no-arc (= 3.5.1)
   - Typhoon/no-arc (3.5.1)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - ObjectMapper
   - SDWebImage
+  - TTGTagCollectionView
   - Typhoon
 
 SPEC CHECKSUMS:
@@ -111,6 +113,7 @@ SPEC CHECKSUMS:
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  TTGTagCollectionView: a3d94004f4d58a6f57089ba60940f53dc47d21b6
   Typhoon: c0950bb9f2e835eb8a7dc6983160109b6baf2dda
 
 COCOAPODS: 0.39.0

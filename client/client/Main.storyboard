@@ -756,6 +756,39 @@
             </objects>
             <point key="canvasLocation" x="149" y="-886"/>
         </scene>
+        <!--Select Categories View Controller-->
+        <scene sceneID="nGl-Rn-ZAq">
+            <objects>
+                <viewController storyboardIdentifier="SelectCategoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hF9-pa-PoY" customClass="SelectCategoriesViewController" customModule="LocusIdeas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0A8-jY-pMo"/>
+                        <viewControllerLayoutGuide type="bottom" id="eij-vt-Qqa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yaK-g9-26e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5d-0g-TQc" customClass="TTGTextTagCollectionView">
+                                <rect key="frame" x="8" y="16" width="304" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="R5d-0g-TQc" secondAttribute="trailing" constant="8" id="1ma-PZ-bA3"/>
+                            <constraint firstItem="R5d-0g-TQc" firstAttribute="top" secondItem="yaK-g9-26e" secondAttribute="top" constant="16" id="59d-l0-fZ2"/>
+                            <constraint firstItem="R5d-0g-TQc" firstAttribute="leading" secondItem="yaK-g9-26e" secondAttribute="leading" constant="8" id="8DF-9W-Qvn"/>
+                            <constraint firstItem="eij-vt-Qqa" firstAttribute="top" secondItem="R5d-0g-TQc" secondAttribute="bottom" constant="8" id="p65-A8-404"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tagCollectionView" destination="R5d-0g-TQc" id="d9z-g5-BIP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYt-Nx-zb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="536" y="-886"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="vfi-lq-GT2">
             <objects>
