@@ -109,7 +109,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         AuthService.sharedInstance.loginWithFacebook(request, successCallback: { (token) in
             self.loaderContainerView.hidden = true
             self.getUserDetails()
-            self.pushToTabView()
+            self.redirectBasedOnOnboardingStatus()
             }) { (error) in
                 print(error.localizedDescription)
         }
@@ -132,7 +132,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         AuthService.sharedInstance.loginWithGoogle(request, successCallback: { (token) in
             self.loaderContainerView.hidden = true
             self.getUserDetails()
-            self.pushToTabView()
+            self.redirectBasedOnOnboardingStatus()
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -143,7 +143,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         AuthService.sharedInstance.loginWithEmail(request, successCallback: { (token) in
             self.getUserDetails()
             self.loaderContainerView.hidden = true
-            self.pushToTabView()
+            self.redirectBasedOnOnboardingStatus()
             }) { (error) in
                 print(error.localizedDescription)
         }
@@ -169,6 +169,20 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
             print("Validation Failed!")
         }
         
+    }
+    
+    func redirectBasedOnOnboardingStatus() {
+        if let _ = UserService.getUser()?.onboardedAt {
+            pushToTabView()
+        } else {
+            pushToOnboardingView()
+        }
+    }
+    
+    
+    func pushToOnboardingView() {
+         let vc = storyboard?.instantiateViewControllerWithIdentifier("LocationNavigationController") as! UINavigationController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     func pushToTabView() {

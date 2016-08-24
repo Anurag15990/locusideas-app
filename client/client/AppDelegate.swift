@@ -81,7 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func redirectBasedOnLoginStatus() {
         
         if NSUserDefaultsUtils.getAuthToken() != nil {
-            redirectToTabView()
+            if let _ = UserService.getUser()?.onboardedAt {
+                redirectToTabView()
+            } else {
+                redirectToOnboardingFlow()
+            }
         } else {
             redirectToLoginFlow()
         }
@@ -90,9 +94,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func redirectToTabView() {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        self.window?.rootViewController = vc
+    }
+    
+    func redirectToOnboardingFlow() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("LocationNavigationController") as! UINavigationController
-
         self.window?.rootViewController = vc
     }
     

@@ -60,7 +60,21 @@ class EnterBioViewController: UIViewController {
     
     func setBio() {
         self.viewModel.setBio(self.growingTextView.text)
-        print(viewModel.onboardingRequestBody.bio)
+        self.onboardUser()
+    }
+    
+    func onboardUser() {
+        self.viewModel.onboardUser({ 
+            self.navigateToTabBarController()
+            }) { (error) in
+                print(error.localizedDescription)
+        }
+    }
+    
+    func navigateToTabBarController() {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        (UIApplication.sharedApplication().delegate as! AppDelegate)
+            .window?.rootViewController = vc
     }
     
     func backButtonPressed(sender: UIButton) {

@@ -239,7 +239,7 @@ class DesignerProfileViewModel: NSObject {
      - returns: <#return value description#>
      */
     func fetchUserSpecialization() -> String? {
-        return user.profile?.designer?.specialization
+        return user.specialization
     }
     
     /**
@@ -296,8 +296,8 @@ class DesignerProfileViewModel: NSObject {
      
      - returns: <#return value description#>
      */
-    func fetchUserSkills() -> [User.DesignerProfile.DesignerObject.Skill]? {
-        return user.profile?.designer?.skills
+    func fetchUserSkills() -> [User.Skill]? {
+        return user.skills
     }
     
     /**
