@@ -13,8 +13,15 @@ pod 'Cloudinary'
 pod 'Bond'
 pod 'IDMPhotoBrowser', '1.8.1'
 pod 'Google/SignIn'
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
+pod 'GoogleMaps'
 pod 'NVActivityIndicatorView'
 pod 'SDWebImage'
+pod 'TTGTagCollectionView'
+pod 'NextGrowingTextView'
+
+
 
 use_frameworks!
 end

@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSThread.sleepForTimeInterval(2.0)
         
         redirectBasedOnLoginStatus()
+        
+        GMSPlacesClient.provideAPIKey(GoogleConstants.googlePlacesAPIKey)
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -78,7 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func redirectBasedOnLoginStatus() {
         
         if NSUserDefaultsUtils.getAuthToken() != nil {
-            redirectToTabView()
+            if let _ = UserService.getUser()?.onboardedAt {
+                redirectToTabView()
+            } else {
+                redirectToOnboardingFlow()
+            }
         } else {
             redirectToLoginFlow()
         }
@@ -88,6 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        self.window?.rootViewController = vc
+    }
+    
+    func redirectToOnboardingFlow() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LocationNavigationController") as! UINavigationController
         self.window?.rootViewController = vc
     }
     

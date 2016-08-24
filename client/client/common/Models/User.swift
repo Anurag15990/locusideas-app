@@ -43,11 +43,13 @@ class User: BaseRequestBody {
     var cover: Media?
     var createdAt: String?
     var updatedAt: String?
-    var profile: DesignerProfile?
+    var onboardedAt: String?
     var links: Links?
     var work: Work?
     var education: Education?
     var offices: OfficeCollection?
+    var skills: [Skill]?
+    var specialization: String?
    
     //TODO: Handle Location for the user.
     
@@ -75,11 +77,13 @@ class User: BaseRequestBody {
         location        <- map["location"]
         picture         <- map["picture"]
         cover           <- map["cover"]
-        profile         <- map["profile"]
         links           <- map["links"]
+        skills          <- map["skills"]
+        specialization  <- map["specialization"]
         work            <- map["work"]
         education       <- map["education"]
         offices         <- map["offices"]
+        onboardedAt     <- map["onboardedAt"]
         createdAt       <- map["createdAt"]
         updatedAt       <- map["updatedAt"]
     }
@@ -237,6 +241,26 @@ class User: BaseRequestBody {
         }
     }
     
+    class Skill: NSObject, Mappable {
+        
+        var id: String?
+        var title: String?
+        
+        override init() {
+            super.init()
+        }
+        
+        required init?(_ map: Map) {
+            
+        }
+        
+        func mapping(map: Map) {
+            
+            id <- map["id"]
+            title   <- map["title"]
+        }
+    }
+    
     class Description: NSObject, Mappable {
         
         var short: String?
@@ -333,62 +357,6 @@ class User: BaseRequestBody {
         func mapping(map: Map) {
             headquarter     <- map["headquarter"]
             others          <- map["others"]
-        }
-    }
-    
-    class DesignerProfile: NSObject, Mappable {
-        
-        var designer: DesignerObject?
-        
-        override init() {
-            super.init()
-        }
-        
-        required init?(_ map: Map) {
-            
-        }
-        
-        func mapping(map: Map) {
-            designer    <- map["designer"]
-        }
-        
-        class DesignerObject: NSObject, Mappable {
-            
-            var specialization: String?
-            var skills: [Skill]?
-            
-            override init() {
-                super.init()
-            }
-            
-            required init?(_ map: Map) {
-                
-            }
-            
-            func mapping(map: Map) {
-                specialization  <- map["specialization"]
-                skills <- map["skills"]
-            }
-            
-            class Skill: NSObject, Mappable {
-                
-                var id: String?
-                var title: String?
-                
-                override init() {
-                    super.init()
-                }
-                
-                required init?(_ map: Map) {
-                    
-                }
-                
-                func mapping(map: Map) {
-                    
-                    id <- map["id"]
-                    title   <- map["title"]
-                }
-            }
         }
     }
 }

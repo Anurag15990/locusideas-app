@@ -94,8 +94,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-client/IDMPhotoBrowser.framework"
   install_framework "Pods-client/Kingfisher.framework"
   install_framework "Pods-client/NVActivityIndicatorView.framework"
+  install_framework "Pods-client/NextGrowingTextView.framework"
   install_framework "Pods-client/ObjectMapper.framework"
   install_framework "Pods-client/SDWebImage.framework"
+  install_framework "Pods-client/TTGTagCollectionView.framework"
   install_framework "Pods-client/Typhoon.framework"
   install_framework "Pods-client/pop.framework"
 fi
@@ -110,8 +112,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-client/IDMPhotoBrowser.framework"
   install_framework "Pods-client/Kingfisher.framework"
   install_framework "Pods-client/NVActivityIndicatorView.framework"
+  install_framework "Pods-client/NextGrowingTextView.framework"
   install_framework "Pods-client/ObjectMapper.framework"
   install_framework "Pods-client/SDWebImage.framework"
+  install_framework "Pods-client/TTGTagCollectionView.framework"
   install_framework "Pods-client/Typhoon.framework"
   install_framework "Pods-client/pop.framework"
 fi

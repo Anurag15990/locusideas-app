@@ -126,10 +126,12 @@ class UserService: NSObject {
         .responseString { (response) in
             switch response.result {
             
-            case .Success(let value):
-                if let user = Mapper<User>().map(value) {
+            case .Success(_):
+                self.getMeRequest({ (user) in
                     successCallback(user: user)
-                }
+                    }, errorCallback: { (error) in
+                        errorCallback(error: error)
+                })
                 
             case .Failure(let error):
                 errorCallback(error: error)

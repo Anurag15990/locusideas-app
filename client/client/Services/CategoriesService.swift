@@ -12,6 +12,8 @@ import ObjectMapper
 
 class CategoriesService: NSObject {
     
+    static let sharedInstance = CategoriesService()
+    
     /**
      Method to fetch list of Categories.
      
