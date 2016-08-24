@@ -17,6 +17,9 @@ class SetLocationViewController: UIViewController {
     var googlePredictions = [GMSAutocompletePrediction]()
     
     var viewModel: OnboardingViewModel!
+    var locationManager =  CLLocationManager()
+    var locationHeaderView = "MyProfileHeaderView"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,17 @@ class SetLocationViewController: UIViewController {
         
         viewModel = OnboardingViewModel()
         // Do any additional setup after loading the view.
+    }
+    
+    func initializeLocationManager() {
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
     }
     
     /**
@@ -42,7 +56,11 @@ class SetLocationViewController: UIViewController {
     }
     
     func initialSetup() {
+        self.tableView.tableFooterView = UIView()
         self.searchBar.delegate = self
+        
+        tableView.registerNib(UINib(nibName: locationHeaderView, bundle: nil), forHeaderFooterViewReuseIdentifier: locationHeaderView)
+
     }
 
     /*
@@ -59,6 +77,12 @@ class SetLocationViewController: UIViewController {
 extension SetLocationViewController: UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.googlePredictions.removeAll()
+            self.tableView.reloadData()
+            return
+        }
+        
         GooglePlacesServices.sharedInstance.getPlaces(searchText, successCallback: { (predictions) in
             
             self.googlePredictions = predictions
@@ -74,32 +98,86 @@ extension SetLocationViewController: UISearchBarDelegate {
 extension SetLocationViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if googlePredictions.count > 0 {
+            return 2
+        }
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return googlePredictions.count + 1
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return googlePredictions.count
+        default:
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("DetectLocationTableViewCell", forIndexPath: indexPath) as! DetectLocationTableViewCell
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("GooglePredictionsTableViewCell", forIndexPath: indexPath) as! GooglePredictionsTableViewCell
-            cell.predictionLabel.attributedText = self.googlePredictions[indexPath.row - 1].attributedPrimaryText
+            cell.predictionLabel.attributedText = self.googlePredictions[indexPath.row].attributedPrimaryText
             return cell
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 {
-            
+        if indexPath.section == 0 {
+            self.initializeLocationManager()
         } else {
-            self.viewModel.setLocationInRequestBody(self.googlePredictions[indexPath.row - 1].attributedPrimaryText.string)
+            self.viewModel.setLocationInRequestBody(self.googlePredictions[indexPath.row].attributedPrimaryText.string)
             print(viewModel.onboardingRequestBody.preferences?.city)
+        }
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(self.locationHeaderView) as! MyProfileHeaderView
+        
+        switch section {
+            
+        case 1:
+            headerView.headerLabel.text = "Locations"
+            
+        default: break
+            
+        }
+        
+        return headerView
+
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 1:
+            return 40
+        default:
+            return 0
+        }
+    }
+
+    
+}
+
+extension SetLocationViewController: CLLocationManagerDelegate {
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            if placemarks!.count > 0 {
+                let placeMark: CLPlacemark = placemarks![0] as CLPlacemark
+                self.viewModel.setLocationInRequestBody(placeMark.locality!)
+                print(self.viewModel.onboardingRequestBody.preferences?.city)
+            }
         }
     }
 }

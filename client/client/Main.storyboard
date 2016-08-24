@@ -649,9 +649,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdT-S8-Ixs">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.97668269230000004" green="0.97668269230000004" blue="0.97668269230000004" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.97668269230000004" green="0.97668269230000004" blue="0.97668269230000004" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetectLocationTableViewCell" id="owY-ZG-uuw" customClass="DetectLocationTableViewCell" customModule="LocusIdeas" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetectLocationTableViewCell" id="owY-ZG-uuw" customClass="DetectLocationTableViewCell" customModule="LocusIdeas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="owY-ZG-uuw" id="Nla-Dt-hxK">
@@ -685,7 +686,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GooglePredictionsTableViewCell" id="5QR-dK-zL7" customClass="GooglePredictionsTableViewCell" customModule="LocusIdeas" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GooglePredictionsTableViewCell" id="5QR-dK-zL7" customClass="GooglePredictionsTableViewCell" customModule="LocusIdeas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QR-dK-zL7" id="XkW-gS-h1F">
