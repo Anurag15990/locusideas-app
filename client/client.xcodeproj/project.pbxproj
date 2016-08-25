@@ -24,6 +24,7 @@
 		752F17E01D6CD5340079F979 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17DF1D6CD5340079F979 /* OnboardingViewModel.swift */; };
 		752F17E41D6DB9460079F979 /* SelectCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17E31D6DB9460079F979 /* SelectCategoriesViewController.swift */; };
 		752F17E61D6E064C0079F979 /* EnterBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17E51D6E064C0079F979 /* EnterBioViewController.swift */; };
+		752F17E81D6EC2820079F979 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17E71D6EC2820079F979 /* EditProfileViewController.swift */; };
 		7534CBDD1D3B995400017C7A /* DesignerProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */; };
 		753577291D1D8C2400B3B043 /* ProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577281D1D8C2400B3B043 /* ProjectRouter.swift */; };
 		7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772B1D1E849C00B3B043 /* StreamViewModel.swift */; };
@@ -180,6 +181,7 @@
 		752F17DF1D6CD5340079F979 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		752F17E31D6DB9460079F979 /* SelectCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectCategoriesViewController.swift; path = views/SelectCategoriesViewController.swift; sourceTree = "<group>"; };
 		752F17E51D6E064C0079F979 /* EnterBioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterBioViewController.swift; sourceTree = "<group>"; };
+		752F17E71D6EC2820079F979 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileHeaderCell.swift; sourceTree = "<group>"; };
 		753577281D1D8C2400B3B043 /* ProjectRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRouter.swift; sourceTree = "<group>"; };
 		7535772B1D1E849C00B3B043 /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
@@ -767,6 +769,7 @@
 				755AF2091D3953AD0028601C /* viewModels */,
 				755AF2061D3950F40028601C /* views */,
 				91F084A51C7AFF6500BA3B80 /* MyProfileViewController.swift */,
+				752F17E71D6EC2820079F979 /* EditProfileViewController.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -1349,6 +1352,7 @@
 				7525C6501D6773570071728A /* UserOnboardingRequestBody.swift in Sources */,
 				75840D4E1C4157880075FA37 /* BaseRouterProtocol.swift in Sources */,
 				91F084A61C7AFF6500BA3B80 /* MyProfileViewController.swift in Sources */,
+				752F17E81D6EC2820079F979 /* EditProfileViewController.swift in Sources */,
 				7534CBDD1D3B995400017C7A /* DesignerProfileHeaderCell.swift in Sources */,
 				75D5A4A01D3A276900728CD9 /* ProfileContactInfoReusableCell.swift in Sources */,
 				75F61E941C536ED80042C765 /* User.swift in Sources */,

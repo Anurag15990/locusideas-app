@@ -58,9 +58,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let settingsObject = self.viewModel.settingsDataSourceArray.array[indexPath.row]
         switch settingsObject.1 {
+            
         case "Logout":
             self.logoutUser()
             break
+            
+        case "Edit Profile":
+            self.navigateToEditProfile()
+            break
+            
         default:
             break
         }
@@ -72,6 +78,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate {
     func logoutUser() {
         NSUserDefaultsUtils.clearUserDefaults()
         (UIApplication.sharedApplication().delegate as! AppDelegate).redirectToLoginFlow()
+    }
+    
+    func navigateToEditProfile() {
+        let viewController = storyboard?.instantiateViewControllerWithIdentifier("EditProfileViewController") as! EditProfileViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     /*
