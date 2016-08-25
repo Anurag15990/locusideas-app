@@ -18,6 +18,7 @@ class SettingsViewModel: NSObject {
         
         settingsDataSourceArray.appendContentsOf(
             [
+                ("", "Edit Profile"),
                 ("", "About"),
                 ("", "Version"),
                 ("", "Terms & Conditions"),

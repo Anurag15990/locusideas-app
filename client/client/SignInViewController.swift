@@ -107,9 +107,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     func authenticateWithFacebook(request: FacebookAuthRequestBody) {
 
         AuthService.sharedInstance.loginWithFacebook(request, successCallback: { (token) in
-            self.loaderContainerView.hidden = true
             self.getUserDetails()
-            self.redirectBasedOnOnboardingStatus()
             }) { (error) in
                 print(error.localizedDescription)
         }
@@ -130,9 +128,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     func authenticateWithGoogle(request: GoogleAuthRequestBody) {
         
         AuthService.sharedInstance.loginWithGoogle(request, successCallback: { (token) in
-            self.loaderContainerView.hidden = true
             self.getUserDetails()
-            self.redirectBasedOnOnboardingStatus()
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -142,15 +138,16 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         self.loaderContainerView.hidden = false
         AuthService.sharedInstance.loginWithEmail(request, successCallback: { (token) in
             self.getUserDetails()
-            self.loaderContainerView.hidden = true
-            self.redirectBasedOnOnboardingStatus()
             }) { (error) in
                 print(error.localizedDescription)
         }
     }
     
     func getUserDetails() {
-        UserService.sharedInstance.getMeRequest({ (user) in })
+        UserService.sharedInstance.getMeRequest({ (user) in
+            self.loaderContainerView.hidden = true
+            self.redirectBasedOnOnboardingStatus()
+            })
         { (error) in
                 print(error)
         }
