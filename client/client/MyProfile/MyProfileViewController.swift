@@ -24,8 +24,15 @@ class MyProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         
         setupNavigationBar()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MyProfileViewController.updateMyProfile(_:)), name: userUpdatedNotification, object: nil)
+        
         self.viewModel = MyProfileViewModel()
         tableView.registerNib(UINib(nibName: profileHeaderView, bundle: nil), forHeaderFooterViewReuseIdentifier: profileHeaderView)
+        self.tableView.reloadData()
+    }
+    
+    func updateMyProfile(sender: NSNotification) {
+        self.viewModel.user = UserService.getUser()
         self.tableView.reloadData()
     }
     

@@ -8,6 +8,8 @@
 
 import UIKit
 
+var userUpdatedNotification = "UserUpdated"
+
 class EditProfileViewController: UIViewController, ImageUploadDelegate {
 
     @IBOutlet weak var profilePictureImageView: UIImageView!
@@ -105,6 +107,29 @@ class EditProfileViewController: UIViewController, ImageUploadDelegate {
     
     func updateUser() {
         
+        if let firstName = firstNameTextField.text {
+            self.viewModel.updateUserRequestBody.name?.firstName = firstName
+        }
+        
+        if let lastName = lastNameTextField.text {
+            self.viewModel.updateUserRequestBody.name?.lastName = lastName
+        }
+        
+        if let mobileNumber = mobileNumberTextField.text {
+            self.viewModel.updateUserRequestBody.phonePrimary?.subscriberNumber = mobileNumber
+            self.viewModel.updateUserRequestBody.phonePrimary?.countryCode = "+91"
+            self.viewModel.updateUserRequestBody.phonePrimary?.isVerified = false
+         }
+        
+        self.viewModel.updateUser({ 
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(userUpdatedNotification, object: nil)
+            self.navigationController?.popViewControllerAnimated(true)
+            
+        }) { (error) in
+            
+            print(error.localizedDescription)
+        }
     }
 
     /*

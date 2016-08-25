@@ -54,6 +54,8 @@ class User: BaseRequestBody {
     //TODO: Handle Location for the user.
     
     override init() {
+        self.name = UserName()
+        self.phonePrimary = Phone()
         super.init()
     }
     
