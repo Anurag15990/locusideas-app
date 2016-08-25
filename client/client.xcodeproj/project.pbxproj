@@ -29,6 +29,7 @@
 		752F17EC1D6F385D0079F979 /* ImageUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17EB1D6F385D0079F979 /* ImageUploadService.swift */; };
 		752F17EE1D6F39020079F979 /* NSMutableDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17ED1D6F39020079F979 /* NSMutableDataExtension.swift */; };
 		752F17F01D6F39ED0079F979 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17EF1D6F39ED0079F979 /* UIImageExtension.swift */; };
+		752F17F21D6F55D30079F979 /* AsyncUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F17F11D6F55D30079F979 /* AsyncUtils.swift */; };
 		7534CBDD1D3B995400017C7A /* DesignerProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */; };
 		753577291D1D8C2400B3B043 /* ProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753577281D1D8C2400B3B043 /* ProjectRouter.swift */; };
 		7535772C1D1E849C00B3B043 /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535772B1D1E849C00B3B043 /* StreamViewModel.swift */; };
@@ -190,6 +191,7 @@
 		752F17EB1D6F385D0079F979 /* ImageUploadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadService.swift; sourceTree = "<group>"; };
 		752F17ED1D6F39020079F979 /* NSMutableDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableDataExtension.swift; sourceTree = "<group>"; };
 		752F17EF1D6F39ED0079F979 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		752F17F11D6F55D30079F979 /* AsyncUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncUtils.swift; sourceTree = "<group>"; };
 		7534CBDC1D3B995400017C7A /* DesignerProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerProfileHeaderCell.swift; sourceTree = "<group>"; };
 		753577281D1D8C2400B3B043 /* ProjectRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRouter.swift; sourceTree = "<group>"; };
 		7535772B1D1E849C00B3B043 /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 				91954C871C64E51B001A0953 /* CAGradientLayer.swift */,
 				C5C4DE2A1D20272800898BFE /* ValidationUtils.swift */,
 				752F17D71D6CADCF0079F979 /* StringConstants.swift */,
+				752F17F11D6F55D30079F979 /* AsyncUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1398,6 +1401,7 @@
 				75F61E961C53708D0042C765 /* EmailSignInAuthRequestBody.swift in Sources */,
 				755550491C9E9B5300B734D8 /* UserRouter.swift in Sources */,
 				753C569C1D245FC7008EB35E /* DesignerProfileViewModel.swift in Sources */,
+				752F17F21D6F55D30079F979 /* AsyncUtils.swift in Sources */,
 				758C3D911D4716B40058842F /* DesignerProfileHeaderView.swift in Sources */,
 				75D5A4A71D3A92B400728CD9 /* SettingsViewController.swift in Sources */,
 				7555504C1C9EA00000B734D8 /* UserFollowRequestBody.swift in Sources */,

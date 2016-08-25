@@ -140,9 +140,11 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
     }
     
     func onImageUploadEnd() {
-        self.profilePicOverlayView.hidden = true
-        self.activityIndicatorView.stopAnimating()
-        self.activityIndicatorView.hidden = true
+        AsyncUtils.runOnMainThread { 
+            self.profilePicOverlayView.hidden = true
+            self.activityIndicatorView.stopAnimating()
+            self.activityIndicatorView.hidden = true
+        }
     }
         
 }
