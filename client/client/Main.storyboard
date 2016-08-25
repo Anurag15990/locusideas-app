@@ -29,6 +29,9 @@
             <string>Asap-Regular</string>
             <string>Asap-Regular</string>
             <string>Asap-Regular</string>
+            <string>Asap-Regular</string>
+            <string>Asap-Regular</string>
+            <string>Asap-Regular</string>
         </mutableArray>
         <mutableArray key="Montserrat-Bold.otf">
             <string>Montserrat-Bold</string>
@@ -1224,7 +1227,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserAvatarImg" translatesAutoresizingMaskIntoConstraints="NO" id="K9A-ou-wD0">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserAvatarImg" translatesAutoresizingMaskIntoConstraints="NO" id="K9A-ou-wD0">
                                 <rect key="frame" x="130" y="50" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9Hz-6x-CwQ"/>
@@ -1246,6 +1249,9 @@
                                 <state key="normal" title="Edit Profile Picture">
                                     <color key="titleColor" red="0.0" green="0.7725490196" blue="0.74901960779999999" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="editProfilePicture" destination="irz-Rl-hd6" eventType="touchUpInside" id="88m-VF-5Th"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FqK-IQ-VKl">
                                 <rect key="frame" x="0.0" y="148" width="320" height="1"/>
@@ -1274,12 +1280,14 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TAr-Kv-Cq6">
                                 <rect key="frame" x="8" y="176" width="305" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.28627450980000002" green="0.58431372550000005" blue="0.56470588239999997" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Asap-Regular" family="Asap" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eB7-FA-HqS">
                                 <rect key="frame" x="8" y="233" width="305" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.28627450980000002" green="0.58431372550000005" blue="0.56470588239999997" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Asap-Regular" family="Asap" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kek-4M-Vnb">
@@ -1298,9 +1306,10 @@
                                 <color key="textColor" red="0.0" green="0.7725490196" blue="0.74901960779999999" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Mobile Number." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F9M-Y2-1RD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter 10 digit Mobile Number." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F9M-Y2-1RD">
                                 <rect key="frame" x="7" y="301" width="305" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.28627450980000002" green="0.58431372550000005" blue="0.56470588239999997" alpha="0.96761853450000002" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Asap-Regular" family="Asap" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4Z-mL-vIV">
@@ -1342,11 +1351,34 @@
                                     <constraint firstAttribute="height" constant="1" id="aRR-xw-APy"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-DK-PCN">
+                                <rect key="frame" x="130" y="50" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.40643857758620688" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="dtw-Xt-grV"/>
+                                    <constraint firstAttribute="height" constant="60" id="wgW-Uy-ftw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="36y-0M-LKv">
+                                <rect key="frame" x="150" y="70" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="EKF-Xj-4Iw"/>
+                                </constraints>
+                                <color key="color" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="38C-Lb-Tos" secondAttribute="trailing" constant="7" id="0OG-Zp-Vtl"/>
                             <constraint firstAttribute="trailing" secondItem="X3o-Fn-UcO" secondAttribute="trailing" id="10Z-CJ-tNt"/>
+                            <constraint firstItem="36y-0M-LKv" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" constant="150" id="1J0-0k-j5Y"/>
+                            <constraint firstItem="ycM-DK-PCN" firstAttribute="top" secondItem="L1d-fn-KAx" secondAttribute="bottom" constant="30" id="1jq-jp-TTb"/>
                             <constraint firstAttribute="trailing" secondItem="CUg-my-2Xs" secondAttribute="trailing" constant="7" id="43a-2L-W21"/>
                             <constraint firstItem="eB7-FA-HqS" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" constant="8" id="4ub-H5-JmJ"/>
                             <constraint firstItem="F9M-Y2-1RD" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" constant="7" id="8yF-r5-gXm"/>
@@ -1378,12 +1410,15 @@
                             <constraint firstItem="TAr-Kv-Cq6" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" constant="8" id="Zmh-zp-crC"/>
                             <constraint firstItem="38C-Lb-Tos" firstAttribute="top" secondItem="s1A-az-Hey" secondAttribute="bottom" constant="8" id="fdn-nQ-W4m"/>
                             <constraint firstItem="Kek-4M-Vnb" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" id="giN-0F-PNW"/>
+                            <constraint firstItem="ycM-DK-PCN" firstAttribute="centerX" secondItem="Jhm-FQ-68B" secondAttribute="centerX" id="iL0-pQ-pzo"/>
+                            <constraint firstAttribute="trailing" secondItem="36y-0M-LKv" secondAttribute="trailing" constant="150" id="iYY-Ya-2lu"/>
                             <constraint firstItem="F4Z-mL-vIV" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" id="kYs-I6-y8a"/>
                             <constraint firstItem="Aih-3Q-Y1x" firstAttribute="top" secondItem="K9A-ou-wD0" secondAttribute="bottom" id="msX-TQ-sER"/>
                             <constraint firstItem="3Ls-2C-Jlt" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" constant="11" id="mzo-WK-dQz"/>
                             <constraint firstItem="X3o-Fn-UcO" firstAttribute="top" secondItem="38C-Lb-Tos" secondAttribute="bottom" constant="8" id="nex-ES-dvb"/>
                             <constraint firstItem="CUg-my-2Xs" firstAttribute="leading" secondItem="Jhm-FQ-68B" secondAttribute="leading" constant="12" id="oeq-0h-F7j"/>
                             <constraint firstItem="CUg-my-2Xs" firstAttribute="top" secondItem="FqK-IQ-VKl" secondAttribute="bottom" constant="8" id="r4n-lP-cez"/>
+                            <constraint firstItem="36y-0M-LKv" firstAttribute="top" secondItem="L1d-fn-KAx" secondAttribute="bottom" constant="50" id="sYc-E5-L9e"/>
                             <constraint firstAttribute="trailing" secondItem="Aih-3Q-Y1x" secondAttribute="trailing" constant="20" id="sxu-4p-LCI"/>
                             <constraint firstItem="s1A-az-Hey" firstAttribute="top" secondItem="bL0-sP-cEP" secondAttribute="bottom" constant="8" id="vcu-yn-YiP"/>
                             <constraint firstAttribute="trailing" secondItem="F9M-Y2-1RD" secondAttribute="trailing" constant="8" id="wwn-jq-Kqi"/>
@@ -1392,6 +1427,14 @@
                             <constraint firstItem="FqK-IQ-VKl" firstAttribute="top" secondItem="Aih-3Q-Y1x" secondAttribute="bottom" constant="8" id="zbK-0i-9MR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="36y-0M-LKv" id="cap-h3-e25"/>
+                        <outlet property="firstNameTextField" destination="TAr-Kv-Cq6" id="Qcs-Ta-pqx"/>
+                        <outlet property="lastNameTextField" destination="eB7-FA-HqS" id="BZ6-OG-nYg"/>
+                        <outlet property="mobileNumberTextField" destination="F9M-Y2-1RD" id="lOc-uv-qMw"/>
+                        <outlet property="profilePicOverlayView" destination="ycM-DK-PCN" id="HgF-y6-gdC"/>
+                        <outlet property="profilePictureImageView" destination="K9A-ou-wD0" id="p6D-v0-VLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwy-e8-py4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

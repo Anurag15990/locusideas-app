@@ -8,17 +8,54 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, ImageUploadDelegate {
 
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var mobileNumberTextField: UITextField!
+    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var profilePicOverlayView: UIView!
+    
+    var viewModel: EditProfileViewModel!
+    
+    var picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupNavigationBar()
+        self.viewModel = EditProfileViewModel()
+        self.initialSetup()
+        self.setupGestureRecognizers()
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initialSetup() {
+        
+        self.picker.delegate = self
+        self.profilePicOverlayView.hidden = true
+        self.activityIndicatorView.hidden = true
+        
+        firstNameTextField.text = viewModel.fetchFirstName()
+        lastNameTextField.text = viewModel.fetchLastName()
+        mobileNumberTextField.text = viewModel.fetchPhoneNumber()
+        
+        if let profilePictureUrl = viewModel.fetchProfilePictureUrl() {
+            profilePictureImageView.kf_setImageWithURL(NSURL(string: profilePictureUrl), placeholderImage: UIImage(named: "UserAvatarImg"))
+        }
+    }
+    
+    func setupGestureRecognizers() {
+        
+        self.profilePictureImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.showImagePickerOptions)))
     }
     
     func setupNavigationBar() {
@@ -31,6 +68,35 @@ class EditProfileViewController: UIViewController {
         nextLabel.setTitle("", forState: .Normal)
         nextLabel.addTarget(self, action: #selector(EditProfileViewController.updateUser), forControlEvents: .TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextLabel)
+    }
+    
+    
+    @IBAction func editProfilePicture() {
+        self.showImagePickerOptions()
+    }
+    
+    func showImagePickerOptions() {
+        let actionSheet =  UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default, handler: { (ACTION :UIAlertAction!)in
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+                
+                self.picker.sourceType = UIImagePickerControllerSourceType.Camera
+                self.picker.cameraDevice = UIImagePickerControllerCameraDevice.Front
+                self.picker.allowsEditing = true
+                
+                self.presentViewController(self.picker, animated: true, completion: nil)
+            }else {
+                print("Camera not available")
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Pick existing photo", style: UIAlertActionStyle.Default, handler: { (ACTION :UIAlertAction!)in
+            self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.picker.allowsEditing = true
+            self.presentViewController(self.picker, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil))
+        self.presentViewController(actionSheet, animated: true, completion: nil)
     }
     
     func backButtonPressed(sender: UIButton) {
@@ -50,5 +116,33 @@ class EditProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        self.picker.dismissViewControllerAnimated(true, completion: nil)
+        profilePictureImageView.image = image
+        self.uploadUserProfilePicture(image)
+    }
+    
+    func uploadUserProfilePicture(image: UIImage) {
+        let imageUploadService = ImageUploadService()
+        imageUploadService.delegate = self
+        imageUploadService.uploadUserProfilePicture(image)
+    }
+    
+    func onImageUploadStart() {
+        self.profilePicOverlayView.hidden = false
+        self.activityIndicatorView.hidden = false
+        self.activityIndicatorView.startAnimating()
+    }
+    
+    func onImageUploadEnd() {
+        self.profilePicOverlayView.hidden = true
+        self.activityIndicatorView.stopAnimating()
+        self.activityIndicatorView.hidden = true
+    }
+        
 }

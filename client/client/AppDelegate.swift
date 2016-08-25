@@ -80,12 +80,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func redirectBasedOnLoginStatus() {
         
+        
         if NSUserDefaultsUtils.getAuthToken() != nil {
-            if let _ = UserService.getUser()?.onboardedAt {
-                redirectToTabView()
-            } else {
-                redirectToOnboardingFlow()
-            }
+            UserService.sharedInstance.getMeRequest({ (user) in
+                
+                if let _ = UserService.getUser()?.onboardedAt {
+                    self.redirectToTabView()
+                } else {
+                    self.redirectToOnboardingFlow()
+                }
+            
+            }, errorCallback: { (error) in
+            
+                print(error.localizedDescription)
+            
+            })
+            
         } else {
             redirectToLoginFlow()
         }
