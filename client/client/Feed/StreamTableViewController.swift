@@ -8,16 +8,22 @@
 
 import UIKit
 import Kingfisher
+import NVActivityIndicatorView
 
 class StreamTableViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView : UITableView!
     
     var viewModel: StreamViewModel!
-
+    
+    @IBOutlet weak var loaderContainerView: LoaderView!
+    
+    private var screenWidth = UIScreen.mainScreen().bounds.size.width
+    private var imageViewHeight: CGFloat = 300
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         viewModel = StreamViewModel()
         
         setupNavigationBar()
@@ -34,7 +40,7 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
     func setupNavigationBar() {
         navigationController?.navigationBar.barTintColor = UIColor(red: 4.0/255.0, green: 158.0/255.0, blue: 143.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.title = "Trending"
+        self.title = "Designs"
     }
     
 
@@ -47,7 +53,9 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
             let project = dataSource[indexPath.section][indexPath.row]
             
             if let url = self.viewModel.fetchProjectPictureUrl(project) {
-                cell.designCoverImage.kf_setImageWithURL(NSURL(string: url)!)
+                cell.designCoverImage.kf_setImageWithURL(NSURL(string: url)!, placeholderImage: UIImage(named: "Placeholder"))
+            } else {
+                cell.designCoverImage.image = UIImage(named: "Placeholder")
             }
             
             if let title = self.viewModel.fetchProjectTitle(project) {
@@ -58,16 +66,37 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
             
             return cell
         }
+        
+        viewModel.progressObservable.observe { (progress) in
+            switch progress {
+            case .None:
+                break
+                
+            case .InProgress:
+                self.loaderContainerView.hidden = false
+                break
+                
+            case .Finished:
+                self.loaderContainerView.hidden = true
+                break
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let project = viewModel.streamArrayObservable.array[indexPath.row]
+        if let media = project.medias?.initial?.first?.media {
+            let imageRatio: CGFloat = CGFloat(media.height!) / CGFloat(media.width!)
+            if imageRatio == 0 || imageRatio < 0 {
+                return imageViewHeight + 103
+            }
+            return screenWidth * imageRatio + 103
+        }
         return 430
     }
     
@@ -78,6 +107,19 @@ class StreamTableViewController: UIViewController, UITableViewDelegate {
         let project = viewModel.streamArrayObservable.array[indexPath.row]
         vc.project = project
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= 0 {
+            if let total = viewModel.paging?.total {
+                if viewModel.streamArrayObservable.array.count < total {
+                    viewModel.fetchNextSetOfProjects()
+                }
+            }
+        }
     }
 
     /*

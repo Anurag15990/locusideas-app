@@ -15,6 +15,19 @@ enum ProjectRouter: BaseRouterProtocol {
     case GetProjectById(String)
     case UpdateProject(String, Project)
     case GetProjectMediaByProjectId(String)
+    case GetProjectsByURL(String)
+    case GetProjectsByOwner(String)
+    
+    var baseURL: String {
+        switch self {
+            
+        case .GetProjectsByURL(let url):
+            return "http:" + url
+            
+        default:
+            return BaseRouter.baseURL
+        }
+    }
     
     var path: String {
         
@@ -30,8 +43,13 @@ enum ProjectRouter: BaseRouterProtocol {
             return "/api/projects/\(projectId)"
             
         case .GetProjectMediaByProjectId(let projectId):
-            return "/api/projects/\(projectId)/media"
+            return "/api/projects/\(projectId)/medias"
         
+        case .GetProjectsByURL:
+            return ""
+            
+        case .GetProjectsByOwner(let ownerId):
+            return "/api/projects/owner/\(ownerId)"
         }
     }
     
@@ -49,6 +67,12 @@ enum ProjectRouter: BaseRouterProtocol {
             return .PUT
             
         case .GetProjectMediaByProjectId:
+            return .GET
+            
+        case .GetProjectsByURL:
+            return .GET
+            
+        case .GetProjectsByOwner:
             return .GET
         }
     }

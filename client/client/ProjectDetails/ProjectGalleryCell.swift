@@ -19,7 +19,6 @@ class ProjectGalleryCell: UITableViewCell {
         // Initialization code
         
         galleryImageView.clipsToBounds = true
-        galleryImageView.image = UIImage_Gradient.imageWithGradientAtBottom(UIImage(named: "Studio_pepperfry.jpg"))
         self.selectionStyle = .None
         
 //        setBackgroundLayer()

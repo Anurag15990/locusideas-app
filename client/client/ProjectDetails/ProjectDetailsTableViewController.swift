@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import IDMPhotoBrowser
+import Kingfisher
 
-class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, IDMPhotoBrowserDelegate {
 
     @IBOutlet weak var tableView : UITableView!
     
+    private var screenWidth = UIScreen.mainScreen().bounds.size.width
+    private var imageViewHeight: CGFloat = 300
+
+    
     var project : Project!
+    
+    var medias =  Array<MediaObject.InitialMedia>()
+    
+    var photos = [IDMPhoto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +39,59 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_arrow_back_white_18pt"), style: .Plain, target: self, action: #selector(ProjectDetailsTableViewController.backButtonPressed(_:)))
 
+        self.assignMediasArray()
+    }
+    
+    /**
+     Method to Assign Media Array.
+     */
+    func assignMediasArray() {
         
-//        self.setNeedsStatusBarAppearanceUpdate()
+        ProjectService.sharedInstance.fetchProjectMediaById(self.project.id!, successCallback: { (media) in
+           
+            if let projectMedias = media.projectMedias {
+                
+                self.medias = projectMedias
+                
+                for media in self.medias {
+                    self.photos.append(self.constructIDMPhoto(media))
+                }
+                
+                self.tableView.reloadData()
+            
+            }
+            
+            
+        }) { (error) in
+                print(error.localizedDescription)
+        }
         
+       
+    }
+    
+    /**
+     Method to Construct IDM Photo from Media Object.
+     
+     - parameter media: <#media description#>
+     
+     - returns: <#return value description#>
+     */
+    func constructIDMPhoto(media: MediaObject.InitialMedia) -> IDMPhoto {
+        let photoObj:IDMPhoto = IDMPhoto()
+        
+        if let url = media.media?.url {
+            
+            photoObj.photoURL = NSURL(string: url)
+
+        }
+        
+        return photoObj
     }
     
     func backButtonPressed(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
     }
     
-//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return .LightContent
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -71,9 +122,15 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProjectGalleryCell", forIndexPath: indexPath) as! ProjectGalleryCell
-            let media = self.getProjectMedia()[indexPath.row - 2].media
-            cell.galleryImageView.kf_setImageWithURL(NSURL(string: (media?.url)!)!)
+            let media = self.medias[indexPath.row - 2].media
+            cell.galleryImageView.kf_setImageWithURL(NSURL(string: (media?.url)!)!, placeholderImage: UIImage(named: "Placeholder"))
             return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row != 0 && indexPath.row != 1 {
+            showImage(self.photos, animatedView: tableView.cellForRowAtIndexPath(indexPath)!.contentView, index: UInt(indexPath.row - 2))
         }
     }
     
@@ -107,22 +164,44 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
                 return calculateHeightForString(text)
             }
         }else {
-            return 300
+            if let media = self.medias[indexPath.row - 2].media {
+                let imageRatio: CGFloat = CGFloat(media.height!) / CGFloat(media.width!)
+                if imageRatio == 0 || imageRatio < 0 {
+                    return imageViewHeight
+                }
+                return screenWidth * imageRatio
+            }
+            return imageViewHeight
         }
         return 0
     }
     
+    /**
+     Method to Get Media Count
+     
+     - returns: <#return value description#>
+     */
     func getProjectMediaCount() -> Int {
         
-        return self.project!.medias!.initial!.count
+        return self.medias.count
         
     }
     
+    /**
+     Method to Get Project Title.
+     
+     - returns: <#return value description#>
+     */
     func getProjectTitle() -> String {
         
         return self.project!.title!
     }
     
+    /**
+     Method to Get Project Owner Name
+     
+     - returns: <#return value description#>
+     */
     func getProjectOwnerName() -> String {
         
         var fullName = ""
@@ -137,6 +216,11 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         return fullName
     }
     
+    /**
+     Method to Get Profile Image of the User.
+     
+     - returns: <#return value description#>
+     */
     func getProfileImage() -> String? {
         
         return self.project.owner?.user?.picture?.url
@@ -151,6 +235,24 @@ class ProjectDetailsTableViewController: UIViewController, UITableViewDelegate, 
         
         return self.project!.medias!.initial!
     
+    }
+    
+    /**
+     Method to Open Gallery Image View with all Photos Array and Selected Photo Index.
+     
+     - parameter photos:       <#photos description#>
+     - parameter animatedView: <#animatedView description#>
+     - parameter index:        <#index description#>
+     */
+    func showImage(photos: [IDMPhoto], animatedView:UIView, index: UInt) {
+        let browser:IDMPhotoBrowser = IDMPhotoBrowser(photos: photos,animatedFromView: animatedView)
+        browser.displayArrowButton = true
+        browser.displayCounterLabel = false
+        browser.displayActionButton = false
+        browser.displayDoneButton = true
+        browser.delegate = self
+        browser.setInitialPageIndex(index)
+        self.presentViewController(browser, animated: true, completion: nil)
     }
 
     /*

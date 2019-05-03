@@ -12,6 +12,7 @@ import ObjectMapper
 class ProjectResponse: NSObject, Mappable {
     
     var projects: [Project]?
+    var paging: Pagination?
     
     override init() {
         super.init()
@@ -23,5 +24,6 @@ class ProjectResponse: NSObject, Mappable {
     
     func mapping(map: Map) {
         projects <- map["projects"]
+        paging   <- map["paging"]
     }
 }

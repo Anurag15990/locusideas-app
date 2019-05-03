@@ -12,6 +12,8 @@ import ObjectMapper
 
 class UserService: NSObject {
     
+    static let sharedInstance = UserService()
+    
     /**
      Method to get User Details from the API. Stores the user details in NSUserDefaults and returns the Locally Stored Object.
      
@@ -46,7 +48,8 @@ class UserService: NSObject {
     static func getUser() -> User?  {
         
         if let userString = NSUserDefaultsUtils.getUserDetails() {
-            return Mapper<User>().map(userString)
+            let userMeResponse =  Mapper<UserMeResponse>().map(userString)
+            return userMeResponse?.user
         }
         
         return nil
@@ -106,6 +109,38 @@ class UserService: NSObject {
     }
     
     /**
+     Method to Onboard User.
+     
+     - parameter userId:          User Id of the User.
+     - parameter requestBody:     Onboarding Parameters/Details.
+     - parameter successCallback: SuccessCallback returns the User Object.
+     - parameter errorCallback:   ErrorCallback returns an NSError Object.
+     */
+    func onboardUser(userId: String,
+                     requestBody: UserOnboardingRequestBody,
+                     successCallback: ((user: User) -> Void),
+                     errorCallback: (error: NSError) -> Void) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.OnboardUser(userId, requestBody)))
+        .debugLog()
+        .responseString { (response) in
+            switch response.result {
+            
+            case .Success(_):
+                self.getMeRequest({ (user) in
+                    successCallback(user: user)
+                    }, errorCallback: { (error) in
+                        errorCallback(error: error)
+                })
+                
+            case .Failure(let error):
+                errorCallback(error: error)
+            
+            }
+        }
+    }
+    
+    /**
      Method to Fetch All Users.
      
      - parameter successCallback: Returns an Array of Users
@@ -119,8 +154,59 @@ class UserService: NSObject {
         .responseString { (response) in
             switch response.result {
             case .Success(let value):
-                if let users = Mapper<User>().mapArray(value) {
+                let userResponse = Mapper<UserResponse>().map(value)
+                if let users = userResponse?.users {
                     successCallback(users: users)
+                }
+            case .Failure(let error):
+                errorCallback(error: error)
+            }
+        }
+    }
+    
+    /**
+     Method to Fetch All Users.
+     
+     - parameter successCallback: Returns an Array of Users
+     - parameter errorCallback:   Returns an Error if Request Fails.
+     */
+    func getDesigners(successCallback: ((users: [User], pagination: Pagination?) -> Void),
+                  errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetDesigners()))
+            .debugLog()
+            .responseString { (response) in
+                switch response.result {
+                case .Success(let value):
+                    let userResponse = Mapper<UserResponse>().map(value)
+                    if let users = userResponse?.userDesigners {
+                        successCallback(users: users, pagination: userResponse?.paging)
+                    }
+                case .Failure(let error):
+                    errorCallback(error: error)
+                }
+        }
+    }
+    
+    /**
+     Method to fetch designers by URL. 
+     
+     - parameter url:             <#url description#>
+     - parameter successCallback: <#successCallback description#>
+     - parameter errorCallback:   <#errorCallback description#>
+     */
+    func getDesignersByURL(url: String,
+                           successCallback: ((users: [User], pagination: Pagination?) -> Void),
+                           errorCallback: ((error: NSError) -> Void)) {
+        
+        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetDesignersByURL(url)))
+        .debugLog()
+        .responseString { (response) in
+            switch response.result {
+            case .Success(let value):
+                let userResponse = Mapper<UserResponse>().map(value)
+                if let users = userResponse?.userDesigners {
+                    successCallback(users: users, pagination: userResponse?.paging)
                 }
             case .Failure(let error):
                 errorCallback(error: error)

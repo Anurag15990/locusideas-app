@@ -15,11 +15,14 @@ enum BaseRouter: URLRequestConvertible {
     /// Static Endpoint/Base URL being fetched from Info.plist
 //    static let baseURL = NSBundle.mainBundle().objectForInfoDictionaryKey("BASE_API") as! String
     
-    static let baseURL = "http://api-staging-c3po.locusideas.com"
+//    static let baseURL = "http://api-staging-c3po.locusideas.com"
+    static let baseURL = "http://192.168.0.190:3001"
+
     
     case AuthRouterManager(AuthRouter)
     case UserRouteManager(UserRouter)
     case ProjectRouteManager(ProjectRouter)
+    case CategoriesRouteManager(CategoriesRouter)
     
     /// URL Request is formed here.
     var URLRequest: NSMutableURLRequest {
@@ -36,6 +39,11 @@ enum BaseRouter: URLRequestConvertible {
         case .ProjectRouteManager(let request):
             let mutableUrlRequest = configureRequest(request)
             return mutableUrlRequest
+            
+        case .CategoriesRouteManager(let request):
+            let mutableUrlRequest = configureRequest(request)
+            return mutableUrlRequest
+            
         }
     }
     
@@ -52,7 +60,7 @@ enum BaseRouter: URLRequestConvertible {
      */
     func configureRequest(requestObj: BaseRouterProtocol) -> NSMutableURLRequest {
         
-        let url = NSURL(string: BaseRouter.baseURL)!
+        let url = NSURL(string: requestObj.baseURL)!
         
         /// Set Request Path
         let mutableURLRequest = NSMutableURLRequest(URL: url.URLByAppendingPathComponent(requestObj.path))

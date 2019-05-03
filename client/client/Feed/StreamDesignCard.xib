@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Light.otf">
@@ -26,17 +26,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KS2-TD-bvE" id="nPr-4X-rmU">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="429.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEP-Ed-17V" customClass="ShadowedContainerView" customModule="LocusIdeas" customModuleProvider="target">
                         <rect key="frame" x="8" y="8" width="304" height="413"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YwR-sL-hlt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YwR-sL-hlt">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="2YU-1U-AOI"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IQ-jq-cmh">
                                 <rect key="frame" x="8" y="308" width="288" height="35"/>
@@ -113,6 +110,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4IQ-jq-cmh" firstAttribute="top" secondItem="YwR-sL-hlt" secondAttribute="bottom" constant="8" id="4L7-yV-WtX"/>
+                            <constraint firstAttribute="bottom" secondItem="dYb-xj-Ls4" secondAttribute="bottom" constant="24" id="8HH-GV-tmF"/>
                             <constraint firstItem="YwR-sL-hlt" firstAttribute="top" secondItem="TEP-Ed-17V" secondAttribute="top" id="9z0-j7-izU"/>
                             <constraint firstAttribute="trailing" secondItem="2P4-Xb-ECs" secondAttribute="trailing" constant="8" id="Aoy-vX-xNI"/>
                             <constraint firstAttribute="trailing" secondItem="YwR-sL-hlt" secondAttribute="trailing" id="B3a-7S-Vbh"/>

@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,16 +21,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = UIColor(red: 2.0/255.0, green: 193.0/255.0, blue: 186.0/255.0, alpha: 1.0)
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Asap-Medium", size: 13)!], forState: .Normal)
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 2.0/255.0, green: 193.0/255.0, blue: 186.0/255.0, alpha: 1.0)], forState: .Selected)
+        
+        NSThread.sleepForTimeInterval(2.0)
         
         redirectBasedOnLoginStatus()
         
+        GMSPlacesClient.provideAPIKey(GoogleConstants.googlePlacesAPIKey)
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
+        if #available(iOS 9.0, *) {
+            return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: (options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String), annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+        } else {
+            // Fallback on earlier versions
+            return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: "", annotation: nil)
+        }
+
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -54,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         FBSDKAppEvents.activateApp()
     }
+    
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -64,7 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func redirectBasedOnLoginStatus() {
         
         if NSUserDefaultsUtils.getAuthToken() != nil {
-            redirectToTabView()
+            if let _ = UserService.getUser()?.onboardedAt {
+                redirectToTabView()
+            } else {
+                redirectToOnboardingFlow()
+            }
         } else {
             redirectToLoginFlow()
         }
@@ -74,6 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        self.window?.rootViewController = vc
+    }
+    
+    func redirectToOnboardingFlow() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LocationNavigationController") as! UINavigationController
         self.window?.rootViewController = vc
     }
     

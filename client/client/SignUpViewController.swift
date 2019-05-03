@@ -12,7 +12,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Alamofire
 
-class SignUpViewController : UIViewController {
+class SignUpViewController : UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var signUpName : UITextField!
     @IBOutlet weak var signUpEmail : UITextField!
@@ -20,14 +20,31 @@ class SignUpViewController : UIViewController {
     @IBOutlet weak var confirmPassword : UITextField!
     @IBOutlet weak var signUpButton : UIButton!
     @IBOutlet weak var facebookSignUpView : UIView!
-    @IBOutlet weak var twitterSignUpView : UIView!
+    @IBOutlet weak var googleSignUpView : UIView!
     
+    var loaderContainerView: LoaderView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        constructLoaderView()
         setupInitialView()
+        initializeGoogleSignInDelegate()
         
+    }
+
+    func constructLoaderView() {
+        loaderContainerView = LoaderView(frame: self.view.frame)
+        self.view.addSubview(loaderContainerView)
+        loaderContainerView.hidden = true
+    }
+    
+    func initializeGoogleSignInDelegate() {
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
 
     
@@ -41,13 +58,19 @@ class SignUpViewController : UIViewController {
         facebookSignUpView.layer.cornerRadius = CGFloat(5)
         facebookSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
-        twitterSignUpView.layer.borderWidth = 2
-        twitterSignUpView.layer.cornerRadius = CGFloat(5)
-        twitterSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
+        googleSignUpView.layer.borderWidth = 2
+        googleSignUpView.layer.cornerRadius = CGFloat(5)
+        googleSignUpView.layer.borderColor = UIColor .lightGrayColor().CGColor
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleTap(_:)))
         self.facebookSignUpView.addGestureRecognizer(tap)
         
+        let googleTap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleGoogleTap(_:)))
+        self.googleSignUpView.addGestureRecognizer(googleTap)
+    }
+    
+    func handleGoogleTap(gestureRecognizer: UITapGestureRecognizer) {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     func handleTap(gestureRecognizer: UITapGestureRecognizer) {
@@ -65,7 +88,7 @@ class SignUpViewController : UIViewController {
     }
     
     func getFBUserData() {
-        
+        loaderContainerView.hidden = false
         let params = ["fields": "id, name, first_name, last_name, picture.type(large), email, work, location, education, friends, birthday, gender"]
         
         if((FBSDKAccessToken.currentAccessToken()) != nil) {
@@ -85,38 +108,51 @@ class SignUpViewController : UIViewController {
     func authenticateWithFacebook(request: FacebookAuthRequestBody){
 
         AuthService.sharedInstance.loginWithFacebook(request, successCallback: { (token) in
+            self.loaderContainerView.hidden = true
             self.getUserDetails()
-            self.pushToTabView()
+            self.redirectBasedOnOnboardingStatus()
+            }) { (error) in
+                print(error.localizedDescription)
+        }
+    }
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        //TODO: Actual Sign Up to be done.
+        
+        loaderContainerView.hidden = false
+        
+        let requestBody = GoogleAuthRequestBody()
+        requestBody.id = user.userID
+        requestBody.accessToken = user.authentication.accessToken
+        requestBody.refreshToken = user.authentication.refreshToken
+        self.authenticateWithGoogle(requestBody)
+    }
+    
+    func authenticateWithGoogle(request: GoogleAuthRequestBody) {
+        
+        AuthService.sharedInstance.loginWithGoogle(request, successCallback: { (token) in
+            self.loaderContainerView.hidden = true
+            self.getUserDetails()
+            self.redirectBasedOnOnboardingStatus()
             }) { (error) in
                 print(error.localizedDescription)
         }
     }
     
     func registerWithEmail(request: EmailSignUpAuthRequestBody) {
-        
+        self.loaderContainerView.hidden = false
         AuthService.sharedInstance.registerWithEmail(request, successCallback: { (token) in
             self.getUserDetails()
-            self.pushToTabView()
+            self.loaderContainerView.hidden = true
+            self.redirectBasedOnOnboardingStatus()
             }) { (error) in
                 print(error.localizedDescription)
         }
     }
     
     func getUserDetails() {
-        
-        Alamofire.request(BaseRouter.UserRouteManager(UserRouter.GetMeRequest()))
-            .debugLog()
-            .responseString {response in
-                print(response.result)
-                if response.result.isSuccess {
-                    print(response.result.value)
-                    if let value = response.result.value {
-                        NSUserDefaultsUtils.setUserDetails(value)
-                    }
-                }
-                else {
-                    print(response.result.error)
-                }
+        UserService.sharedInstance.getMeRequest({ (user) in }) { (error) in
+                print(error.localizedDescription)
         }
     }
     
@@ -134,6 +170,20 @@ class SignUpViewController : UIViewController {
         }
     }
     
+    func redirectBasedOnOnboardingStatus() {
+        if let _ = UserService.getUser()?.onboardedAt {
+            pushToTabView()
+        } else {
+            pushToOnboardingView()
+        }
+    }
+    
+    
+    func pushToOnboardingView() {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("LocationNavigationController") as! UINavigationController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
     func pushToTabView() {
         
         let vc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
@@ -143,5 +193,4 @@ class SignUpViewController : UIViewController {
     @IBAction func cancelButtonTapped() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
 }
